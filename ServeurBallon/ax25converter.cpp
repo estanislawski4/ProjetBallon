@@ -115,7 +115,6 @@ QString AX25Converter::convertAX25ToTNC2(const QByteArray &ax25) {
     QString sDest = decodeAX25Address(dest);
     QString sSrc  = decodeAX25Address(src);
 
-    // Reconstruire la trame TNC2 au format "SRC>DEST:payload"
     return QString("%1>%2:%3")
         .arg(sSrc)
         .arg(sDest)

@@ -1,4 +1,4 @@
-QT       += core gui widgets websockets serialport
+QT       += core gui widgets websockets serialport sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,6 +14,7 @@ SOURCES += \
     kisshandler.cpp \
     main.cpp \
     interface.cpp \
+    mysqlmanager.cpp \
     serialportmanager.cpp
 
 HEADERS += \
@@ -21,6 +22,7 @@ HEADERS += \
     ax25converter.h \
     interface.h \
     kisshandler.h \
+    mysqlmanager.h \
     serialportmanager.h
 
 FORMS += \

@@ -12,6 +12,7 @@ class APRSISClient;
 class AX25Converter;
 class KISSHandler;
 class WebSocketServer;
+class MySQLManager;
 
 class Interface : public QWidget
 {
@@ -32,8 +33,11 @@ private:
     APRSISClient     *m_aprsClient;
     AX25Converter    *m_converter;
     KISSHandler      *m_kissHandler;
+    MySQLManager     *m_dbManager;
     QString buildLoRaFrame();
     QString buildAprsFrame();
+    bool storeLoRaTrame(const QString &source, const QString &destination,
+                        const QString &fullTrame, const QString &message);
 };
 
 #endif // INTERFACE_H

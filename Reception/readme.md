@@ -1,0 +1,3 @@
+# Script de la nacelle pour gérer les requêtes
+
+Script utilisé pour répondre selon le type de requête, notamment au code Q, par exemple QSA?;QSL;QRT etc...
