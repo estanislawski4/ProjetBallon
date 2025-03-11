@@ -15,6 +15,7 @@ class KISSHandler : public QObject {
 public:
     explicit KISSHandler(APRSISClient *aprsClient, AX25Converter *converter, QObject *parent = nullptr);
     void parseKISSData(const QByteArray &data);
+    void setSendToAprs(bool enabled);
 
 signals:
     void logMessage(const QString &msg);
@@ -23,6 +24,7 @@ private:
     void processKISSFrame(const QByteArray &frame);
     APRSISClient *m_aprsClient;
     AX25Converter *m_converter;
+    bool m_sendToAprs;
 };
 
 #endif // KISSHANDLER_H

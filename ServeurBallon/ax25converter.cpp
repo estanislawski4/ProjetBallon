@@ -78,6 +78,50 @@ QByteArray AX25Converter::convertTNC2ToAX25(const QString &tnc2) {
     return ax25Frame;
 }
 
+QString AX25Converter::convertAX25ToTNC2(const QByteArray &ax25) {
+    // On recherche la fin de la liste des adresses.
+    int offset = 0;
+    int addressCount = 0;
+    // Les adresses AX.25 sont constituées de champs de 7 octets.
+    // Le dernier champ d'adresse est identifié par le bit d'extension (LSB du 7ème octet à 1).
+    while (offset + 7 <= ax25.size()) {
+        QByteArray addrField = ax25.mid(offset, 7);
+        addressCount++;
+        // Si le bit d'extension est positionné, c'est le dernier champ d'adresse.
+        if (addrField.at(6) & 0x01) {
+            offset += 7;
+            break;
+        }
+        offset += 7;
+    }
+    // Vérifier qu'il reste au moins 2 octets pour le contrôle et le PID.
+    if (offset + 2 > ax25.size())
+        return QString();
+
+    // Récupération du contrôle et du PID (même si ce ne sont pas 0x03 et 0xF0)
+    unsigned char control = static_cast<unsigned char>(ax25.at(offset));
+    unsigned char pid = static_cast<unsigned char>(ax25.at(offset + 1));
+    offset += 2; // Passer au payload
+
+    QByteArray payload = ax25.mid(offset);
+
+    // Pour la conversion TNC2, on suppose que les deux premiers champs d'adresse
+    // correspondent respectivement à la destination et à la source.
+    if (addressCount < 2)
+        return QString();
+
+    QByteArray dest = ax25.mid(0, 7);
+    QByteArray src  = ax25.mid(7, 7);
+    QString sDest = decodeAX25Address(dest);
+    QString sSrc  = decodeAX25Address(src);
+
+    // Reconstruire la trame TNC2 au format "SRC>DEST:payload"
+    return QString("%1>%2:%3")
+        .arg(sSrc)
+        .arg(sDest)
+        .arg(QString::fromLatin1(payload));
+}
+
 QString AX25Converter::decodeAX25Address(const QByteArray &addr7) {
     if (addr7.size() < 7) return QString();
     QByteArray callsign(6, ' ');
@@ -90,11 +134,4 @@ QString AX25Converter::decodeAX25Address(const QByteArray &addr7) {
     unsigned char ssidByte = (unsigned char)addr7.at(6);
     unsigned int rawSsid = (ssidByte >> 1) & 0x0F;
     return (rawSsid == 0) ? cs : QString("%1-%2").arg(cs).arg(rawSsid);
-}
-
-QString AX25Converter::convertAX25ToTNC2(const QByteArray &ax25) {
-    // Implémentation simplifiée selon votre code...
-    QString tnc2;
-    // ...
-    return tnc2;
 }

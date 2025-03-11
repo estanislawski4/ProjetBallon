@@ -14,16 +14,14 @@ SOURCES += \
     kisshandler.cpp \
     main.cpp \
     interface.cpp \
-    serialportmanager.cpp \
-    websocketserver.cpp
+    serialportmanager.cpp
 
 HEADERS += \
     aprsisclient.h \
     ax25converter.h \
     interface.h \
     kisshandler.h \
-    serialportmanager.h \
-    websocketserver.h
+    serialportmanager.h
 
 FORMS += \
     interface.ui

@@ -32,7 +32,8 @@ private:
     APRSISClient     *m_aprsClient;
     AX25Converter    *m_converter;
     KISSHandler      *m_kissHandler;
-    WebSocketServer  *m_wsServer;
+    QString buildLoRaFrame();
+    QString buildAprsFrame();
 };
 
 #endif // INTERFACE_H

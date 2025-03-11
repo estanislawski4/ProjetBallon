@@ -6,8 +6,13 @@
 KISSHandler::KISSHandler(APRSISClient *aprsClient, AX25Converter *converter, QObject *parent)
     : QObject(parent),
     m_aprsClient(aprsClient),
-    m_converter(converter)
+    m_converter(converter),
+    m_sendToAprs(false)
 { }
+
+void KISSHandler::setSendToAprs(bool enabled) {
+    m_sendToAprs = enabled;
+}
 
 void KISSHandler::parseKISSData(const QByteArray &data) {
     static QByteArray frameBuffer;
@@ -50,7 +55,11 @@ void KISSHandler::processKISSFrame(const QByteArray &frame) {
     QString tnc2 = m_converter->convertAX25ToTNC2(ax25Payload);
     if (!tnc2.isEmpty()) {
         emit logMessage("Trame convertie => " + tnc2);
-        m_aprsClient->sendLine(tnc2 + "\r\n");
+        // Envoyer sur aprs.fi uniquement si l'option est activée
+        if (m_sendToAprs) {
+            m_aprsClient->sendLine(tnc2 + "\r\n");
+            emit logMessage("Message APRS envoyé depuis la réception LoRa");
+        }
     } else {
         emit logMessage("Impossible de convertir AX.25 -> TNC2 (pas UI frame?)");
     }

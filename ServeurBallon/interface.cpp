@@ -5,7 +5,6 @@
 #include "aprsisclient.h"
 #include "ax25converter.h"
 #include "kisshandler.h"
-#include "websocketserver.h"
 
 #include <QDebug>
 
@@ -20,7 +19,6 @@ Interface::Interface(QWidget *parent) :
     m_aprsClient    = new APRSISClient(this);
     m_converter     = new AX25Converter(this);
     m_kissHandler   = new KISSHandler(m_aprsClient, m_converter, this);
-    m_wsServer      = new WebSocketServer(1234, this);
 
     // Connexions pour rediriger la journalisation dans l'interface
     connect(m_serialManager, &SerialPortManager::errorOccurred, this, [this](const QString &err) {
@@ -31,9 +29,6 @@ Interface::Interface(QWidget *parent) :
     });
     connect(m_aprsClient, &APRSISClient::messageReceived, this, [this](const QString &msg) {
         ui->logs->append("APRS-IS >> " + msg);
-    });
-    connect(m_wsServer, &WebSocketServer::logMessage, this, [this](const QString &msg) {
-        ui->logs->append("WebSocket: " + msg);
     });
 
     // Rediriger les données série vers le traitement KISS
@@ -47,6 +42,10 @@ Interface::Interface(QWidget *parent) :
             this, &Interface::onStartButtonClicked);
     connect(ui->sendButton, &QPushButton::clicked,
             this, &Interface::onSendButtonClicked);
+    connect(ui->aprsCheckBox, &QCheckBox::toggled,
+            m_kissHandler, &KISSHandler::setSendToAprs);
+
+    m_kissHandler->setSendToAprs(ui->aprsCheckBox->isChecked());
 
     // Remplir la liste des ports et initier la connexion APRS-IS
     fillPortsComboBox();
@@ -83,22 +82,83 @@ void Interface::onStartButtonClicked()
     }
 }
 
+QString Interface::buildAprsFrame() {
+    // On suppose que vous disposez de QLineEdit dédiés pour ces paramètres
+    QString source = ui->sourceLineEdit->text().trimmed();
+    if (source.isEmpty())
+        source = "F4LTZ";  // valeur par défaut
+
+    // L'en-tête APRS est fixe dans cet exemple.
+    QString aprsHeader = "APRS,TCPIP*,qAC," + source;
+
+    QString dest = ui->destLineEdit->text().trimmed();
+    if (dest.isEmpty())
+        dest = "F4GOH";
+    // On complète à 9 caractères si nécessaire
+    dest = dest.leftJustified(9, ' ');
+
+    QString payload = ui->messageLineEdit->text().trimmed();
+
+    // Format final : SOURCE > en-tête :: DEST : payload
+    return QString("%1>%2::%3:%4")
+        .arg(source)
+        .arg(aprsHeader)
+        .arg(dest)
+        .arg(payload);
+}
+
+// Fonction pour construire la trame LoRa (qui sera convertie)
+QString Interface::buildLoRaFrame() {
+    // Pour LoRa, on peut utiliser des QLineEdit différents
+    QString source = ui->sourceLineEdit->text().trimmed();
+    if (source.isEmpty())
+        source = "F4LTZ";  // valeur par défaut
+
+    // En-tête spécifique LoRa
+    QString loraHeader = "APIN21,WIDE1-1";
+
+    QString dest = ui->destLineEdit->text().trimmed();
+    if (dest.isEmpty())
+        dest = "F4KMN";
+    dest = dest.leftJustified(9, ' ');
+
+    QString payload = ui->messageLineEdit->text().trimmed();
+
+    // Format final : SOURCE > loraHeader :: DEST : payload
+    return QString("%1>%2::%3:%4")
+        .arg(source)
+        .arg(loraHeader)
+        .arg(dest)
+        .arg(payload);
+
+}
+
 void Interface::onSendButtonClicked()
 {
-    QString userText = ui->messageLineEdit->text().trimmed();
-    if (userText.isEmpty()) {
+    // Vérifier que l'utilisateur a saisi un message
+    QString message = ui->messageLineEdit->text().trimmed();
+    if (message.isEmpty()) {
         ui->logs->append("Aucun message à envoyer !");
         return;
     }
 
-    // Conversion de TNC2 vers AX.25 via le convertisseur
-    QByteArray ax25Frame = m_converter->convertTNC2ToAX25(userText);
+    // Créer la trame APRS et l'envoyer directement sur aprs.fi
+    QString aprsFrame = buildAprsFrame();
+    m_aprsClient->sendLine(aprsFrame + "\r\n");
+    ui->logs->append("Message APRS envoyé : " + aprsFrame);
+
+    // Créer la trame LoRa qui doit être convertie
+    QString loraTNC2 = buildLoRaFrame();
+    qDebug() << "Trame LoRa TNC2 :" << loraTNC2;
+
+    // Convertir la trame LoRa (TNC2) en AX.25
+    QByteArray ax25Frame = m_converter->convertTNC2ToAX25(loraTNC2);
     if (ax25Frame.isEmpty()) {
-        ui->logs->append("Erreur conversion AX.25 !");
+        ui->logs->append("Erreur conversion AX.25 (LoRa) !");
         return;
     }
 
-    // Construction de la trame KISS
+    // Construire la trame KISS pour le LoRa
     QByteArray kissFrame;
     kissFrame.append((char)0xC0);
     kissFrame.append((char)0x00);
@@ -115,11 +175,11 @@ void Interface::onSendButtonClicked()
     }
     kissFrame.append((char)0xC0);
 
-    // Envoi de la trame sur le port série
+    // Envoi de la trame KISS sur le port série (LoRa)
     qint64 written = m_serialManager->writeData(kissFrame);
     if (written < 0) {
-        ui->logs->append("Erreur d'envoi sur le port série !");
+        ui->logs->append("Erreur d'envoi sur le port série (LoRa) !");
     } else {
-        ui->logs->append("Trame envoyée (hex) : " + QString(kissFrame.toHex(' ')));
+        ui->logs->append("Trame LoRa envoyée (hex) : " + QString(kissFrame.toHex(' ')));
     }
 }
