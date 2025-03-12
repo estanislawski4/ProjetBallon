@@ -1,84 +1,70 @@
 
-# 🚀 Projet Ballon Stratosphérique 2025
+## 1. Vue d’Ensemble
 
-**Lycée Touchard-Washington, Le Mans**
+Ce projet est mené par les étudiants du Lycée Touchard-Washington dans le cadre du BTS Systèmes Numériques (IR), sous l’égide du CNES et de Planète Sciences. Il s’agit d’un défi annuel visant à lancer un ballon stratosphérique, collecter des mesures environnementales, les transmettre au sol, et innover sans relâche pour sublimer l’expérience d’apprentissage.
 
-----------
+Pour l’édition 2025, deux axes primordiaux se distinguent :
 
-## 📌 Contexte du Projet
-
-Chaque année, le Lycée Touchard-Washington réalise un lancement de ballon stratosphérique dans le cadre du BTS Systèmes Numériques (IR). Ce projet, soutenu financièrement par le CNES et l’association Planète Sciences, a pour objectif pédagogique de permettre aux étudiants de développer et mettre en œuvre des systèmes embarqués complexes, assurant notamment la prise de mesures environnementales et la transmission des données vers le sol.
-
-Cette édition 2025 introduit deux principaux objectifs :
-
-1.  **Mesure du diamètre du ballon** par analyse d'images prises en vol pour renouveler l'expérience sur la loi des gaz parfaits.
-2.  **Transmission bidirectionnelle** des données télémétriques via liaison radio LoRa, incluant le suivi des signaux (RSSI et SNR).
+1.  **Analyser le diamètre du ballon** grâce à des images prises en vol, afin de revisiter la loi des gaz parfaits.
+2.  **Gérer une liaison radio LoRa** en télécommunication bidirectionnelle, réceptionnant et renvoyant des informations de télémétrie.
 
 ----------
 
-## 🎯 Objectifs Techniques Principaux
+## 2. Objectifs Stratégiques
 
--   Captation et transmission d'images du ballon via SSTV toutes les 5 minutes.
--   Mesure et enregistrement en continu des données : température, pression, humidité et accélérations (axes x, y, z).
--   Transmission télémétrique régulière via LoRa UHF à 433 MHz, toutes les 2 minutes au format APRS.
--   Détection et signalement d'événements critiques (éclatement du ballon, atterrissage).
-
-----------
-
-## 📡 Technologies et Systèmes Utilisés
-
-**Nacelle embarquée :**
-
--   Raspberry Pi Zero
--   Module caméra embarquée avec stockage SD
--   Module LoRa RA-02 pour télémétrie et commandes à distance
--   Protocole SSTV pour transmission d’images en modulation SSB (HF, 28 MHz)
-
-**Station au sol :**
-
--   Station de réception SSTV avec décodage des images en temps réel, hébergées sur serveur web Linux Debian accessible au public.
--   Gateway LoRa, communication bidirectionnelle et retransmission vers le serveur [APRS.fi](https://aprs.fi).
+1.  **Capturer et transmettre des images** via SSTV toutes les 5 minutes, telles des missives célestes.
+2.  **Enregistrer en continu** température, pression, humidité et accélérations (x, y, z).
+3.  **Émettre des données télémétriques** (LoRa UHF à 433 MHz, format APRS) toutes les 2 minutes.
+4.  **Signaler les événements critiques** (éclatement, atterrissage), assurant qu’aucun rebondissement ne vous échappe.
 
 ----------
 
-## 🛠️ Contraintes et Spécifications Techniques
+## 3. Technologies Employées
 
--   **Budget :** environ 2000 €, financé par le CNES et Planète Sciences.
--   **Durée totale du projet :** 150 heures.
--   **Développement :**
-    -   Langage : C++ sous Linux Debian Stable
-    -   IDE : NetBeans et PlatformIO
-    -   Raspberry Pi Zero avec caméra intégrée et module LoRa RA-02
-    -   Logiciels libres (Apache, Debian, NetBeans, Modélio, Doxygen)
+### Nacelle Embarquée
 
-----------
+-   **Raspberry Pi Zero** : cerveau miniature, mais redoutable stratège.
+-   **Caméra** : immortalise le diamètre du ballon en plein vol.
+-   **Module LoRa RA-02** : télémétrie bidirectionnelle, comme une messagerie secrète.
+-   **SSTV** : transmission d’images par modulation SSB (HF, 28 MHz).
 
-## 👨‍💻 Équipe Projet
+### Station au Sol
 
--   **Étudiants participants :** 4
--   **Professeurs responsables :** Philippe SIMIER, Jilali KHAMLACH
--   **Commanditaires :** CNES & Planète Sciences espace
+-   **Réception SSTV** : décodage en direct des images, hébergement web sous Linux Debian pour partage instantané.
+-   **Passerelle LoRa** : retransmission vers [APRS.fi](https://aprs.fi) et exécution des ordres royaux depuis votre trône numérique.
 
 ----------
 
-## ✅ Critères d’Évaluation et Livrables attendus
+## 4. Contraintes et Spécifications
 
--   Photos et données télémétriques stockées sur carte SD et accessibles en ligne.
--   Détection fiable des événements critiques (atterrissage, éclatement).
--   Transmission d’images et télémétrie opérationnelles et consultables en temps réel.
-
-----------
-
-## 🌐 Partenaires et Soutiens
-
--   **Centre National d’Études Spatiales (CNES)**
--   **Planète Sciences Espace**
--   **Radio Club de la Sarthe**
+-   **Budget** : ± 2000 €, acquis auprès du CNES et de Planète Sciences.
+-   **Temps Imparti** : 150 heures pour concevoir, déployer, valider.
+-   **Développement** :
+    -   C++ sous Linux Debian Stable
+    -   Outils : NetBeans, PlatformIO, Doxygen, Apache
+    -   Raspberry Pi Zero, modules LoRa, systèmes libres
 
 ----------
 
-## 🔗 Liens utiles
+## 5. Organisation du Corps Expéditionnaire
 
--   Suivi télémétrique : [APRS.fi](https://aprs.fi)
--   Documentation et détails techniques dans le dossier `Documentation`.
+-   **Étudiants mobilisés** : 4 braves âmes.
+-   **Maîtres d’œuvre** : Philippe SIMIER, Jilali KHAMLACH.
+-   **Hauts Commanditaires** : CNES & Planète Sciences Espace.
 
+----------
+
+## 6. Livrables et Critères de Réussite
+
+1.  **Photographies & données télémétriques** stockées sur carte SD, diffusées en ligne.
+2.  **Détection fiable** des instants cruciaux (éclatement, atterrissage).
+3.  **Transmission en temps réel** des informations et images, consultables à distance.
+
+----------
+
+## 7. Ressources Complémentaires
+
+-   **Suivi Télémétrique** : [APRS.fi](https://aprs.fi)
+-   **Documentation** : Détails et notes techniques dans le dossier `Documentation`.
+
+> « Qui s’élève dans les airs ne redescend jamais comme avant… »
