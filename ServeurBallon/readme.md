@@ -15,9 +15,9 @@ Ainsi, d’un simple clic, vous commandez à distance l’oiseau volant vers la 
 
 1.  **Gestion de ports série** : Dialogue direct avec le module LoRa via un port série. L’application lit et écrit dans ce canal pour transmettre ou recevoir des trames KISS.
 2.  **Conversion AX.25 / TNC2** : Pas de place pour l’approximation lorsqu’il s’agit de coder ou décoder les formats de trames. Un module dédié gère cette gymnastique, de sorte qu’aucune parcelle d’information ne vous échappe.
-3.  **Connexion APRS-IS** : Le programme se connecte à un serveur APRS, y loge ses identifiants, et relaie ainsi les trames de position ou de message. Votre empire des ondes s’étend là où bon vous semble.
-4.  **Base de données MySQL** : Vous consignez chaque trame reçue ou transmise, enregistrant source, destination et contenu dans une BDD distante. Si un espion venait à questionner l’historique, vous aurez toutes les preuves en main.
-5.  **Interface graphique** : Développée sous Qt, elle répertorie les ports disponibles, l’état des connexions, et offre un champ de saisie pour vos messages. Ainsi, vous gouvernez vos transmissions au gré de votre humeur et de vos besoins.
+3.  **Connexion APRS-IS** : Le programme se connecte à un serveur APRS, y loge ses identifiants, et relaie ainsi les trames de position ou de message.
+4.  **Base de données MySQL** : Vous consignez chaque trame reçue ou transmise, enregistrant source, destination et contenu dans une BDD distante.
+5.  **Interface graphique** : Développée sous Qt, elle répertorie les ports disponibles, l’état des connexions, et offre un champ de saisie pour vos messages.
 
 ----------
 
