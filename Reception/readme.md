@@ -1,7 +1,7 @@
 
 ## Aperçu général
 
-Ce programme C++ orchestre la réception et le traitement de requêtes LoRa émises vers la nacelle d’un ballon stratosphérique. Point d’oisiveté : nous ne daignons agir que sur trois codes Q savamment sélectionnés. Chacun d’eux ouvre la voie à une réponse spécifique, à condition que la requête ait été formulée dans les règles de l’art, c’est-à-dire :
+Ce programme C++ orchestre la réception et le traitement de requêtes LoRa émises vers la nacelle d’un ballon stratosphérique. Point d’oisiveté : nous ne daignons agir que sur sept codes Q savamment sélectionnés. Chacun d’eux ouvre la voie à une réponse spécifique, à condition que la requête ait été formulée dans les règles de l’art, c’est-à-dire :
 
 1.  Qu’un point d’interrogation (`?`) suive le code Q.
 2.  Que la destination soit `F4KMN-8` (l’indicatif réservé à notre nacelle de test).
