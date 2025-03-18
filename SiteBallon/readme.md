@@ -27,7 +27,6 @@ Cette application web vous permet d’analyser et de visualiser des trames rése
 
 ## Structure du projet
 
-`/
 ├── App
 │   ├── Controllers
 │   │   └── TramesController.php
@@ -39,7 +38,7 @@ Cette application web vous permet d’analyser et de visualiser des trames rése
 ├── public │   ├── css (optionnel pour styles)
 │   └── index.php
 ├── assets (éventuellement pour images, css, js externes)
-└── README.md` 
+└── README.md
 
 ----------
 
