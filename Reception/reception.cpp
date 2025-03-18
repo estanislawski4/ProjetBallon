@@ -138,14 +138,14 @@ int main() {
                 }
                 case QCode::QRZ: {
                     std::vector<std::string> responses = {
-                        "QRZ Si vous appelez, vous connaissez deja mon indicatif.",
-                        "QRZ Demandez-vous vraiment a qui vous parlez maintenant ?",
-                        "QRZ Curieux : appeler sans savoir qui vous appellez...",
+                        "QRZ Si vous appelez, vous connaissez deja mon indic.",
+                        "QRZ Demandez-vous vraiment a qui vous parlez ?",
+                        "QRZ Curieux: appeler sans savoir qui vous appellez...",
                         "QRZ Paradoxe resolu si vous savez a qui vous parlez.",
-                        "QRZ Test d hypnose : oublieriez-vous mon indicatif ?",
-                        "QRZ Vous doutez ? Pourtant vous m avez bien appele !",
-                        "QRZ La reponse : c est vous qui creez la question.",
-                        "QRZ Vous m appelez mais vous ignorez encore mon nom ?"
+                        "QRZ Test d hypnose, oublieriez-vous mon indicatif ?",
+                        "QRZ Vous doutez ? Pourtant vous avez bien appele !",
+                        "QRZ La reponse: c est vous qui creez la question.",
+                        "QRZ Vous appelez mais vous ignorez encore mon nom ?"
                     };
                     out << responses[std::rand() % responses.size()];
                     break;
@@ -155,7 +155,7 @@ int main() {
                         "QRX Rappeler ? Je reponds plus vite qu un photon.",
                         "QRX Cafe quantique fini, rappel inutile, je suis la.",
                         "QRX Attendez que la vitesse lumiere ralentisse ? Non.",
-                        "QRX Automate toujours pret, c est vous qui hésitez.",
+                        "QRX Automate toujours pret, c est vous qui hesitez.",
                         "QRX File attente inexistante : je reponds sans delai.",
                         "QRX Temps relatif, mais ici je reponds instantanement.",
                         "QRX Resistance serie inutile, reponse deja envoyee !",
