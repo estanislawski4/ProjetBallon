@@ -21,25 +21,6 @@ Cette application web vous permet d’analyser et de visualiser des trames rése
     -   Top 10 des messages les plus fréquents
     -   Évolution horaire des trames
 -   Affichage de l'historique détaillé des trames sous forme de tableau interactif.
-    
-
-----------
-
-## Structure du projet
-
-`\
-├── App
-│   ├── Controllers
-│   │   └── TramesController.php
-│   └── Models
-│       └── TrameModel.php
-├── Views
-│   └── trames
-│       └── index.php
-├── public │   ├── css (optionnel pour styles)
-│   └── index.php
-├── assets (éventuellement pour images, css, js externes)
-└── README.md`
 
 ----------
 
