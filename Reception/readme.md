@@ -133,7 +133,4 @@ Ici se trouve l’intelligence qui traite la requête reçue et fabrique la rép
 
  
 
-> « La précision est la politesse des rois… mais surtout celle des
- 
-
-> reines, stratégiquement, pour qui veut commander le ciel. »
+> « La précision est la politesse des rois… mais surtout celle des reines, stratégiquement, pour qui veut commander le ciel. »
