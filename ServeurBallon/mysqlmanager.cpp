@@ -1,11 +1,11 @@
+// MySQLManager.cpp
 #include "mysqlmanager.h"
-
 #include <QDebug>
 
 MySQLManager::MySQLManager(QObject *parent)
     : QObject(parent)
 {
-    // Configuration de la base de données selon votre config.inc PHP
+    // Configuration de la connexion MySQL
     m_db = QSqlDatabase::addDatabase("QMYSQL");
     m_db.setHostName("195.221.60.234");
     m_db.setDatabaseName("Ballon2025");
@@ -13,11 +13,13 @@ MySQLManager::MySQLManager(QObject *parent)
     m_db.setPassword("P6wL9sF4");
 }
 
-MySQLManager::~MySQLManager() {
+MySQLManager::~MySQLManager()
+{
     closeConnection();
 }
 
-bool MySQLManager::openConnection() {
+bool MySQLManager::openConnection()
+{
     if (!m_db.open()) {
         qDebug() << "Erreur de connexion à MySQL:" << m_db.lastError().text();
         return false;
@@ -25,13 +27,14 @@ bool MySQLManager::openConnection() {
     return true;
 }
 
-void MySQLManager::closeConnection() {
-    if (m_db.isOpen()) {
+void MySQLManager::closeConnection()
+{
+    if (m_db.isOpen())
         m_db.close();
-    }
 }
 
-QSqlQuery MySQLManager::executeQuery(const QString &queryStr) {
+QSqlQuery MySQLManager::executeQuery(const QString &queryStr)
+{
     QSqlQuery query(m_db);
     if (!query.exec(queryStr)) {
         qDebug() << "Erreur lors de l'exécution de la requête:" << query.lastError().text();
@@ -39,7 +42,8 @@ QSqlQuery MySQLManager::executeQuery(const QString &queryStr) {
     return query;
 }
 
-bool MySQLManager::machineExists(const QString &indicatif) {
+bool MySQLManager::machineExists(const QString &indicatif)
+{
     QSqlQuery query(m_db);
     query.prepare("SELECT COUNT(*) FROM machines WHERE indicatif = ?");
     query.addBindValue(indicatif);
@@ -47,13 +51,13 @@ bool MySQLManager::machineExists(const QString &indicatif) {
         qDebug() << "Erreur machineExists:" << query.lastError().text();
         return false;
     }
-    if (query.next()) {
+    if (query.next())
         return query.value(0).toInt() > 0;
-    }
     return false;
 }
 
-bool MySQLManager::insertMachine(const QString &indicatif, const QString &description) {
+bool MySQLManager::insertMachine(const QString &indicatif, const QString &description)
+{
     QSqlQuery query(m_db);
     query.prepare("INSERT INTO machines (indicatif, description) VALUES (?, ?)");
     query.addBindValue(indicatif);
@@ -65,8 +69,8 @@ bool MySQLManager::insertMachine(const QString &indicatif, const QString &descri
     return true;
 }
 
-
-bool MySQLManager::executeNonQuery(const QString &queryStr) {
+bool MySQLManager::executeNonQuery(const QString &queryStr)
+{
     QSqlQuery query(m_db);
     if (!query.exec(queryStr)) {
         qDebug() << "Erreur lors de l'exécution de la requête non query:" << query.lastError().text();
@@ -75,6 +79,7 @@ bool MySQLManager::executeNonQuery(const QString &queryStr) {
     return true;
 }
 
-QSqlDatabase MySQLManager::database() const {
+QSqlDatabase MySQLManager::database() const
+{
     return m_db;
 }

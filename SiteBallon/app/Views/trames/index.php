@@ -129,6 +129,30 @@
                 </tbody>
             </table>
         <?php else: ?>
+        <!-- Avant d'afficher le graphique ou le tableau -->
+        <?php if ($chartType === 'top_messages' || $chartType === 'historique'): ?>
+            <form method="get" style="margin-bottom: 20px;">
+                <!-- Garder le type de graphique sélectionné -->
+                <input type="hidden" name="chart" value="<?= htmlspecialchars($chartType) ?>">
+
+                <label for="date_start">Date début:</label>
+                <input type="date" name="date_start" id="date_start" value="<?= isset($_GET['date_start']) ? htmlspecialchars($_GET['date_start']) : '' ?>">
+
+                <label for="date_end">Date fin:</label>
+                <input type="date" name="date_end" id="date_end" value="<?= isset($_GET['date_end']) ? htmlspecialchars($_GET['date_end']) : '' ?>">
+
+                <?php if ($chartType === 'historique'): ?>
+                    <label for="source">Source:</label>
+                    <input type="text" name="source" id="source" value="<?= isset($_GET['source']) ? htmlspecialchars($_GET['source']) : '' ?>">
+
+                    <label for="destination">Destination:</label>
+                    <input type="text" name="destination" id="destination" value="<?= isset($_GET['destination']) ? htmlspecialchars($_GET['destination']) : '' ?>">
+                <?php endif; ?>
+
+                <button type="submit">Filtrer</button>
+            </form>
+        <?php endif; ?>
+
             <!-- Si on est sur un autre type de chart, on affiche Highcharts -->
             <div id="container" style="width:100%; height:500px;"></div>
             <script>

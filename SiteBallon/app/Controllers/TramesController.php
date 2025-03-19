@@ -28,13 +28,19 @@ class TramesController
                 $data = $this->model->getTramesCountByDay();
                 break;
             case 'top_messages':
-                $data = $this->model->getTopMessages();
+                $date_start = isset($_GET['date_start']) ? $_GET['date_start'] : null;
+                $date_end   = isset($_GET['date_end'])   ? $_GET['date_end']   : null;
+                $data = $this->model->getTopMessages($date_start, $date_end);
                 break;
             case 'hourly':
                 $data = $this->model->getTramesHourly();
                 break;
             case 'historique':
-                $data = $this->model->getAllTrames();
+                $date_start  = isset($_GET['date_start'])  ? $_GET['date_start']  : null;
+                $date_end    = isset($_GET['date_end'])    ? $_GET['date_end']    : null;
+                $source      = isset($_GET['source'])      ? $_GET['source']      : null;
+                $destination = isset($_GET['destination']) ? $_GET['destination'] : null;
+                $data = $this->model->getAllTrames($date_start, $date_end, $source, $destination);
                 break;
             case 'source':
             default:

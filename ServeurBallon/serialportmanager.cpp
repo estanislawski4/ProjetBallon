@@ -1,6 +1,7 @@
 // SerialPortManager.cpp
 #include "serialportmanager.h"
 #include <QDebug>
+#include <QSerialPortInfo>
 
 SerialPortManager::SerialPortManager(QObject *parent)
     : QObject(parent)
@@ -9,15 +10,16 @@ SerialPortManager::SerialPortManager(QObject *parent)
     connect(&m_serial, &QSerialPort::errorOccurred, this, &SerialPortManager::onErrorOccurred);
 }
 
-QStringList SerialPortManager::availablePorts() const {
+QStringList SerialPortManager::availablePorts() const
+{
     QStringList ports;
-    for (const QSerialPortInfo &info : QSerialPortInfo::availablePorts()) {
+    for (const QSerialPortInfo &info : QSerialPortInfo::availablePorts())
         ports << info.portName();
-    }
     return ports;
 }
 
-bool SerialPortManager::openPort(const QString &portName, QString &errorString) {
+bool SerialPortManager::openPort(const QString &portName, QString &errorString)
+{
     m_serial.setPortName(portName);
     m_serial.setBaudRate(QSerialPort::Baud9600);
     m_serial.setDataBits(QSerialPort::Data8);
@@ -32,21 +34,25 @@ bool SerialPortManager::openPort(const QString &portName, QString &errorString) 
     return true;
 }
 
-qint64 SerialPortManager::writeData(const QByteArray &data) {
+qint64 SerialPortManager::writeData(const QByteArray &data)
+{
     return m_serial.write(data);
 }
 
-void SerialPortManager::closePort() {
-    if(m_serial.isOpen())
+void SerialPortManager::closePort()
+{
+    if (m_serial.isOpen())
         m_serial.close();
 }
 
-void SerialPortManager::onReadyRead() {
+void SerialPortManager::onReadyRead()
+{
     QByteArray data = m_serial.readAll();
     emit dataReceived(data);
 }
 
-void SerialPortManager::onErrorOccurred(QSerialPort::SerialPortError error) {
+void SerialPortManager::onErrorOccurred(QSerialPort::SerialPortError error)
+{
     if(error != QSerialPort::NoError)
         emit errorOccurred(m_serial.errorString());
 }

@@ -2,178 +2,177 @@
 <ui version="4.0">
  <class>Interface</class>
  <widget class="QWidget" name="Interface">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>674</width>
-    <height>600</height>
-   </rect>
-  </property>
   <property name="windowTitle">
    <string>Interface</string>
   </property>
-  <widget class="QTextEdit" name="logs">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>10</y>
-     <width>361</width>
-     <height>271</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>290</y>
-     <width>291</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
+  <!-- Taille minimale et maximale pour contrôler l'agrandissement -->
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1024</width>
+    <height>768</height>
+   </size>
+  </property>
+  <!-- Feuille de style pour une apparence moderne et raffinée -->
+  <property name="styleSheet">
+   <string notr="true">
+    <![CDATA[
+        QWidget {
+            background-color: #F0F0F0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 12pt;
+        }
+        QLineEdit, QTextEdit, QComboBox {
+            border: 1px solid #AAAAAA;
+            border-radius: 4px;
+            padding: 4px;
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+        QPushButton {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+        QPushButton:hover {
+            background-color: #2980b9;
+        }
+        QLabel {
+            color: #000000;
+        }
+        QCheckBox {
+            spacing: 5px;
+            color: #000000;
+        }
+    ]]>
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+    <!-- Ligne 1 : Choix APRS.fi -->
     <item>
-     <widget class="QLabel" name="labelPort">
-      <property name="text">
-       <string>Port :</string>
-      </property>
-     </widget>
+      <layout class="QHBoxLayout" name="horizontalLayoutAPRS">
+        <item>
+          <widget class="QLabel" name="labelAPRS">
+            <property name="text">
+              <string>Envoyer vers APRS.fi :</string>
+            </property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QCheckBox" name="aprsCheckBox">
+            <property name="text">
+              <string>Oui</string>
+            </property>
+            <property name="checked">
+              <bool>true</bool>
+            </property>
+          </widget>
+        </item>
+      </layout>
     </item>
+    <!-- Ligne 2 : Indicatif source -->
     <item>
-     <widget class="QComboBox" name="portComboBox"/>
+      <layout class="QHBoxLayout" name="horizontalLayoutSource">
+        <item>
+          <widget class="QLabel" name="labelSource">
+            <property name="text">
+              <string>Indicatif source :</string>
+            </property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QLineEdit" name="sourceLineEdit">
+            <property name="text">
+              <string>F4LTZ</string>
+            </property>
+          </widget>
+        </item>
+      </layout>
     </item>
+    <!-- Ligne 3 : Indicatif destination -->
     <item>
-     <widget class="QPushButton" name="refreshButton">
-      <property name="text">
-       <string>Actualiser</string>
-      </property>
-     </widget>
+      <layout class="QHBoxLayout" name="horizontalLayoutDest">
+        <item>
+          <widget class="QLabel" name="labelDest">
+            <property name="text">
+              <string>Indicatif destination :</string>
+            </property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QLineEdit" name="destLineEdit">
+            <property name="text">
+              <string>F4KMN-8</string>
+            </property>
+          </widget>
+        </item>
+      </layout>
     </item>
+    <!-- Ligne 4 : Zone de logs (extensible) -->
     <item>
-     <widget class="QPushButton" name="startButton">
-      <property name="text">
-       <string>Démarrer</string>
-      </property>
-     </widget>
+      <widget class="QTextEdit" name="logs"/>
     </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>540</y>
-     <width>274</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <!-- Ligne 5 : Choix du port et actions -->
     <item>
-     <widget class="QLabel" name="labelMessage">
-      <property name="text">
-       <string>Message:</string>
-      </property>
-     </widget>
+      <layout class="QHBoxLayout" name="horizontalLayoutPort">
+        <item>
+          <widget class="QLabel" name="labelPort">
+            <property name="text">
+              <string>Port :</string>
+            </property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QComboBox" name="portComboBox"/>
+        </item>
+        <item>
+          <widget class="QPushButton" name="refreshButton">
+            <property name="text">
+              <string>Actualiser</string>
+            </property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QPushButton" name="startButton">
+            <property name="text">
+              <string>Démarrer</string>
+            </property>
+          </widget>
+        </item>
+      </layout>
     </item>
+    <!-- Ligne 6 : Envoi de message -->
     <item>
-     <widget class="QLineEdit" name="messageLineEdit">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
+      <layout class="QHBoxLayout" name="horizontalLayoutMessage">
+        <item>
+          <widget class="QLabel" name="labelMessage">
+            <property name="text">
+              <string>Message :</string>
+            </property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QLineEdit" name="messageLineEdit"/>
+        </item>
+        <item>
+          <widget class="QPushButton" name="sendButton">
+            <property name="text">
+              <string>Envoyer</string>
+            </property>
+          </widget>
+        </item>
+      </layout>
     </item>
-    <item>
-     <widget class="QPushButton" name="sendButton">
-      <property name="text">
-       <string>Envoyer</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>40</y>
-     <width>131</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Envoyer vers APRS.fi :</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="aprsCheckBox">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>40</y>
-     <width>83</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Oui</string>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="sourceLineEdit">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>80</y>
-     <width>113</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>F4LTZ</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>80</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Indicatif source :</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>110</y>
-     <width>131</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Indicatif destination : </string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="destLineEdit">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>110</y>
-     <width>113</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>F4KMN-8</string>
-   </property>
-  </widget>
+  </layout>
  </widget>
  <resources/>
  <connections/>
 </ui>
+

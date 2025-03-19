@@ -43,10 +43,28 @@ class TrameModel
     }
 
     // Graphique 4 : Top 5 messages (les 5 messages les plus fréquents)
-    public function getTopMessages()
+    public function getTopMessages($date_start = null, $date_end = null)
     {
-        $sql = "SELECT message, COUNT(*) AS total FROM trames GROUP BY message ORDER BY total DESC LIMIT 10";
-        $stmt = $this->bdd->query($sql);
+        $sql = "SELECT message, COUNT(*) AS total FROM trames";
+        $conditions = [];
+        $params = [];
+
+        if ($date_start) {
+            $conditions[] = "date_reception >= :date_start";
+            $params[':date_start'] = $date_start;
+        }
+        if ($date_end) {
+            $conditions[] = "date_reception <= :date_end";
+            $params[':date_end'] = $date_end;
+        }
+        if (!empty($conditions)) {
+            $sql .= " WHERE " . implode(" AND ", $conditions);
+        }
+        
+        $sql .= " GROUP BY message ORDER BY total DESC LIMIT 10";
+
+        $stmt = $this->bdd->prepare($sql);
+        $stmt->execute($params);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -59,10 +77,36 @@ class TrameModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getAllTrames()
+    public function getAllTrames($date_start = null, $date_end = null, $source = null, $destination = null)
     {
-        $sql = "SELECT * FROM trames ORDER BY date_reception DESC";
-        $stmt = $this->bdd->query($sql);
+        $sql = "SELECT * FROM trames";
+        $conditions = [];
+        $params = [];
+
+        if ($date_start) {
+            $conditions[] = "date_reception >= :date_start";
+            $params[':date_start'] = $date_start;
+        }
+        if ($date_end) {
+            $conditions[] = "date_reception <= :date_end";
+            $params[':date_end'] = $date_end;
+        }
+        if ($source) {
+            $conditions[] = "source = :source";
+            $params[':source'] = $source;
+        }
+        if ($destination) {
+            $conditions[] = "destination = :destination";
+            $params[':destination'] = $destination;
+        }
+        if (!empty($conditions)) {
+            $sql .= " WHERE " . implode(" AND ", $conditions);
+        }
+        
+        $sql .= " ORDER BY date_reception DESC";
+
+        $stmt = $this->bdd->prepare($sql);
+        $stmt->execute($params);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
