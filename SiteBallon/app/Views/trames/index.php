@@ -101,6 +101,7 @@
         <a href="?chart=day" class="<?= ($chartType=='day') ? 'active' : '' ?>">Par Jour</a>
         <a href="?chart=top_messages" class="<?= ($chartType=='top_messages') ? 'active' : '' ?>">Top Messages</a>
         <a href="?chart=hourly" class="<?= ($chartType=='hourly') ? 'active' : '' ?>">Évolution Horaire</a>
+        <a href="?chart=telemetry" class="<?= ($chartType=='telemetry') ? 'active' : '' ?>">Télémétrie</a>
         <a href="?chart=historique" class="<?= ($chartType=='historique') ? 'active' : '' ?>">Historique</a>
     </div>
 
@@ -229,8 +230,110 @@
                         yAxis: { min: 0, title: { text: 'Nombre de trames' } },
                         series: [{ name: 'Trames', data: seriesData }]
                     };
-                }
+                } else if (chartType === 'telemetry') {
+                    /*
+                     * Format attendu de chartData :
+                     * [
+                     *   {
+                     *     date: '2025-03-21 14:06:34',
+                     *     temperature: 77,
+                     *     humidity: 36,
+                     *     pressure: 9993,
+                     *     accelX: -1.06,
+                     *     accelY: -0.05,
+                     *     accelZ: 0.07
+                     *   },
+                     *   ...
+                     * ]
+                     *
+                     * On va générer 4 (ou 5/6) séries : Temp, Hum, Pression, Ax, Ay, Az
+                     */
 
+                    // On utilise un tableau distinct pour chaque série
+                    var temps = [];
+                    var hums = [];
+                    var press = [];
+                    var ax = [];
+                    var ay = [];
+                    var az = [];
+
+                    chartData.forEach(function (item) {
+                        // On peut soit utiliser l'index comme catégorie, soit le champ date.
+                        // Si on veut l'affichage type "datetime" sur l'axe X, on convertit date en timestamp
+                        // ou on met en categories un tableau de dates lisibles.
+                        // Ex. on garde item.date au format string, dans categories :
+                        categories.push(item.date);
+
+                        temps.push(parseFloat(item.temperature));
+                        hums.push(parseFloat(item.humidity));
+                        press.push(parseFloat(item.pressure));
+                        ax.push(parseFloat(item.accelX));
+                        ay.push(parseFloat(item.accelY));
+                        az.push(parseFloat(item.accelZ));
+                    });
+
+                    chartOptions = {
+                        chart: {
+                            type: 'line'
+                        },
+                        title: {
+                            text: 'Télémétrie: Température, Humidité, Pression & Accélérations'
+                        },
+                        xAxis: {
+                            categories: categories,
+                            title: {
+                                text: 'Date'
+                            },
+                            // Si vous avez beaucoup de points, pensez à rotation / skip
+                            labels: {
+                                rotation: -45
+                            }
+                        },
+                        yAxis: [{
+                            // On peut superposer plusieurs axes Y ou en utiliser un seul
+                            min: 0,
+                            title: { text: 'Valeurs T/H/P' },
+                            // Index 0 = 1er axe Y pour température, humidité et pression
+                            opposite: false
+                        }, {
+                            // second axis Y pour l'accélération, par exemple
+                            title: { text: 'Accélération (m/s²)' },
+                            opposite: true
+                        }],
+                        series: [
+                            {
+                                name: 'Température',
+                                data: temps,
+                                yAxis: 0
+                            },
+                            {
+                                name: 'Humidité',
+                                data: hums,
+                                yAxis: 0
+                            },
+                            {
+                                name: 'Pression',
+                                data: press,
+                                yAxis: 0
+                            },
+                            {
+                                name: 'Accel X',
+                                data: ax,
+                                yAxis: 1
+                            },
+                            {
+                                name: 'Accel Y',
+                                data: ay,
+                                yAxis: 1
+                            },
+                            {
+                                name: 'Accel Z',
+                                data: az,
+                                yAxis: 1
+                            }
+                        ]
+                    };
+                }
                 // Création du graphique Highcharts si on n'est pas en "historique"
                 Highcharts.chart('container', chartOptions);
             </script>

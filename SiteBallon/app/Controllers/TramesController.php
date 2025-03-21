@@ -42,6 +42,9 @@ class TramesController
                 $destination = isset($_GET['destination']) ? $_GET['destination'] : null;
                 $data = $this->model->getAllTrames($date_start, $date_end, $source, $destination);
                 break;
+            case 'telemetry':
+                $data = $this->model->getTelemetryData();
+                break;
             case 'source':
             default:
                 $data = $this->model->getTramesCountBySource();

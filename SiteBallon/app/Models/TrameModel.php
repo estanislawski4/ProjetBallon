@@ -109,5 +109,56 @@ class TrameModel
         $stmt->execute($params);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    /**
+     * Récupère les données de télémétrie (Temp, Humidité, Pression, Accélérations, etc.)
+     */
+    public function getTelemetryData()
+    {
+        $sql = "SELECT message, date_reception 
+                FROM trames 
+                WHERE message LIKE '%_%' 
+                ORDER BY date_reception ASC";
+
+        $stmt = $this->bdd->query($sql);
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $telemetryData = [];
+
+        foreach ($rows as $row) {
+            $message = $row['message'];
+
+            // Exemple : t077h36b9993 ...
+            $regex = '/t(\d+)h(\d+)b(\d+)\s+([-+0-9,\.\s]+)/';
+
+            if (preg_match($regex, $message, $matches)) {
+                // Conversion en supposant dixièmes de °C
+                $temperatureF = (float) $matches[1];  // ex : "077" => 7.7°C
+                $temperatureC = ($temperatureF - 32) * 5 / 9; 
+                $humidity    = (float) $matches[2];        // ex : "36" => 36% (si c’est bien le cas)
+                $pressure    = (float) $matches[3];        // ex : "9993" => 9993 (à adapter si nécessaire)
+
+                // Accélérations
+                $accelString = str_replace(',', '.', trim($matches[4]));
+                $accelParts  = preg_split('/\s+/', $accelString);
+
+                $accelX = isset($accelParts[0]) ? (float)$accelParts[0] : 0.0;
+                $accelY = isset($accelParts[1]) ? (float)$accelParts[1] : 0.0;
+                $accelZ = isset($accelParts[2]) ? (float)$accelParts[2] : 0.0;
+
+                $telemetryData[] = [
+                    'date'        => $row['date_reception'],
+                    'temperature' => $temperatureC,
+                    'humidity'    => $humidity,
+                    'pressure'    => $pressure,
+                    'accelX'      => $accelX,
+                    'accelY'      => $accelY,
+                    'accelZ'      => $accelZ
+                ];
+            }
+        }
+
+        return $telemetryData;
+    }
 }
 
