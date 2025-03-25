@@ -10,13 +10,13 @@ CXXFLAGS = -Wall -O2 -std=c++11
 LDFLAGS = -lwiringPi
 
 # Fichiers source
-SOURCES = main.cpp i2c.cpp BME280.cpp  GestionTemps.cpp telemetrie.cpp
+SOURCES = main.cpp i2c.cpp BME280.cpp  GestionTemps.cpp GestionFile.cpp telemetrie.cpp
 
 # Fichiers objets
 OBJECTS = $(SOURCES:.cpp=.o)
 
 # Nom de l'exécutable
-TARGET = testTrame
+TARGET = laTelemetrie
 
 # Règle par défaut
 all: $(TARGET)

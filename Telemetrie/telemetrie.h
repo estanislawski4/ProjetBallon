@@ -2,7 +2,7 @@
 #define TELEMETRIE_H
 #include "BME280.h"
 #include "GestionTemps.h"
-
+#include <fstream>
 #include <sstream>
 namespace
 {
@@ -32,6 +32,7 @@ class Telemetrie
 public:
     Telemetrie();
     string CreationTrameAPRS();
+    void SauvegarderEnCsv();
 
 private:
 
@@ -46,6 +47,7 @@ private:
     double temperature;
     double pression;
     double humidite;
+    string fichierCSV;
 
 };
 

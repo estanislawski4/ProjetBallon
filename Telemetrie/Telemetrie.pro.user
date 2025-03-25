@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 12.0.1, 2025-03-11T11:50:27. -->
+<!-- Written by QtCreator 12.0.1, 2025-03-21T15:53:13. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -97,8 +97,8 @@
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/build-Projet_Ballon_Test-Desktop_Qt_6_7_1-Debug</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/build-Projet_Ballon_Test-Desktop_Qt_6_7_1-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/USERS/ELEVES/CIEL2023/cmainfray/remote/cmainfray/build-Telemetrie-Desktop_Qt_6_7_1-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/USERS/ELEVES/CIEL2023/cmainfray/remote/cmainfray/build-Telemetrie-Desktop_Qt_6_7_1-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -136,8 +136,8 @@
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/build-Projet_Ballon_Test-Desktop_Qt_6_7_1-Release</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/build-Projet_Ballon_Test-Desktop_Qt_6_7_1-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/USERS/ELEVES/CIEL2023/cmainfray/remote/cmainfray/build-Telemetrie-Desktop_Qt_6_7_1-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/USERS/ELEVES/CIEL2023/cmainfray/remote/cmainfray/build-Telemetrie-Desktop_Qt_6_7_1-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -177,8 +177,8 @@
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/build-Projet_Ballon_Test-Desktop_Qt_6_7_1-Profile</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/build-Projet_Ballon_Test-Desktop_Qt_6_7_1-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/USERS/ELEVES/CIEL2023/cmainfray/remote/cmainfray/build-Telemetrie-Desktop_Qt_6_7_1-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/USERS/ELEVES/CIEL2023/cmainfray/remote/cmainfray/build-Telemetrie-Desktop_Qt_6_7_1-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -240,14 +240,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Projet_Ballon_Test2</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/USERS/ELEVES/CIEL2023/cmainfray/remote/cmainfray/Projet_Ballon_Test/Projet_Ballon_Test.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/USERS/ELEVES/CIEL2023/cmainfray/remote/cmainfray/Projet_Ballon_Test/Projet_Ballon_Test.pro</value>
-    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/USERS/ELEVES/CIEL2023/cmainfray/remote/cmainfray/Telemetrie/Telemetrie.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/USERS/ELEVES/CIEL2023/cmainfray/remote/cmainfray/Telemetrie/Telemetrie.pro</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/build-Projet_Ballon_Test-Desktop_Qt_6_7_1-Debug</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/USERS/ELEVES/CIEL2023/cmainfray/remote/cmainfray/build-Telemetrie-Desktop_Qt_6_7_1-Debug</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

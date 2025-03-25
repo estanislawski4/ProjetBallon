@@ -8,6 +8,7 @@ CONFIG += c++17 cmdline
 
 SOURCES += \
         BME280.cpp \
+        GestionFile.cpp \
         GestionTemps.cpp \
         i2c.cpp \
         main.cpp \
@@ -20,6 +21,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     BME280.h \
+    GestionFile.h \
     GestionTemps.h \
     i2c.h \
     telemetrie.h

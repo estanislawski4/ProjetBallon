@@ -1,10 +1,22 @@
 #include "telemetrie.h"
 
+
 Telemetrie::Telemetrie():
 bme(ADDRESS_BME280)
 {
 
-    localeAvecVirgule = locale(std::locale(), new VirguleDecimal);
+    localeAvecVirgule = std::locale(std::locale(), new VirguleDecimal);
+
+    fichierCSV = "/home/cmainfray/" + gestionTemps.generateFilename();
+    std::ofstream fichier(fichierCSV);
+    if(fichier.is_open()){
+        fichier << "Date Time Time_Zone;Température;Pression;Humidité" << std::endl;
+    }
+    else
+    {
+        throw std::runtime_error("Impossible d'ouvrir le fichier pour enregistrer les en-têtes du fichier CSV.");
+    }
+    fichier.close();
 }
 
 string Telemetrie::CreationTrameAPRS()
@@ -14,7 +26,7 @@ string Telemetrie::CreationTrameAPRS()
     ObtenirPression();
 
     VerifierMesures();
-    int t = static_cast<int>(( temperature* 9.0 / 5.0) + 32.0);
+    int t = static_cast<int>(( temperature* 9.0 / 5.0) + 32.0); //Transformation des dégré
     int h = static_cast<int>(humidite + 0.5);
     int p = static_cast<int>((pression + 0.5) * 10);
 
@@ -29,22 +41,47 @@ string Telemetrie::CreationTrameAPRS()
     return out.str();
 }
 
+void Telemetrie::SauvegarderEnCsv()
+{
+    ObtenirTemperature();
+    ObtenirHumidite();
+    ObtenirPression();
+
+    std::ofstream fichier(fichierCSV, std::ios_base::app);
+    if(fichier.is_open()){
+        std::ostringstream out;
+        out.imbue(localeAvecVirgule);
+        out << setfill('0') << fixed << setprecision(2) << "\"" << temperature << "\"";
+        out << ";" << "\"" << pression << "\"";
+        out << ";" << "\"" << humidite << "\"";
+        out << showpos << std::endl;
+        fichier << gestionTemps.getDateFormatee();
+        fichier << ";";
+        fichier << out.str();
+        std::cout << out.str();
+        fichier.close();
+    }
+    else
+    {
+        throw std::runtime_error("Impossible d'ouvrir le fichier pour enregistrer les mesures.");
+    }
+}
+
 void Telemetrie::ObtenirTemperature()
 {
     temperature = bme.obtenirTemperatureEnC();
-    std::cout << "T = " << temperature << std::endl;
+
 }
 
 void Telemetrie::ObtenirPression()
 {
     pression = bme.obtenirPression();
-    std::cout << "P = " << pression << std::endl;
+
 }
 
 void Telemetrie::ObtenirHumidite()
 {
     humidite = bme.obtenirHumidite();
-    std::cout << "H = " << humidite << std::endl;
 }
 
 bool Telemetrie::VerifierMesures()
@@ -71,5 +108,5 @@ bool Telemetrie::VerifierMesures()
         valide = false;
         humidite = NAN;
     }
-    return valide;
+    return valide; // Renvoie vrai si toute les mesures sont correctes sinon il renvoie faux
 }
