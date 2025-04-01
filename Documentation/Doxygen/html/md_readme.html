@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[Admin] Gestion des trames LoRa: Présentation</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ballonLogo (1).png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">[Admin] Gestion des trames LoRa
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Un panneau administratif développé en C++ sous QT pour envoyer, recevoir et enregistrer des trames LoRa. Mysql, KISS et aprs.fi sont supportés.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('md_readme.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Présentation </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Cette application, développée sous <em>Qt Creator</em>, se veut le <b>tableau de bord d’administration</b> du système. Ici, nul besoin de vous aventurer dans la stratosphère : tout se pilote depuis un ordinateur, confortablement ancré à la terre ferme. L’objectif est limpide :</p>
+<ol type="1">
+<li><b>Envoyer des requêtes</b> vers la nacelle, exactement comme un souverain émettrait ses décrets.</li>
+<li><b>Recevoir les retours</b> de données, valider le bon fonctionnement de la nacelle et consigner ces informations.</li>
+<li><b>Assurer un suivi</b> en temps réel de la position ou de l’état du ballon.</li>
+</ol>
+<p>Ainsi, d’un simple clic, vous commandez à distance l’oiseau volant vers la stratosphère…</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md2"></a>
+Fonctionnalités principales</h1>
+<ol type="1">
+<li><b>Gestion de ports série</b> : Dialogue direct avec le module LoRa via un port série. L’application lit et écrit dans ce canal pour transmettre ou recevoir des trames KISS.</li>
+<li><b>Conversion AX.25 / TNC2</b> : Pas de place pour l’approximation lorsqu’il s’agit de coder ou décoder les formats de trames. Un module dédié gère cette gymnastique, de sorte qu’aucune parcelle d’information ne vous échappe.</li>
+<li><b>Connexion APRS-IS</b> : Le programme se connecte à un serveur APRS, y loge ses identifiants, et relaie ainsi les trames de position ou de message.</li>
+<li><b>Base de données MySQL</b> : Vous consignez chaque trame reçue ou transmise, enregistrant source, destination et contenu dans une BDD distante.</li>
+<li><b><a class="el" href="class_interface.html">Interface</a> graphique</b> : Développée sous Qt, elle répertorie les ports disponibles, l’état des connexions, et offre un champ de saisie pour vos messages.</li>
+</ol>
+<hr  />
+<h1><a class="anchor" id="autotoc_md4"></a>
+Logique de l’architecture</h1>
+<ol type="1">
+<li><b><a class="el" href="class_interface.html">Interface</a> (<a class="el" href="interface_8cpp.html" title="Implémentation de la classe Interface.">interface.cpp</a>)</b><ul>
+<li>Propose une <b>fenêtre Qt</b> affichant les logs, la configuration des ports, et divers contrôles.</li>
+<li>Récupère la liste des ports série et déclenche l’ouverture du canal souhaité.</li>
+<li>Prépare et envoie la trame APRS ou LoRa, puis journalise les opérations.</li>
+<li>Stocke systématiquement dans la base MySQL les trames transmises et reçues.</li>
+</ul>
+</li>
+<li><b><a class="el" href="class_a_p_r_s_i_s_client.html" title="Client pour la communication avec un serveur APRS-IS.">APRSISClient</a> (<a class="el" href="aprsisclient_8cpp.html">aprsisclient.cpp</a>)</b><ul>
+<li>Gère la <b>connexion TCP</b> à un serveur APRS-IS.</li>
+<li>À la connexion, envoie la ligne de <em>login</em> et reste à l’écoute des messages entrants, que l’application répercute dans l’interface.</li>
+</ul>
+</li>
+<li><b><a class="el" href="class_a_x25_converter.html" title="Classe de conversion pour le protocole AX.25.">AX25Converter</a> (<a class="el" href="ax25converter_8cpp.html" title="Constructeur de la classe AX25Converter.">ax25converter.cpp</a>)</b><ul>
+<li>Opère la <b>conversion</b> entre le format TNC2 et AX.25.</li>
+<li>Lecture, découpe et recomposition des adresses, extraction du <em>payload</em>.</li>
+<li>Ainsi, le flux transite aisément des trames KISS au format APRS et inversement.</li>
+</ul>
+</li>
+<li><b><a class="el" href="class_k_i_s_s_handler.html" title="Gestionnaire de trames KISS.">KISSHandler</a> (<a class="el" href="kisshandler_8cpp.html" title="Implémentation de la classe KISSHandler.">kisshandler.cpp</a>)</b><ul>
+<li>Parse les <b>trames KISS</b> reçues du port série.</li>
+<li>Reconstitue le flux AX.25, puis le transforme en TNC2 grâce au convertisseur dédié.</li>
+<li>En cas de succès, la trame est alors exploitable (transmissible vers APRS, sauvegardée en BDD, etc.).</li>
+</ul>
+</li>
+<li><b><a class="el" href="class_my_s_q_l_manager.html" title="Gestionnaire de connexion et d&#39;opérations MySQL.">MySQLManager</a> (<a class="el" href="mysqlmanager_8cpp.html" title="Implémentation de la classe MySQLManager.">mysqlmanager.cpp</a>)</b><ul>
+<li>S’occupe des connexions et requêtes MySQL.</li>
+<li>Gère l’insertion de nouvelles machines (indicatifs) et de trames.</li>
+<li>Vous maintenez ainsi une <b>traçabilité</b> sans faille des messages.</li>
+</ul>
+</li>
+<li><b><a class="el" href="class_serial_port_manager.html" title="Gestionnaire de communication série.">SerialPortManager</a> (<a class="el" href="serialportmanager_8cpp.html" title="Implémentation de la classe SerialPortManager.">serialportmanager.cpp</a>)</b><ul>
+<li>Assure la <b>communication série</b> (ouverture, écriture, lecture).</li>
+<li>Émet des signaux en cas de réception de données ou d’erreur, signaux ensuite captés par d’autres modules (<a class="el" href="class_k_i_s_s_handler.html" title="Gestionnaire de trames KISS.">KISSHandler</a>, interface graphique, etc.).</li>
+</ul>
+</li>
+</ol>
+<hr  />
+<h1><a class="anchor" id="autotoc_md6"></a>
+Utilisation</h1>
+<ol type="1">
+<li><b>Configuration initiale</b><ul>
+<li>Veillez à renseigner correctement l’adresse du serveur APRS, les identifiants, et les paramètres de la base MySQL.</li>
+</ul>
+</li>
+<li><b>Lancement de l’application</b><ul>
+<li>Choisissez le port série adéquat dans l’interface.</li>
+<li>Activez l’option d’envoi APRS si vous désirez propager vos trames au grand monde (ou garder le secret si le dessein l’exige).</li>
+</ul>
+</li>
+<li><b>Envoi et réception</b><ul>
+<li>Rédigez un message depuis l’interface, sélectionnez la destination, puis laissez la machine orchestrer conversions, envois et journalisations.</li>
+<li>Toute trame entrante surgit dans la zone de logs.</li>
+</ul>
+</li>
+<li><b>Sauvegarde automatique</b><ul>
+<li>Chaque trame transite par la BDD, vous n’avez rien d’autre à faire que d’observer, à l’abri dans votre forteresse numérique.</li>
+</ul>
+</li>
+</ol>
+<blockquote class="doxtable">
+<p>« Contrôler la technique, c’est régner en silence – et nul ne se doute alors de la force qui se cache derrière un écran. » </p>
+</blockquote>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

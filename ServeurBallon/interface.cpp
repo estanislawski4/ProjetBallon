@@ -1,4 +1,3 @@
-// interface.cpp
 #include "interface.h"
 #include "ui_interface.h"
 
@@ -10,6 +9,23 @@
 
 #include <QDebug>
 
+/**
+ * @file interface.cpp
+ * @brief Implémentation de la classe Interface.
+ *
+ * Ce fichier contient l'implémentation de la classe Interface qui gère l'interface utilisateur,
+ * la communication via les ports série, l'envoi des trames vers APRS-IS et LoRa, et leur stockage en base de données.
+ */
+
+/**
+ * @brief Constructeur de la classe Interface.
+ *
+ * Initialise l'interface utilisateur et instancie les différents gestionnaires
+ * (SerialPortManager, APRSISClient, AX25Converter, KISSHandler, MySQLManager). Configure les connexions
+ * entre les signaux et les slots pour rediriger les messages vers le log.
+ *
+ * @param parent Pointeur vers l'objet parent (par défaut nullptr).
+ */
 Interface::Interface(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Interface)
@@ -72,6 +88,11 @@ Interface::Interface(QWidget *parent) :
     m_aprsClient->connectToServer("france.aprs2.net", 14580);
 }
 
+/**
+ * @brief Destructeur de la classe Interface.
+ *
+ * Ferme la connexion à la base de données et libère la mémoire allouée pour l'interface utilisateur.
+ */
 Interface::~Interface()
 {
     if (m_dbManager)
@@ -79,6 +100,12 @@ Interface::~Interface()
     delete ui;
 }
 
+/**
+ * @brief Remplit la combobox avec les ports série disponibles.
+ *
+ * Récupère la liste des ports via SerialPortManager et met à jour l'interface en conséquence.
+ * Affiche un message dans le log si aucun port n'est détecté.
+ */
 void Interface::fillPortsComboBox()
 {
     ui->portComboBox->clear();
@@ -92,6 +119,11 @@ void Interface::fillPortsComboBox()
     }
 }
 
+/**
+ * @brief Gère l'action du bouton "Start".
+ *
+ * Tente d'ouvrir le port série sélectionné et affiche le résultat (succès ou erreur) dans le log.
+ */
 void Interface::onStartButtonClicked()
 {
     QString portName = ui->portComboBox->currentText();
@@ -103,6 +135,14 @@ void Interface::onStartButtonClicked()
     }
 }
 
+/**
+ * @brief Construit une trame APRS à partir des informations saisies.
+ *
+ * Récupère le source, la destination et le message saisis dans l'interface pour
+ * construire une trame APRS respectant le format requis.
+ *
+ * @return QString La trame APRS construite.
+ */
 QString Interface::buildAprsFrame()
 {
     QString source = ui->sourceLineEdit->text().trimmed();
@@ -123,6 +163,14 @@ QString Interface::buildAprsFrame()
         .arg(payload);
 }
 
+/**
+ * @brief Construit une trame LoRa à partir des informations saisies.
+ *
+ * Récupère le source, la destination et le message depuis l'interface pour
+ * construire une trame LoRa au format TNC2.
+ *
+ * @return QString La trame LoRa construite.
+ */
 QString Interface::buildLoRaFrame()
 {
     QString source = ui->sourceLineEdit->text().trimmed();
@@ -143,37 +191,62 @@ QString Interface::buildLoRaFrame()
         .arg(payload);
 }
 
+/**
+ * @brief Stocke une trame LoRa dans la base de données.
+ *
+ * Vérifie si la machine source et la machine destination existent dans la base de données,
+ * les insère automatiquement si nécessaire, puis stocke la trame et son message associé.
+ *
+ * @param source Indicatif de la machine source.
+ * @param destination Indicatif de la machine destination.
+ * @param fullTrame La trame LoRa complète à stocker.
+ * @param message Le message extrait de la trame.
+ * @return bool @c true si le stockage a réussi, @c false sinon.
+ */
 bool Interface::storeLoRaTrame(const QString &source, const QString &destination,
                                const QString &fullTrame, const QString &message)
 {
+    bool success = true;
+
     // Vérifier et insérer la machine source si nécessaire
     if (!m_dbManager->machineExists(source)) {
         if (!m_dbManager->insertMachine(source, "Machine ajoutée automatiquement")) {
             ui->logs->append("Erreur lors de l'insertion de la machine source dans la BDD.");
-            return false;
+            success = false;
         }
     }
-    // Vérifier et insérer la machine destination si nécessaire
-    if (!m_dbManager->machineExists(destination)) {
+
+    // Vérifier et insérer la machine destination si nécessaire (uniquement si la précédente a réussi)
+    if (success && !m_dbManager->machineExists(destination)) {
         if (!m_dbManager->insertMachine(destination, "Machine ajoutée automatiquement")) {
             ui->logs->append("Erreur lors de l'insertion de la machine destination dans la BDD.");
-            return false;
+            success = false;
         }
     }
 
-    QString queryStr = QString("INSERT INTO trames (source, destination, trame, message) "
-                               "VALUES ('%1', '%2', '%3', '%4')")
-                           .arg(source)
-                           .arg(destination)
-                           .arg(fullTrame)
-                           .arg(message);
-    if (!m_dbManager->executeNonQuery(queryStr)) {
-        ui->logs->append("Erreur DB: " + m_dbManager->database().lastError().text());
-        return false;
+    // Si tout est en ordre, procéder à l'insertion de la trame
+    if (success) {
+        QString queryStr = QString("INSERT INTO trames (source, destination, trame, message) "
+                                   "VALUES ('%1', '%2', '%3', '%4')")
+                               .arg(source)
+                               .arg(destination)
+                               .arg(fullTrame)
+                               .arg(message);
+        if (!m_dbManager->executeNonQuery(queryStr)) {
+            ui->logs->append("Erreur DB: " + m_dbManager->database().lastError().text());
+            success = false;
+        }
     }
-    return true;
+
+    return success;
 }
 
+/**
+ * @brief Gère l'envoi d'une trame.
+ *
+ * Vérifie que le message à envoyer n'est pas vide, construit et envoie une trame APRS et une trame LoRa.
+ * La trame LoRa est convertie en trame AX.25 avant d'être transmise via le port série, puis stockée en base.
+ */
 void Interface::onSendButtonClicked()
 {
     QString message = ui->messageLineEdit->text().trimmed();

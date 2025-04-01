@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[Admin] Gestion des trames LoRa:  Fichier source de ax25converter.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ballonLogo (1).png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">[Admin] Gestion des trames LoRa
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Un panneau administratif développé en C++ sous QT pour envoyer, recevoir et enregistrer des trames LoRa. Mysql, KISS et aprs.fi sont supportés.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('ax25converter_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ax25converter.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ax25converter_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef AX25CONVERTER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define AX25CONVERTER_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;QByteArray&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_a_x25_converter.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_a_x25_converter.html">AX25Converter</a> : <span class="keyword">public</span> QObject {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_a_x25_converter.html#a932959b85869443413b54d7b19b7f3bf">AX25Converter</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    QByteArray <a class="code" href="class_a_x25_converter.html#a7f51d248bdcd1b36527132f8825be720">destAdrToAX25</a>(<span class="keyword">const</span> QString &amp;indicatif);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    QByteArray <a class="code" href="class_a_x25_converter.html#abca4cf269205624716d9fa2e1d1dafc6">convertTNC2ToAX25</a>(<span class="keyword">const</span> QString &amp;tnc2);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    QString <a class="code" href="class_a_x25_converter.html#a949f49844c73b939079d65f25d0abc51">convertAX25ToTNC2</a>(<span class="keyword">const</span> QByteArray &amp;ax25);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">static</span> QString <a class="code" href="class_a_x25_converter.html#ac6de2a14c84634ae23a606849a34318f">decodeAX25Address</a>(<span class="keyword">const</span> QByteArray &amp;addr7);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AX25CONVERTER_H</span></div>
+<div class="ttc" id="aclass_a_x25_converter_html"><div class="ttname"><a href="class_a_x25_converter.html">AX25Converter</a></div><div class="ttdoc">Classe de conversion pour le protocole AX.25.</div><div class="ttdef"><b>Definition:</b> ax25converter.h:25</div></div>
+<div class="ttc" id="aclass_a_x25_converter_html_a7f51d248bdcd1b36527132f8825be720"><div class="ttname"><a href="class_a_x25_converter.html#a7f51d248bdcd1b36527132f8825be720">AX25Converter::destAdrToAX25</a></div><div class="ttdeci">QByteArray destAdrToAX25(const QString &amp;indicatif)</div><div class="ttdoc">Convertit un indicatif en adresse AX.25.</div><div class="ttdef"><b>Definition:</b> ax25converter.cpp:26</div></div>
+<div class="ttc" id="aclass_a_x25_converter_html_a932959b85869443413b54d7b19b7f3bf"><div class="ttname"><a href="class_a_x25_converter.html#a932959b85869443413b54d7b19b7f3bf">AX25Converter::AX25Converter</a></div><div class="ttdeci">AX25Converter(QObject *parent=nullptr)</div><div class="ttdoc">Constructeur de la classe AX25Converter.</div><div class="ttdef"><b>Definition:</b> ax25converter.cpp:12</div></div>
+<div class="ttc" id="aclass_a_x25_converter_html_a949f49844c73b939079d65f25d0abc51"><div class="ttname"><a href="class_a_x25_converter.html#a949f49844c73b939079d65f25d0abc51">AX25Converter::convertAX25ToTNC2</a></div><div class="ttdeci">QString convertAX25ToTNC2(const QByteArray &amp;ax25)</div><div class="ttdoc">Convertit une trame AX.25 en format TNC2.</div><div class="ttdef"><b>Definition:</b> ax25converter.cpp:96</div></div>
+<div class="ttc" id="aclass_a_x25_converter_html_abca4cf269205624716d9fa2e1d1dafc6"><div class="ttname"><a href="class_a_x25_converter.html#abca4cf269205624716d9fa2e1d1dafc6">AX25Converter::convertTNC2ToAX25</a></div><div class="ttdeci">QByteArray convertTNC2ToAX25(const QString &amp;tnc2)</div><div class="ttdoc">Convertit une trame TNC2 en trame AX.25.</div><div class="ttdef"><b>Definition:</b> ax25converter.cpp:48</div></div>
+<div class="ttc" id="aclass_a_x25_converter_html_ac6de2a14c84634ae23a606849a34318f"><div class="ttname"><a href="class_a_x25_converter.html#ac6de2a14c84634ae23a606849a34318f">AX25Converter::decodeAX25Address</a></div><div class="ttdeci">static QString decodeAX25Address(const QByteArray &amp;addr7)</div><div class="ttdoc">Décode une adresse AX.25 sur 7 octets.</div><div class="ttdef"><b>Definition:</b> ax25converter.cpp:141</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="ax25converter_8h.html">ax25converter.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

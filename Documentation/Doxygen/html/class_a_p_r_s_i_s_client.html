@@ -1,0 +1,585 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>[Admin] Gestion des trames LoRa: Référence de la classe APRSISClient</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ballonLogo (1).png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">[Admin] Gestion des trames LoRa
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Un panneau administratif développé en C++ sous QT pour envoyer, recevoir et enregistrer des trames LoRa. Mysql, KISS et aprs.fi sont supportés.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_a_p_r_s_i_s_client.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#signals">Signaux</a> &#124;
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-slots">Connecteurs privés</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="class_a_p_r_s_i_s_client-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe APRSISClient</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Client pour la communication avec un serveur APRS-IS.  
+ <a href="class_a_p_r_s_i_s_client.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="aprsisclient_8h_source.html">aprsisclient.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe d'héritage de APRSISClient:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_a_p_r_s_i_s_client__inherit__graph.png" border="0" usemap="#a_a_p_r_s_i_s_client_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_a_p_r_s_i_s_client_inherit__map" id="a_a_p_r_s_i_s_client_inherit__map">
+<area shape="rect" title="Client pour la communication avec un serveur APRS&#45;IS." alt="" coords="5,131,145,311"/>
+<area shape="rect" title=" " alt="" coords="40,5,111,83"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signaux</h2></td></tr>
+<tr class="memitem:a7e9de7ea9aaf7a31bc71c5d72f1fdd2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_r_s_i_s_client.html#a7e9de7ea9aaf7a31bc71c5d72f1fdd2c">connected</a> ()</td></tr>
+<tr class="memdesc:a7e9de7ea9aaf7a31bc71c5d72f1fdd2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis lors de l'établissement de la connexion avec le serveur.  <a href="class_a_p_r_s_i_s_client.html#a7e9de7ea9aaf7a31bc71c5d72f1fdd2c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7e9de7ea9aaf7a31bc71c5d72f1fdd2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac295597894ffe7994e8787f21102af49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_r_s_i_s_client.html#ac295597894ffe7994e8787f21102af49">disconnected</a> ()</td></tr>
+<tr class="memdesc:ac295597894ffe7994e8787f21102af49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis lors de la déconnexion du serveur.  <a href="class_a_p_r_s_i_s_client.html#ac295597894ffe7994e8787f21102af49">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac295597894ffe7994e8787f21102af49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ecce272efa61bbaa7d3f1dbcb4d367"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_r_s_i_s_client.html#a87ecce272efa61bbaa7d3f1dbcb4d367">messageReceived</a> (const QString &amp;msg)</td></tr>
+<tr class="memdesc:a87ecce272efa61bbaa7d3f1dbcb4d367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis lorsqu'un message est reçu du serveur APRS-IS.  <a href="class_a_p_r_s_i_s_client.html#a87ecce272efa61bbaa7d3f1dbcb4d367">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a87ecce272efa61bbaa7d3f1dbcb4d367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a118af77430aaf734289863abc14433c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_r_s_i_s_client.html#a118af77430aaf734289863abc14433c3">errorOccurred</a> (const QString &amp;error)</td></tr>
+<tr class="memdesc:a118af77430aaf734289863abc14433c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émis lorsqu'une erreur se produit.  <a href="class_a_p_r_s_i_s_client.html#a118af77430aaf734289863abc14433c3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a118af77430aaf734289863abc14433c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a7c063e8adb3671ec19df19774a3d2f59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_r_s_i_s_client.html#a7c063e8adb3671ec19df19774a3d2f59">APRSISClient</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a7c063e8adb3671ec19df19774a3d2f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="class_a_p_r_s_i_s_client.html" title="Client pour la communication avec un serveur APRS-IS.">APRSISClient</a>.  <a href="class_a_p_r_s_i_s_client.html#a7c063e8adb3671ec19df19774a3d2f59">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7c063e8adb3671ec19df19774a3d2f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4470a82876e41fff02fdb9b7b96d873"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_r_s_i_s_client.html#af4470a82876e41fff02fdb9b7b96d873">connectToServer</a> (const QString &amp;host, int port)</td></tr>
+<tr class="memdesc:af4470a82876e41fff02fdb9b7b96d873"><td class="mdescLeft">&#160;</td><td class="mdescRight">Établit une connexion avec le serveur APRS-IS.  <a href="class_a_p_r_s_i_s_client.html#af4470a82876e41fff02fdb9b7b96d873">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af4470a82876e41fff02fdb9b7b96d873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bec47f36950f70185213fd442b02bf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_r_s_i_s_client.html#a9bec47f36950f70185213fd442b02bf9">sendLine</a> (const QString &amp;line)</td></tr>
+<tr class="memdesc:a9bec47f36950f70185213fd442b02bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie une ligne de trame vers le serveur APRS-IS.  <a href="class_a_p_r_s_i_s_client.html#a9bec47f36950f70185213fd442b02bf9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9bec47f36950f70185213fd442b02bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
+Connecteurs privés</h2></td></tr>
+<tr class="memitem:aa7efdac1a99558a28d20b54d84e8d3f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_r_s_i_s_client.html#aa7efdac1a99558a28d20b54d84e8d3f2">onConnected</a> ()</td></tr>
+<tr class="memdesc:aa7efdac1a99558a28d20b54d84e8d3f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot appelé lorsque la connexion au serveur est établie.  <a href="class_a_p_r_s_i_s_client.html#aa7efdac1a99558a28d20b54d84e8d3f2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa7efdac1a99558a28d20b54d84e8d3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bbade7bff9ba655487a67242796b50a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_r_s_i_s_client.html#a5bbade7bff9ba655487a67242796b50a">onReadyRead</a> ()</td></tr>
+<tr class="memdesc:a5bbade7bff9ba655487a67242796b50a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot appelé lorsque des données sont disponibles en lecture.  <a href="class_a_p_r_s_i_s_client.html#a5bbade7bff9ba655487a67242796b50a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5bbade7bff9ba655487a67242796b50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f04fcd2c7a5d3fe646cb332f650486b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_r_s_i_s_client.html#a5f04fcd2c7a5d3fe646cb332f650486b">onDisconnected</a> ()</td></tr>
+<tr class="memdesc:a5f04fcd2c7a5d3fe646cb332f650486b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot appelé lors de la déconnexion du serveur.  <a href="class_a_p_r_s_i_s_client.html#a5f04fcd2c7a5d3fe646cb332f650486b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5f04fcd2c7a5d3fe646cb332f650486b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a77e84cbf2aa88d8613c0d317a01a5dbb"><td class="memItemLeft" align="right" valign="top">QTcpSocket&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_r_s_i_s_client.html#a77e84cbf2aa88d8613c0d317a01a5dbb">m_socket</a></td></tr>
+<tr class="memdesc:a77e84cbf2aa88d8613c0d317a01a5dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket TCP utilisé pour la communication avec le serveur APRS-IS.  <a href="class_a_p_r_s_i_s_client.html#a77e84cbf2aa88d8613c0d317a01a5dbb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a77e84cbf2aa88d8613c0d317a01a5dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd646ad3c672abec56fdf7ed5637afc9"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_r_s_i_s_client.html#acd646ad3c672abec56fdf7ed5637afc9">mIGateCall</a></td></tr>
+<tr class="memdesc:acd646ad3c672abec56fdf7ed5637afc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call sign utilisé pour la connexion (identifiant APRS-IS).  <a href="class_a_p_r_s_i_s_client.html#acd646ad3c672abec56fdf7ed5637afc9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acd646ad3c672abec56fdf7ed5637afc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b883d2aed4faa774d7e0e0b44126d8e"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_r_s_i_s_client.html#a8b883d2aed4faa774d7e0e0b44126d8e">mIGatePass</a></td></tr>
+<tr class="memdesc:a8b883d2aed4faa774d7e0e0b44126d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mot de passe associé au call sign pour la connexion APRS-IS.  <a href="class_a_p_r_s_i_s_client.html#a8b883d2aed4faa774d7e0e0b44126d8e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8b883d2aed4faa774d7e0e0b44126d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Client pour la communication avec un serveur APRS-IS. </p>
+<p>La classe <a class="el" href="class_a_p_r_s_i_s_client.html" title="Client pour la communication avec un serveur APRS-IS.">APRSISClient</a> établit une connexion TCP avec un serveur APRS-IS, envoie des lignes de trame (par exemple pour l'authentification ou l'envoi de messages) et traite la réception des messages. </p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a id="a7c063e8adb3671ec19df19774a3d2f59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c063e8adb3671ec19df19774a3d2f59">&#9670;&nbsp;</a></span>APRSISClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">APRSISClient::APRSISClient </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructeur de la classe <a class="el" href="class_a_p_r_s_i_s_client.html" title="Client pour la communication avec un serveur APRS-IS.">APRSISClient</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Pointeur vers l'objet parent (par défaut nullptr).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Initialise le client APRS-IS avec les informations de connexion (call sign et mot de passe) et connecte les signaux du socket aux slots correspondants.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Pointeur vers l'objet parent (par défaut nullptr). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="a7e9de7ea9aaf7a31bc71c5d72f1fdd2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e9de7ea9aaf7a31bc71c5d72f1fdd2c">&#9670;&nbsp;</a></span>connected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APRSISClient::connected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal émis lors de l'établissement de la connexion avec le serveur. </p>
+
+</div>
+</div>
+<a id="af4470a82876e41fff02fdb9b7b96d873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4470a82876e41fff02fdb9b7b96d873">&#9670;&nbsp;</a></span>connectToServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APRSISClient::connectToServer </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Établit une connexion avec le serveur APRS-IS. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">host</td><td>Adresse du serveur. </td></tr>
+    <tr><td class="paramname">port</td><td>Port de connexion.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Tente d'ouvrir une connexion TCP vers le serveur spécifié par l'adresse <code>host</code> et le port <code>port</code>.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">host</td><td>Adresse du serveur APRS-IS. </td></tr>
+    <tr><td class="paramname">port</td><td>Port de connexion. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac295597894ffe7994e8787f21102af49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac295597894ffe7994e8787f21102af49">&#9670;&nbsp;</a></span>disconnected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APRSISClient::disconnected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal émis lors de la déconnexion du serveur. </p>
+
+</div>
+</div>
+<a id="a118af77430aaf734289863abc14433c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a118af77430aaf734289863abc14433c3">&#9670;&nbsp;</a></span>errorOccurred</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APRSISClient::errorOccurred </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>error</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal émis lorsqu'une erreur se produit. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error</td><td>Description de l'erreur. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a87ecce272efa61bbaa7d3f1dbcb4d367"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87ecce272efa61bbaa7d3f1dbcb4d367">&#9670;&nbsp;</a></span>messageReceived</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APRSISClient::messageReceived </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal émis lorsqu'un message est reçu du serveur APRS-IS. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Le message reçu. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa7efdac1a99558a28d20b54d84e8d3f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7efdac1a99558a28d20b54d84e8d3f2">&#9670;&nbsp;</a></span>onConnected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APRSISClient::onConnected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot appelé lorsque la connexion au serveur est établie. </p>
+<p>Ce slot émet le signal <code>connected</code> et envoie la ligne de login pour s'authentifier.</p>
+<p>Une fois connecté, ce slot émet le signal <code>connected</code> et envoie la ligne de login pour authentifier l'utilisateur auprès du serveur APRS-IS. </p>
+
+</div>
+</div>
+<a id="a5f04fcd2c7a5d3fe646cb332f650486b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f04fcd2c7a5d3fe646cb332f650486b">&#9670;&nbsp;</a></span>onDisconnected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APRSISClient::onDisconnected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot appelé lors de la déconnexion du serveur. </p>
+<p>Slot appelé lors de la déconnexion du serveur APRS-IS.</p>
+<p>Émet le signal <code>disconnected</code> pour notifier la perte de connexion.</p>
+<p>Émet le signal <code>disconnected</code> pour notifier que la connexion a été interrompue. </p>
+
+</div>
+</div>
+<a id="a5bbade7bff9ba655487a67242796b50a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bbade7bff9ba655487a67242796b50a">&#9670;&nbsp;</a></span>onReadyRead</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APRSISClient::onReadyRead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot appelé lorsque des données sont disponibles en lecture. </p>
+<p>Slot appelé lorsque des données sont disponibles sur le socket.</p>
+<p>Lit les données disponibles sur le socket et émet le signal <code>messageReceived</code>.</p>
+<p>Lit toutes les données disponibles et émet le signal <code>messageReceived</code> avec le contenu reçu. </p>
+
+</div>
+</div>
+<a id="a9bec47f36950f70185213fd442b02bf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bec47f36950f70185213fd442b02bf9">&#9670;&nbsp;</a></span>sendLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APRSISClient::sendLine </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Envoie une ligne de trame vers le serveur APRS-IS. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>La ligne de trame à envoyer.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Avant l'envoi, vérifie que le socket est bien connecté. Si ce n'est pas le cas, émet le signal <code>errorOccurred</code> avec un message d'erreur.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>La ligne de trame à envoyer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a id="a77e84cbf2aa88d8613c0d317a01a5dbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77e84cbf2aa88d8613c0d317a01a5dbb">&#9670;&nbsp;</a></span>m_socket</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTcpSocket APRSISClient::m_socket</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Socket TCP utilisé pour la communication avec le serveur APRS-IS. </p>
+
+</div>
+</div>
+<a id="acd646ad3c672abec56fdf7ed5637afc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd646ad3c672abec56fdf7ed5637afc9">&#9670;&nbsp;</a></span>mIGateCall</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString APRSISClient::mIGateCall</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Call sign utilisé pour la connexion (identifiant APRS-IS). </p>
+
+</div>
+</div>
+<a id="a8b883d2aed4faa774d7e0e0b44126d8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b883d2aed4faa774d7e0e0b44126d8e">&#9670;&nbsp;</a></span>mIGatePass</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString APRSISClient::mIGatePass</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mot de passe associé au call sign pour la connexion APRS-IS. </p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li><a class="el" href="aprsisclient_8h_source.html">aprsisclient.h</a></li>
+<li><a class="el" href="aprsisclient_8cpp.html">aprsisclient.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_a_p_r_s_i_s_client.html">APRSISClient</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

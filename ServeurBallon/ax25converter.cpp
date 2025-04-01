@@ -1,10 +1,28 @@
-// AX25Converter.cpp
 #include "ax25converter.h"
 
+/**
+ * @file ax25converter.cpp
+ * @brief Constructeur de la classe AX25Converter.
+ * @author Erwän STANISLAWSKI
+ *
+ * Initialise un objet AX25Converter sans effectuer d'opération particulière.
+ *
+ * @param parent Pointeur vers l'objet parent (par défaut nullptr).
+ */
 AX25Converter::AX25Converter(QObject *parent)
     : QObject(parent)
 { }
 
+/**
+ * @brief Convertit un indicatif en adresse AX.25.
+ *
+ * Convertit une chaîne représentant un indicatif en une adresse AX.25 codée sur 7 octets.
+ * Les 6 premiers octets contiennent le callsign décalé d'un bit vers la gauche,
+ * et le 7ème octet est configuré pour le SSID.
+ *
+ * @param indicatif L'indicatif (callsign) à convertir.
+ * @return QByteArray Représentation de l'adresse au format AX.25.
+ */
 QByteArray AX25Converter::destAdrToAX25(const QString &indicatif)
 {
     QByteArray adr(7, 0x40); // Initialisation avec des espaces (0x40)
@@ -18,6 +36,15 @@ QByteArray AX25Converter::destAdrToAX25(const QString &indicatif)
     return adr;
 }
 
+/**
+ * @brief Convertit une trame TNC2 en trame AX.25.
+ *
+ * Analyse la trame TNC2 pour extraire les adresses source et destination ainsi que la charge utile,
+ * puis construit une trame conforme au protocole AX.25 en utilisant les méthodes de conversion d'adresse.
+ *
+ * @param tnc2 La trame au format TNC2.
+ * @return QByteArray La trame AX.25 convertie, ou QByteArray() en cas d'erreur.
+ */
 QByteArray AX25Converter::convertTNC2ToAX25(const QString &tnc2)
 {
     if (tnc2.isEmpty())
@@ -57,6 +84,15 @@ QByteArray AX25Converter::convertTNC2ToAX25(const QString &tnc2)
     return ax25Frame;
 }
 
+/**
+ * @brief Convertit une trame AX.25 en format TNC2.
+ *
+ * Parcourt la trame AX.25 pour extraire les champs d'adresses, contrôle, PID et la charge utile,
+ * puis reconstruit une trame au format TNC2 en décodant les adresses via la méthode decodeAX25Address.
+ *
+ * @param ax25 La trame au format AX.25.
+ * @return QString La trame convertie au format TNC2, ou une chaîne vide en cas d'erreur.
+ */
 QString AX25Converter::convertAX25ToTNC2(const QByteArray &ax25)
 {
     int offset = 0;
@@ -93,6 +129,15 @@ QString AX25Converter::convertAX25ToTNC2(const QByteArray &ax25)
         .arg(QString::fromLatin1(payload));
 }
 
+/**
+ * @brief Décode une adresse AX.25 sur 7 octets.
+ *
+ * Extrait le callsign des 6 premiers octets en décalant chaque octet d'un bit vers la droite,
+ * et récupère le SSID à partir du 7ème octet. Le SSID est concaténé au callsign si différent de 0.
+ *
+ * @param addr7 La représentation en 7 octets de l'adresse AX.25.
+ * @return QString L'adresse décodée sous forme de chaîne, par exemple "CALL-SSID" ou "CALL".
+ */
 QString AX25Converter::decodeAX25Address(const QByteArray &addr7)
 {
     if (addr7.size() < 7)
