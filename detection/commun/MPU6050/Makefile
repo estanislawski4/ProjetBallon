@@ -10,13 +10,13 @@ CXXFLAGS = -Wall -O2 -std=c++11
 LDFLAGS = -lwiringPi -lpthread -lm
 
 # Fichiers source
-SOURCES = main.cpp MPU6050.cpp i2c.cpp
+SOURCES = main.cpp MPU6050.cpp i2c.cpp GestionFile.cpp
 
 # Fichiers objets
 OBJECTS = $(SOURCES:.cpp=.o)
 
 # Nom de l'exécutable
-TARGET = test_MPU
+TARGET = MPU6050
 
 # Règle par défaut
 all: $(TARGET)
