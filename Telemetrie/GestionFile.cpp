@@ -54,7 +54,7 @@ bool GestionFile::ecrireDansLaFileIPC(const std::string &payload)
  * @param type le type du message
  * @return une structure MessageRX
  */
- MessageRX GestionFile::lireDansLaFileIPC(int type){
+MessageRX GestionFile::lireDansLaFileIPC(int type){
 
     MessageRX message;
     int ret;
@@ -62,6 +62,6 @@ bool GestionFile::ecrireDansLaFileIPC(const std::string &payload)
     ret = msgrcv(fileId, &message, sizeof(message) - 4, type, 0);
     if (ret == -1){
         throw std::runtime_error("Erreur lecture fileRX !");
-    }   
+    }
     return message;
 }

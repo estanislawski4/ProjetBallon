@@ -22,8 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Ballon stratosphérique
-   &#160;<span id="projectnumber">1.2</span>
+   &#160;<span id="projectnumber">1.4</span>
    </div>
+   <div id="projectbrief">Programme de télémétrie du projet</div>
   </td>
  </tr>
  </tbody>
@@ -70,24 +71,36 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Structure pour stocker les composants d'une date et d'une heure.  
+ <a href="struct_temps.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_gestion_temps_8h_source.html">GestionTemps.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a5c8002a551ac0bc46efea0a1ba64a155"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_temps.html#a5c8002a551ac0bc46efea0a1ba64a155">annee</a> {}</td></tr>
+<tr class="memdesc:a5c8002a551ac0bc46efea0a1ba64a155"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'année sous forme de chaîne.  <a href="struct_temps.html#a5c8002a551ac0bc46efea0a1ba64a155">More...</a><br /></td></tr>
 <tr class="separator:a5c8002a551ac0bc46efea0a1ba64a155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeff9a659d797ee4b245e9e2e2eb0aebd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_temps.html#aeff9a659d797ee4b245e9e2e2eb0aebd">mois</a> {}</td></tr>
+<tr class="memdesc:aeff9a659d797ee4b245e9e2e2eb0aebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le mois sous forme de chaîne.  <a href="struct_temps.html#aeff9a659d797ee4b245e9e2e2eb0aebd">More...</a><br /></td></tr>
 <tr class="separator:aeff9a659d797ee4b245e9e2e2eb0aebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c107bbd2b241396e3cc02d3cec3c671"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_temps.html#a4c107bbd2b241396e3cc02d3cec3c671">jour</a> {}</td></tr>
+<tr class="memdesc:a4c107bbd2b241396e3cc02d3cec3c671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le jour sous forme de chaîne.  <a href="struct_temps.html#a4c107bbd2b241396e3cc02d3cec3c671">More...</a><br /></td></tr>
 <tr class="separator:a4c107bbd2b241396e3cc02d3cec3c671"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fa1651c3ee90c17b6f892bc1bd4f140"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_temps.html#a9fa1651c3ee90c17b6f892bc1bd4f140">heure</a> {}</td></tr>
+<tr class="memdesc:a9fa1651c3ee90c17b6f892bc1bd4f140"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'heure sous forme de chaîne.  <a href="struct_temps.html#a9fa1651c3ee90c17b6f892bc1bd4f140">More...</a><br /></td></tr>
 <tr class="separator:a9fa1651c3ee90c17b6f892bc1bd4f140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15cca16b379be5715dadcd07f8a09127"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_temps.html#a15cca16b379be5715dadcd07f8a09127">minute</a> {}</td></tr>
+<tr class="memdesc:a15cca16b379be5715dadcd07f8a09127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Les minutes sous forme de chaîne.  <a href="struct_temps.html#a15cca16b379be5715dadcd07f8a09127">More...</a><br /></td></tr>
 <tr class="separator:a15cca16b379be5715dadcd07f8a09127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a7d38912375750e3fffda700d872d01"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_temps.html#a2a7d38912375750e3fffda700d872d01">seconde</a> {}</td></tr>
+<tr class="memdesc:a2a7d38912375750e3fffda700d872d01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Les secondes sous forme de chaîne.  <a href="struct_temps.html#a2a7d38912375750e3fffda700d872d01">More...</a><br /></td></tr>
 <tr class="separator:a2a7d38912375750e3fffda700d872d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Structure pour stocker les composants d'une date et d'une heure. </p>
+<p>Cette structure permet de stocker les différents composants d'une date et d'une heure (année, mois, jour, heure, minute, seconde) sous forme de chaînes de caractères. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a5c8002a551ac0bc46efea0a1ba64a155"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c8002a551ac0bc46efea0a1ba64a155">&#9670;&nbsp;</a></span>annee</h2>
 
@@ -99,6 +112,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>L'année sous forme de chaîne. </p>
 
 </div>
 </div>
@@ -114,6 +129,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>L'heure sous forme de chaîne. </p>
+
 </div>
 </div>
 <a id="a4c107bbd2b241396e3cc02d3cec3c671"></a>
@@ -127,6 +144,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Le jour sous forme de chaîne. </p>
 
 </div>
 </div>
@@ -142,6 +161,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Les minutes sous forme de chaîne. </p>
+
 </div>
 </div>
 <a id="aeff9a659d797ee4b245e9e2e2eb0aebd"></a>
@@ -156,6 +177,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Le mois sous forme de chaîne. </p>
+
 </div>
 </div>
 <a id="a2a7d38912375750e3fffda700d872d01"></a>
@@ -169,6 +192,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Les secondes sous forme de chaîne. </p>
 
 </div>
 </div>

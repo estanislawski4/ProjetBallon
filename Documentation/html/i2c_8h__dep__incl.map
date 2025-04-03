@@ -2,8 +2,8 @@
 <area shape="rect" id="node1" title=" " alt="" coords="131,5,305,76"/>
 <area shape="rect" id="node2" href="$_b_m_e280_8cpp.html" title=" " alt="" coords="5,243,180,313"/>
 <area shape="rect" id="node3" href="$_b_m_e280_8h.html" title=" " alt="" coords="131,124,305,195"/>
-<area shape="rect" id="node7" href="$i2c_8cpp.html" title="Classe pour le bus I2C \detail I2C (pronounce: I squared C) is a protocol developed by Philips...." alt="" coords="329,124,504,195"/>
+<area shape="rect" id="node7" href="$i2c_8cpp.html" title="Implémentation de la classe i2c pour la communication sur le bus I2C." alt="" coords="329,124,504,195"/>
 <area shape="rect" id="node4" href="$telemetrie_8h.html" title="Declération de la classe Telemetrie." alt="" coords="204,243,379,313"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title=" " alt="" coords="104,361,279,432"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="Programme principal pour la collecte et l&#39;envoi de données météorologiques." alt="" coords="104,361,279,432"/>
 <area shape="rect" id="node6" href="$telemetrie_8cpp.html" title="Implémentation de la classe Telemetrie." alt="" coords="303,361,477,432"/>
 </map>

@@ -22,8 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Ballon stratosphérique
-   &#160;<span id="projectnumber">1.2</span>
+   &#160;<span id="projectnumber">1.4</span>
    </div>
+   <div id="projectbrief">Programme de télémétrie du projet</div>
   </td>
  </tr>
  </tbody>
@@ -70,117 +71,136 @@ $(function() {
 <div class="title">i2c.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="i2c_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef I2C_H_INCLUDED</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define I2C_H_INCLUDED</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<a href="i2c_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef I2C_H_INCLUDED</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define I2C_H_INCLUDED</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;errno.h&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;fcntl.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;sys/ioctl.h&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//#include &lt;asm/ioctl.h&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;errno.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;fcntl.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;sys/ioctl.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;asm/ioctl.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// I2C definitions</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="i2c_8h.html#ab15137f7c592d05573de99f078516157">   19</a></span>&#160;<span class="preprocessor">#define I2C_SLAVE       0x0703  </span><span class="comment">/* Use this slave address */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="i2c_8h.html#a0839b8a41f6fd5560c6a970e1e04f624">   20</a></span>&#160;<span class="preprocessor">#define I2C_ACK_TEST    0x0710  </span><span class="comment">/* Voir si un esclave est à une adresse spécifique */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="i2c_8h.html#a4e9d483fb9eb1074646726ce518b1d4d">   21</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS       0x0720  </span><span class="comment">/* SMBus transfer */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="i2c_8h.html#a8f5482668eb7741ef21dd9c211d876c9">   24</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_READ  1</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="i2c_8h.html#ac4d2a9af170b85b33c640c811f240c76">   25</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_WRITE 0</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// SMBus transaction types</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="i2c_8h.html#a94760c9e3bb58f5535578eb52a0ffc0c">   29</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_QUICK             0  </span><span class="comment">// This sends a single bit to the device, at the place of the Rd/Wr bit.</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="i2c_8h.html#a8006fa66a9d9224959fb8337a365a12a">   30</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_BYTE              1  </span><span class="comment">// Handles the SMBus read_byte and write_byte commands</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="i2c_8h.html#a3d7320d4d3f8b109344ee08feab0e533">   31</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_BYTE_DATA         2  </span><span class="comment">// Handles the SMBus read_byte_data and write_byte_data commands</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="i2c_8h.html#abd0ad56a944b1a95435d51cc54db36c4">   32</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_WORD_DATA         3  </span><span class="comment">// Handles the SMBus read_word_data and write_word_data commands</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="i2c_8h.html#a140bc92b58f10de5eb796ad71e8f0da2">   33</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_PROC_CALL         4  </span><span class="comment">// This command selects a device register (through the Comm byte), sends</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                       <span class="comment">// 16 bits of data to it, and reads 16 bits of data in return.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="i2c_8h.html#a0253f81d1f2732492c1a05dc41094d12">   35</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_BLOCK_DATA        5  </span><span class="comment">// Handles the SMBus read_block_data and write_block_data commands</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="i2c_8h.html#a36bcbcb9294695fddb8606a32cbedc9b">   36</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_I2C_BLOCK_BROKEN  6  </span><span class="comment">// </span></div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="i2c_8h.html#a187e1de23e9935885cdb94ee429a2eed">   37</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_BLOCK_PROC_CALL   7  </span><span class="comment">// This command selects a device register (through the Comm byte), sends</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                       <span class="comment">// 1 to 31 bytes of data to it, and reads 1 to 31 bytes of data in return.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="i2c_8h.html#aa5ecbb0ceaddcb905d68d366edfb026c">   39</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_I2C_BLOCK_DATA    8</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// SMBus messages</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="i2c_8h.html#ac2dd8b77e329bba4a3ca9cd275f9bf50">   43</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_BLOCK_MAX     32      </span><span class="comment">/* taille maxi d&#39;un bloc de données */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="i2c_8h.html#a13045bd7a62d8d55acbcf174b7149cbf">   44</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_I2C_BLOCK_MAX 32      </span><span class="comment">/* Not specified but we use same structure */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// Structures utilisées par les appels ioctl()</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// I2C definitions</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="i2c_8h.html#ab15137f7c592d05573de99f078516157">   24</a></span>&#160;<span class="preprocessor">#define I2C_SLAVE       0x0703  </span><span class="comment">/* Utilise cette adresse esclave */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="i2c_8h.html#a0839b8a41f6fd5560c6a970e1e04f624">   30</a></span>&#160;<span class="preprocessor">#define I2C_ACK_TEST    0x0710  </span><span class="comment">/* Voir si un esclave est à une adresse spécifique */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="i2c_8h.html#a4e9d483fb9eb1074646726ce518b1d4d">   36</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS       0x0720  </span><span class="comment">/* Transfert SMBus */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="i2c_8h.html#a8f5482668eb7741ef21dd9c211d876c9">   42</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_READ  1</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="i2c_8h.html#ac4d2a9af170b85b33c640c811f240c76">   48</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_WRITE 0</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// La donnée peut être soit un Octet, soit un Mot ou un tableau d&#39;octet</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="unioni2c__smbus__data.html">   51</a></span>&#160;<span class="keyword">union </span><a class="code" href="unioni2c__smbus__data.html">i2c_smbus_data</a></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="unioni2c__smbus__data.html#a7145699abf962d118aa1c78ff864e892">   53</a></span>&#160;  uint8_t  <a class="code" href="unioni2c__smbus__data.html#a7145699abf962d118aa1c78ff864e892">byte</a> ;</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="unioni2c__smbus__data.html#ae8621bf131cbdfff90b21499a2c11a26">   54</a></span>&#160;  uint16_t <a class="code" href="unioni2c__smbus__data.html#ae8621bf131cbdfff90b21499a2c11a26">word</a> ;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="unioni2c__smbus__data.html#a56729c242baa246a3105fd7c64b86f48">   55</a></span>&#160;  uint8_t  block [<a class="code" href="i2c_8h.html#ac2dd8b77e329bba4a3ca9cd275f9bf50">I2C_SMBUS_BLOCK_MAX</a> + 2] ;    <span class="comment">// 2 car block [0] est utilisé pour la longeur + 1 pour PEC (Controle CRC)</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// Types de transactions SMBus</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="i2c_8h.html#a94760c9e3bb58f5535578eb52a0ffc0c">   56</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_QUICK             0  </span><span class="comment">// Envoie un seul bit à l&#39;appareil</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structi2c__smbus__ioctl__data.html">   58</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structi2c__smbus__ioctl__data.html">i2c_smbus_ioctl_data</a></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structi2c__smbus__ioctl__data.html#add449c765b690f883e5771132d16a4f8">   60</a></span>&#160;  <span class="keywordtype">char</span> <a class="code" href="structi2c__smbus__ioctl__data.html#add449c765b690f883e5771132d16a4f8">read_write</a> ;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structi2c__smbus__ioctl__data.html#adaacbd70d47e01e8bca1457b721089e7">   61</a></span>&#160;  uint8_t <a class="code" href="structi2c__smbus__ioctl__data.html#adaacbd70d47e01e8bca1457b721089e7">command</a> ;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structi2c__smbus__ioctl__data.html#a777bacfabf66ba077b40d1c835c7879f">   62</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="structi2c__smbus__ioctl__data.html#a777bacfabf66ba077b40d1c835c7879f">size</a> ;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structi2c__smbus__ioctl__data.html#af5a53e4ed38f278bd5fb62a65b67432d">   63</a></span>&#160;  <span class="keyword">union </span><a class="code" href="unioni2c__smbus__data.html">i2c_smbus_data</a> *<a class="code" href="structi2c__smbus__ioctl__data.html#af5a53e4ed38f278bd5fb62a65b67432d">data</a> ;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="i2c_8h.html#a8006fa66a9d9224959fb8337a365a12a">   63</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_BYTE              1  </span><span class="comment">// Lecture et écriture d&#39;un octet</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classi2c.html">   68</a></span>&#160;<span class="keyword">class </span><a class="code" href="classi2c.html">i2c</a></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="i2c_8h.html#a3d7320d4d3f8b109344ee08feab0e533">   70</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_BYTE_DATA         2  </span><span class="comment">// Lecture et écriture de données (octet)</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">// le constructeur</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="classi2c.html">i2c</a>(<span class="keywordtype">int</span> adresseI2C, <span class="keywordtype">int</span> idBusI2C=1);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">//idBusI2C = 0 pour les raspberry version 1</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">//idBusI2C = 1 pour les raspberry version 2 et 3</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">bool</span> getError();</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="i2c_8h.html#abd0ad56a944b1a95435d51cc54db36c4">   77</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_WORD_DATA         3  </span><span class="comment">// Lecture et écriture d&#39;un mot de données</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> Read ();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> ReadReg8 (<span class="keywordtype">int</span> reg);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> ReadReg16 (<span class="keywordtype">int</span> reg);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">int</span> ReadBlockData (<span class="keywordtype">int</span> reg, <span class="keywordtype">int</span> length, <span class="keywordtype">int</span> *values);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> Write (<span class="keywordtype">int</span> data);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> WriteReg8 (<span class="keywordtype">int</span> reg, <span class="keywordtype">int</span> value);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> WriteReg16 (<span class="keywordtype">int</span> reg, <span class="keywordtype">int</span> value);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">int</span> WriteBlockData (<span class="keywordtype">int</span> reg, <span class="keywordtype">int</span> length, <span class="keywordtype">int</span> *data);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">int</span> delay_ms(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> num_ms);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="i2c_8h.html#a140bc92b58f10de5eb796ad71e8f0da2">   84</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_PROC_CALL         4  </span><span class="comment">// Sélectionne un registre et échange des données</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="i2c_8h.html#a0253f81d1f2732492c1a05dc41094d12">   90</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_BLOCK_DATA        5  </span><span class="comment">// Lecture et écriture d&#39;un bloc de données</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classi2c.html#a06301451fcee29a607b323abc5dc00bf">   93</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classi2c.html#a06301451fcee29a607b323abc5dc00bf">fd</a>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classi2c.html#aea39837fb935ecdf947846a92379b2f7">   94</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classi2c.html#aea39837fb935ecdf947846a92379b2f7">error</a>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">int</span> i2c_smbus_access (<span class="keywordtype">char</span> rw, uint8_t command, <span class="keywordtype">int</span> size, <span class="keyword">union</span> <a class="code" href="unioni2c__smbus__data.html">i2c_smbus_data</a> *data);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="i2c_8h.html#a36bcbcb9294695fddb8606a32cbedc9b">   97</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_I2C_BLOCK_BROKEN  6</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// I2C_H_INCLUDED</span></div>
-<div class="ttc" id="aclassi2c_html"><div class="ttname"><a href="classi2c.html">i2c</a></div><div class="ttdef"><b>Definition:</b> i2c.h:69</div></div>
-<div class="ttc" id="aclassi2c_html_a06301451fcee29a607b323abc5dc00bf"><div class="ttname"><a href="classi2c.html#a06301451fcee29a607b323abc5dc00bf">i2c::fd</a></div><div class="ttdeci">int fd</div><div class="ttdef"><b>Definition:</b> i2c.h:93</div></div>
-<div class="ttc" id="aclassi2c_html_aea39837fb935ecdf947846a92379b2f7"><div class="ttname"><a href="classi2c.html#aea39837fb935ecdf947846a92379b2f7">i2c::error</a></div><div class="ttdeci">bool error</div><div class="ttdef"><b>Definition:</b> i2c.h:94</div></div>
-<div class="ttc" id="ai2c_8h_html_ac2dd8b77e329bba4a3ca9cd275f9bf50"><div class="ttname"><a href="i2c_8h.html#ac2dd8b77e329bba4a3ca9cd275f9bf50">I2C_SMBUS_BLOCK_MAX</a></div><div class="ttdeci">#define I2C_SMBUS_BLOCK_MAX</div><div class="ttdef"><b>Definition:</b> i2c.h:43</div></div>
-<div class="ttc" id="astructi2c__smbus__ioctl__data_html"><div class="ttname"><a href="structi2c__smbus__ioctl__data.html">i2c_smbus_ioctl_data</a></div><div class="ttdef"><b>Definition:</b> i2c.h:59</div></div>
-<div class="ttc" id="astructi2c__smbus__ioctl__data_html_a777bacfabf66ba077b40d1c835c7879f"><div class="ttname"><a href="structi2c__smbus__ioctl__data.html#a777bacfabf66ba077b40d1c835c7879f">i2c_smbus_ioctl_data::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition:</b> i2c.h:62</div></div>
-<div class="ttc" id="astructi2c__smbus__ioctl__data_html_adaacbd70d47e01e8bca1457b721089e7"><div class="ttname"><a href="structi2c__smbus__ioctl__data.html#adaacbd70d47e01e8bca1457b721089e7">i2c_smbus_ioctl_data::command</a></div><div class="ttdeci">uint8_t command</div><div class="ttdef"><b>Definition:</b> i2c.h:61</div></div>
-<div class="ttc" id="astructi2c__smbus__ioctl__data_html_add449c765b690f883e5771132d16a4f8"><div class="ttname"><a href="structi2c__smbus__ioctl__data.html#add449c765b690f883e5771132d16a4f8">i2c_smbus_ioctl_data::read_write</a></div><div class="ttdeci">char read_write</div><div class="ttdef"><b>Definition:</b> i2c.h:60</div></div>
-<div class="ttc" id="astructi2c__smbus__ioctl__data_html_af5a53e4ed38f278bd5fb62a65b67432d"><div class="ttname"><a href="structi2c__smbus__ioctl__data.html#af5a53e4ed38f278bd5fb62a65b67432d">i2c_smbus_ioctl_data::data</a></div><div class="ttdeci">union i2c_smbus_data * data</div><div class="ttdef"><b>Definition:</b> i2c.h:63</div></div>
-<div class="ttc" id="aunioni2c__smbus__data_html"><div class="ttname"><a href="unioni2c__smbus__data.html">i2c_smbus_data</a></div><div class="ttdef"><b>Definition:</b> i2c.h:52</div></div>
-<div class="ttc" id="aunioni2c__smbus__data_html_a7145699abf962d118aa1c78ff864e892"><div class="ttname"><a href="unioni2c__smbus__data.html#a7145699abf962d118aa1c78ff864e892">i2c_smbus_data::byte</a></div><div class="ttdeci">uint8_t byte</div><div class="ttdef"><b>Definition:</b> i2c.h:53</div></div>
-<div class="ttc" id="aunioni2c__smbus__data_html_ae8621bf131cbdfff90b21499a2c11a26"><div class="ttname"><a href="unioni2c__smbus__data.html#ae8621bf131cbdfff90b21499a2c11a26">i2c_smbus_data::word</a></div><div class="ttdeci">uint16_t word</div><div class="ttdef"><b>Definition:</b> i2c.h:54</div></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="i2c_8h.html#a187e1de23e9935885cdb94ee429a2eed">  103</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_BLOCK_PROC_CALL   7</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="i2c_8h.html#aa5ecbb0ceaddcb905d68d366edfb026c">  109</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_I2C_BLOCK_DATA    8</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">// Messages SMBus</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="i2c_8h.html#ac2dd8b77e329bba4a3ca9cd275f9bf50">  117</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_BLOCK_MAX     32      </span><span class="comment">/* taille maxi d&#39;un bloc de données */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="i2c_8h.html#a13045bd7a62d8d55acbcf174b7149cbf">  123</a></span>&#160;<span class="preprocessor">#define I2C_SMBUS_I2C_BLOCK_MAX 32      </span><span class="comment">/* Non spécifié, mais utilise la même structure */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">// Structures utilisées par les appels ioctl()</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="unioni2c__smbus__data.html">  135</a></span>&#160;<span class="keyword">union </span><a class="code" href="unioni2c__smbus__data.html">i2c_smbus_data</a></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;{</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="unioni2c__smbus__data.html#a7145699abf962d118aa1c78ff864e892">  137</a></span>&#160;    uint8_t  <a class="code" href="unioni2c__smbus__data.html#a7145699abf962d118aa1c78ff864e892">byte</a> ; </div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="unioni2c__smbus__data.html#ae8621bf131cbdfff90b21499a2c11a26">  138</a></span>&#160;    uint16_t <a class="code" href="unioni2c__smbus__data.html#ae8621bf131cbdfff90b21499a2c11a26">word</a> ; </div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="unioni2c__smbus__data.html#a56729c242baa246a3105fd7c64b86f48">  139</a></span>&#160;    uint8_t  block [<a class="code" href="i2c_8h.html#ac2dd8b77e329bba4a3ca9cd275f9bf50">I2C_SMBUS_BLOCK_MAX</a> + 2] ;    </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;};</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="structi2c__smbus__ioctl__data.html">  148</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structi2c__smbus__ioctl__data.html">i2c_smbus_ioctl_data</a></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="structi2c__smbus__ioctl__data.html#add449c765b690f883e5771132d16a4f8">  150</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="structi2c__smbus__ioctl__data.html#add449c765b690f883e5771132d16a4f8">read_write</a> ; </div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="structi2c__smbus__ioctl__data.html#adaacbd70d47e01e8bca1457b721089e7">  151</a></span>&#160;    uint8_t <a class="code" href="structi2c__smbus__ioctl__data.html#adaacbd70d47e01e8bca1457b721089e7">command</a> ; </div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="structi2c__smbus__ioctl__data.html#a777bacfabf66ba077b40d1c835c7879f">  152</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structi2c__smbus__ioctl__data.html#a777bacfabf66ba077b40d1c835c7879f">size</a> ;        </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="structi2c__smbus__ioctl__data.html#af5a53e4ed38f278bd5fb62a65b67432d">  153</a></span>&#160;    <span class="keyword">union </span><a class="code" href="unioni2c__smbus__data.html">i2c_smbus_data</a> *<a class="code" href="structi2c__smbus__ioctl__data.html#af5a53e4ed38f278bd5fb62a65b67432d">data</a> ; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;};</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="classi2c.html">  164</a></span>&#160;<span class="keyword">class </span><a class="code" href="classi2c.html">i2c</a></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="classi2c.html">i2c</a>(<span class="keywordtype">int</span> adresseI2C, <span class="keywordtype">int</span> idBusI2C=1);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">//idBusI2C = 0 pour les raspberry version 1</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">//idBusI2C = 1 pour les raspberry version 2 et 3</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">bool</span> getError();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> Read ();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> ReadReg8 (<span class="keywordtype">int</span> reg);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> ReadReg16 (<span class="keywordtype">int</span> reg);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">int</span> ReadBlockData (<span class="keywordtype">int</span> reg, <span class="keywordtype">int</span> length, <span class="keywordtype">int</span> *values);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> Write (<span class="keywordtype">int</span> data);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> WriteReg8 (<span class="keywordtype">int</span> reg, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> WriteReg16 (<span class="keywordtype">int</span> reg, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordtype">int</span> WriteBlockData (<span class="keywordtype">int</span> reg, <span class="keywordtype">int</span> length, <span class="keywordtype">int</span> *data);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordtype">int</span> delay_ms(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> num_ms);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="classi2c.html#a06301451fcee29a607b323abc5dc00bf">  266</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classi2c.html#a06301451fcee29a607b323abc5dc00bf">fd</a>; </div>
+<div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="classi2c.html#aea39837fb935ecdf947846a92379b2f7">  267</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classi2c.html#aea39837fb935ecdf947846a92379b2f7">error</a>; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> i2c_smbus_access (<span class="keywordtype">char</span> rw, uint8_t command, <span class="keywordtype">int</span> size, <span class="keyword">union</span> <a class="code" href="unioni2c__smbus__data.html">i2c_smbus_data</a> *data);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;};</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// I2C_H_INCLUDED</span></div>
+<div class="ttc" id="aclassi2c_html"><div class="ttname"><a href="classi2c.html">i2c</a></div><div class="ttdoc">Classe permettant la gestion des communications I2C avec un périphérique.</div><div class="ttdef"><b>Definition:</b> i2c.h:165</div></div>
+<div class="ttc" id="aclassi2c_html_a06301451fcee29a607b323abc5dc00bf"><div class="ttname"><a href="classi2c.html#a06301451fcee29a607b323abc5dc00bf">i2c::fd</a></div><div class="ttdeci">int fd</div><div class="ttdoc">Descripteur de fichier pour la communication I2C.</div><div class="ttdef"><b>Definition:</b> i2c.h:266</div></div>
+<div class="ttc" id="aclassi2c_html_aea39837fb935ecdf947846a92379b2f7"><div class="ttname"><a href="classi2c.html#aea39837fb935ecdf947846a92379b2f7">i2c::error</a></div><div class="ttdeci">bool error</div><div class="ttdoc">Indicateur d'erreur de communication.</div><div class="ttdef"><b>Definition:</b> i2c.h:267</div></div>
+<div class="ttc" id="ai2c_8h_html_ac2dd8b77e329bba4a3ca9cd275f9bf50"><div class="ttname"><a href="i2c_8h.html#ac2dd8b77e329bba4a3ca9cd275f9bf50">I2C_SMBUS_BLOCK_MAX</a></div><div class="ttdeci">#define I2C_SMBUS_BLOCK_MAX</div><div class="ttdoc">Taille maximale d'un bloc de données dans SMBus.</div><div class="ttdef"><b>Definition:</b> i2c.h:117</div></div>
+<div class="ttc" id="astructi2c__smbus__ioctl__data_html"><div class="ttname"><a href="structi2c__smbus__ioctl__data.html">i2c_smbus_ioctl_data</a></div><div class="ttdoc">Structure utilisée pour les opérations SMBus via ioctl().</div><div class="ttdef"><b>Definition:</b> i2c.h:149</div></div>
+<div class="ttc" id="astructi2c__smbus__ioctl__data_html_a777bacfabf66ba077b40d1c835c7879f"><div class="ttname"><a href="structi2c__smbus__ioctl__data.html#a777bacfabf66ba077b40d1c835c7879f">i2c_smbus_ioctl_data::size</a></div><div class="ttdeci">int size</div><div class="ttdoc">Taille des données à lire/écrire.</div><div class="ttdef"><b>Definition:</b> i2c.h:152</div></div>
+<div class="ttc" id="astructi2c__smbus__ioctl__data_html_adaacbd70d47e01e8bca1457b721089e7"><div class="ttname"><a href="structi2c__smbus__ioctl__data.html#adaacbd70d47e01e8bca1457b721089e7">i2c_smbus_ioctl_data::command</a></div><div class="ttdeci">uint8_t command</div><div class="ttdoc">Commande SMBus à envoyer.</div><div class="ttdef"><b>Definition:</b> i2c.h:151</div></div>
+<div class="ttc" id="astructi2c__smbus__ioctl__data_html_add449c765b690f883e5771132d16a4f8"><div class="ttname"><a href="structi2c__smbus__ioctl__data.html#add449c765b690f883e5771132d16a4f8">i2c_smbus_ioctl_data::read_write</a></div><div class="ttdeci">char read_write</div><div class="ttdoc">Indique si l'opération est de lecture ou d'écriture.</div><div class="ttdef"><b>Definition:</b> i2c.h:150</div></div>
+<div class="ttc" id="astructi2c__smbus__ioctl__data_html_af5a53e4ed38f278bd5fb62a65b67432d"><div class="ttname"><a href="structi2c__smbus__ioctl__data.html#af5a53e4ed38f278bd5fb62a65b67432d">i2c_smbus_ioctl_data::data</a></div><div class="ttdeci">union i2c_smbus_data * data</div><div class="ttdoc">Données à envoyer ou à recevoir.</div><div class="ttdef"><b>Definition:</b> i2c.h:153</div></div>
+<div class="ttc" id="aunioni2c__smbus__data_html"><div class="ttname"><a href="unioni2c__smbus__data.html">i2c_smbus_data</a></div><div class="ttdoc">Union permettant de stocker les données pour une transaction SMBus.</div><div class="ttdef"><b>Definition:</b> i2c.h:136</div></div>
+<div class="ttc" id="aunioni2c__smbus__data_html_a7145699abf962d118aa1c78ff864e892"><div class="ttname"><a href="unioni2c__smbus__data.html#a7145699abf962d118aa1c78ff864e892">i2c_smbus_data::byte</a></div><div class="ttdeci">uint8_t byte</div><div class="ttdoc">Données sous forme d'octet.</div><div class="ttdef"><b>Definition:</b> i2c.h:137</div></div>
+<div class="ttc" id="aunioni2c__smbus__data_html_ae8621bf131cbdfff90b21499a2c11a26"><div class="ttname"><a href="unioni2c__smbus__data.html#ae8621bf131cbdfff90b21499a2c11a26">i2c_smbus_data::word</a></div><div class="ttdeci">uint16_t word</div><div class="ttdoc">Données sous forme de mot.</div><div class="ttdef"><b>Definition:</b> i2c.h:138</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

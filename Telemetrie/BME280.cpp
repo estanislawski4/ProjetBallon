@@ -18,8 +18,16 @@
 
 using namespace std;
 
-// Le constructeur
+/**
+ * @class BME280
+ * @brief Classe permettant d'interagir avec un capteur BME280 via I2C
+ */
 
+/**
+ * @brief Constructeur de la classe BME280
+ * @param i2cAddress Adresse I2C du capteur (0x76 ou 0x77)
+ * @throws std::runtime_error si la communication I2C échoue
+ */
 BME280::BME280(int i2cAddress) {
     deviceI2C = new i2c(i2cAddress);
     if (!deviceI2C->getError()) {
@@ -36,18 +44,25 @@ BME280::BME280(int i2cAddress) {
     }
 }
 
+/**
+ * @brief Destructeur de la classe BME280
+ */
 BME280::~BME280() {
     if (deviceI2C != NULL)
         delete deviceI2C;
 }
 
-
-// Méthode pour obtenir le Chip ID (0x60 pour le BME280)
-
+/**
+ * @brief Obtient l'identifiant du capteur (0x60 pour BME280)
+ * @return Identifiant du capteur
+ */
 unsigned int BME280::obtenirChipID() {
     return (unsigned int) deviceI2C->ReadReg8(CHIPID);
 }
 
+/**
+ * @brief Lit les données de calibration du capteur
+ */
 void BME280::readCalibrationData() {
     cal.dig_T1 = (uint16_t) deviceI2C->ReadReg16(DIG_T1);
     cal.dig_T2 = (int16_t) deviceI2C->ReadReg16(DIG_T2);
@@ -71,6 +86,9 @@ void BME280::readCalibrationData() {
     cal.dig_H6 = (int8_t) deviceI2C->ReadReg8(DIG_H6);
 }
 
+/**
+ * @brief Lit les données brutes du capteur
+ */
 void BME280::getRawData() {
 
     deviceI2C->Write(0xf7);
@@ -102,6 +120,10 @@ void BME280::getRawData() {
     raw.humidity = (raw.humidity | raw.hlsb);
 }
 
+/**
+ * @brief Obtient la température en degrés Celsius
+ * @return Température en °C
+ */
 double BME280::obtenirTemperatureEnC() {
     double var1;
     double var2;
@@ -125,6 +147,10 @@ double BME280::obtenirTemperatureEnC() {
     return temperature;
 }
 
+/**
+ * @brief Obtient la température en degrés Fahrenheit
+ * @return Température en °F
+ */
 double BME280::obtenirTemperatureEnF() {
     double output = obtenirTemperatureEnC();
     output = (output * 9) / 5 + 32;
@@ -137,6 +163,10 @@ double BME280::obtenirTemperatureEnF() {
 // (24 bits pour la partie entière et 8 bits pour la partie fractionnaire).
 // 24674867 represente 24674867/256 = 96386.2 Pa ou 24674867/25600 963.862 hPa
 
+/**
+ * @brief Obtient la pression atmosphérique en hPa
+ * @return Pression en hPa
+ */
 double BME280::obtenirPression() {
     double var1;
     double var2;
@@ -176,6 +206,10 @@ double BME280::obtenirPression() {
 
 // retourne le taux d'humidité relative en %
 
+/**
+ * @brief Obtient le taux d'humidité relative en %
+ * @return Humidité en %
+ */
 double BME280::obtenirHumidite() {
     double humidity;
     double humidity_min = 0.0;
@@ -209,6 +243,10 @@ double BME280::obtenirHumidite() {
 // Selon l'atmosphère standard internationale (ISA) ou atmosphère normalisée
 // (appelée aussi QNH en aviation) qui ne tient pas compte de la température réelle.
 
+/**
+ * @brief Obtient la pression avec réduction au niveau de la mer
+ * @return Pression au niveau de la mer en hPa
+ */
 double BME280::obtenirPression0() {
     double P = obtenirPression();
     return P * (pow(1.0 - (0.0065 * h / (273.15 + 15)), 5.255));
@@ -217,12 +255,18 @@ double BME280::obtenirPression0() {
 // h = différence d'altitude du capteur avec P (mètres),
 // négatif pour les élévations, positif pour les dépressions (la Mer Morte par exemple)
 
+/**
+ * \brief Définit l'altitude pour le calcul de la pression au niveau de la mer
+ * \param altitude Différence d'altitude en mètres
+ */
 void BME280::donnerAltitude(double altitude) {
     this->h = altitude * -1.0;
 }
 
-// retourne la valeur du point de rosée
-
+/**
+ * @brief Obtient la température du point de rosée
+ * @return Point de rosée en °C
+ */
 double BME280::obtenirPointDeRosee() {
     double ai = 7.45;
     double bi = 235.0;
@@ -245,6 +289,9 @@ double BME280::obtenirPointDeRosee() {
 
 // retourne la version de la classe
 
+/**
+ * \brief Affiche la version de la classe
+ */
 void BME280::version() {
 
     cout << "\nBME280 PSR Version 2.0\n" << endl;

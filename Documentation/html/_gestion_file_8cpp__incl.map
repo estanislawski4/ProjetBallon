@@ -1,6 +1,6 @@
 <map id="/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/ProjetBallon/Telemetrie/GestionFile.cpp" name="/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/ProjetBallon/Telemetrie/GestionFile.cpp">
 <area shape="rect" id="node1" title=" " alt="" coords="218,5,399,76"/>
-<area shape="rect" id="node2" href="$_gestion_file_8h.html" title=" " alt="" coords="205,124,303,151"/>
+<area shape="rect" id="node2" href="$_gestion_file_8h.html" title="Classe qui gère les files IPC (Inter Process Communication)." alt="" coords="205,124,303,151"/>
 <area shape="rect" id="node9" title=" " alt="" coords="327,124,399,151"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,199,60,225"/>
 <area shape="rect" id="node4" title=" " alt="" coords="85,199,143,225"/>

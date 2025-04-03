@@ -22,8 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Ballon stratosphérique
-   &#160;<span id="projectnumber">1.2</span>
+   &#160;<span id="projectnumber">1.4</span>
    </div>
+   <div id="projectbrief">Programme de télémétrie du projet</div>
   </td>
  </tr>
  </tbody>
@@ -71,32 +72,42 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Classe pour la gestion des files IPC.  
+ <a href="class_gestion_file.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_gestion_file_8h_source.html">GestionFile.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a623c8c001d8987db946d39ac0d4d34b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_file.html#a623c8c001d8987db946d39ac0d4d34b5">GestionFile</a> ()</td></tr>
+<tr class="memdesc:a623c8c001d8987db946d39ac0d4d34b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="class_gestion_file.html" title="Classe pour la gestion des files IPC.">GestionFile</a>.  <a href="class_gestion_file.html#a623c8c001d8987db946d39ac0d4d34b5">More...</a><br /></td></tr>
 <tr class="separator:a623c8c001d8987db946d39ac0d4d34b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72decf1c58ce145884e9a8bfa05c699b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_file.html#a72decf1c58ce145884e9a8bfa05c699b">~GestionFile</a> ()</td></tr>
+<tr class="memdesc:a72decf1c58ce145884e9a8bfa05c699b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe <a class="el" href="class_gestion_file.html" title="Classe pour la gestion des files IPC.">GestionFile</a>.  <a href="class_gestion_file.html#a72decf1c58ce145884e9a8bfa05c699b">More...</a><br /></td></tr>
 <tr class="separator:a72decf1c58ce145884e9a8bfa05c699b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5b3074925aebd7eaf5450fc72062bfa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_file.html#ad5b3074925aebd7eaf5450fc72062bfa">obtenirFileIPC</a> (const int key)</td></tr>
-<tr class="memdesc:ad5b3074925aebd7eaf5450fc72062bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_gestion_file.html#ad5b3074925aebd7eaf5450fc72062bfa" title="GestionFile::obtenirFileIPC.">GestionFile::obtenirFileIPC</a>.  <a href="class_gestion_file.html#ad5b3074925aebd7eaf5450fc72062bfa">More...</a><br /></td></tr>
+<tr class="memdesc:ad5b3074925aebd7eaf5450fc72062bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouvre la file IPC avec une clé spécifique.  <a href="class_gestion_file.html#ad5b3074925aebd7eaf5450fc72062bfa">More...</a><br /></td></tr>
 <tr class="separator:ad5b3074925aebd7eaf5450fc72062bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf1e693750c81f18aaa35c47397d8680"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_file.html#aaf1e693750c81f18aaa35c47397d8680">ecrireDansLaFileIPC</a> (const std::string &amp;payload)</td></tr>
-<tr class="memdesc:aaf1e693750c81f18aaa35c47397d8680"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_gestion_file.html#aaf1e693750c81f18aaa35c47397d8680" title="GestionFile::ecrireDansLaFileIPC.">GestionFile::ecrireDansLaFileIPC</a>.  <a href="class_gestion_file.html#aaf1e693750c81f18aaa35c47397d8680">More...</a><br /></td></tr>
+<tr class="memdesc:aaf1e693750c81f18aaa35c47397d8680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Écrit un message dans la file IPC.  <a href="class_gestion_file.html#aaf1e693750c81f18aaa35c47397d8680">More...</a><br /></td></tr>
 <tr class="separator:aaf1e693750c81f18aaa35c47397d8680"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a177f900b6013b03f60d265b2029eb32a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_message_r_x.html">MessageRX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_file.html#a177f900b6013b03f60d265b2029eb32a">lireDansLaFileIPC</a> (int type)</td></tr>
-<tr class="memdesc:a177f900b6013b03f60d265b2029eb32a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_gestion_file.html#a177f900b6013b03f60d265b2029eb32a" title="GestionFile::lireDansLaFileIPC fonction bloquante.">GestionFile::lireDansLaFileIPC</a> fonction bloquante.  <a href="class_gestion_file.html#a177f900b6013b03f60d265b2029eb32a">More...</a><br /></td></tr>
+<tr class="memdesc:a177f900b6013b03f60d265b2029eb32a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lit un message dans la file IPC.  <a href="class_gestion_file.html#a177f900b6013b03f60d265b2029eb32a">More...</a><br /></td></tr>
 <tr class="separator:a177f900b6013b03f60d265b2029eb32a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a90a1fb740e5e4c9ce79736e18bde569f"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_file.html#a90a1fb740e5e4c9ce79736e18bde569f">mutexTx</a></td></tr>
+<tr class="memdesc:a90a1fb740e5e4c9ce79736e18bde569f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex pour la synchronisation lors de l'écriture dans la file.  <a href="class_gestion_file.html#a90a1fb740e5e4c9ce79736e18bde569f">More...</a><br /></td></tr>
 <tr class="separator:a90a1fb740e5e4c9ce79736e18bde569f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af184c4a4bcb55cab285654f31af91a01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_file.html#af184c4a4bcb55cab285654f31af91a01">fileId</a></td></tr>
+<tr class="memdesc:af184c4a4bcb55cab285654f31af91a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifiant de la file IPC.  <a href="class_gestion_file.html#af184c4a4bcb55cab285654f31af91a01">More...</a><br /></td></tr>
 <tr class="separator:af184c4a4bcb55cab285654f31af91a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Classe pour la gestion des files IPC. </p>
+<p>Cette classe permet de gérer les files de messages IPC, permettant ainsi l'échange de données entre différents processus. Elle offre des méthodes pour créer une file IPC, écrire dans la file, et lire les messages à partir de la file. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a623c8c001d8987db946d39ac0d4d34b5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a623c8c001d8987db946d39ac0d4d34b5">&#9670;&nbsp;</a></span>GestionFile()</h2>
 
@@ -111,6 +122,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructeur de la classe <a class="el" href="class_gestion_file.html" title="Classe pour la gestion des files IPC.">GestionFile</a>. </p>
+<p>Initialise l'objet <a class="el" href="class_gestion_file.html" title="Classe pour la gestion des files IPC.">GestionFile</a> et prépare la file IPC. </p>
 
 </div>
 </div>
@@ -128,6 +142,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destructeur de la classe <a class="el" href="class_gestion_file.html" title="Classe pour la gestion des files IPC.">GestionFile</a>. </p>
+<p>Libère la file IPC lorsque l'objet est détruit. </p>
 
 </div>
 </div>
@@ -148,7 +165,17 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_gestion_file.html#aaf1e693750c81f18aaa35c47397d8680" title="GestionFile::ecrireDansLaFileIPC.">GestionFile::ecrireDansLaFileIPC</a>. </p>
+<p>Écrit un message dans la file IPC. </p>
+<p><a class="el" href="class_gestion_file.html#aaf1e693750c81f18aaa35c47397d8680" title="Écrit un message dans la file IPC.">GestionFile::ecrireDansLaFileIPC</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Le message à envoyer dans la file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Si le message a été écrit avec succès. </dd>
+<dd>
+false Si l'écriture dans la file échoue.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">payload</td><td>le message à placer dans la fileTX </td></tr>
@@ -176,14 +203,28 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_gestion_file.html#a177f900b6013b03f60d265b2029eb32a" title="GestionFile::lireDansLaFileIPC fonction bloquante.">GestionFile::lireDansLaFileIPC</a> fonction bloquante. </p>
+<p>Lit un message dans la file IPC. </p>
+<p><a class="el" href="class_gestion_file.html#a177f900b6013b03f60d265b2029eb32a" title="Lit un message dans la file IPC.">GestionFile::lireDansLaFileIPC</a> fonction bloquante.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Le type du message à lire. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_message_r_x.html" title="Structure pour le message de réception (RX).">MessageRX</a> Le message reçu dans la file IPC. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>Si la lecture échoue.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">type</td><td>le type du message </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>une structure <a class="el" href="struct_message_r_x.html">MessageRX</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>une structure <a class="el" href="struct_message_r_x.html" title="Structure pour le message de réception (RX).">MessageRX</a> </dd></dl>
 
 </div>
 </div>
@@ -203,7 +244,20 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_gestion_file.html#ad5b3074925aebd7eaf5450fc72062bfa" title="GestionFile::obtenirFileIPC.">GestionFile::obtenirFileIPC</a>. </p>
+<p>Ouvre la file IPC avec une clé spécifique. </p>
+<p><a class="el" href="class_gestion_file.html#ad5b3074925aebd7eaf5450fc72062bfa" title="Ouvre la file IPC avec une clé spécifique.">GestionFile::obtenirFileIPC</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Clé unique permettant d'identifier la file IPC. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>Si l'ouverture de la file échoue.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>Une clé (de type int) qui identifie de manière unique la file de messages. </td></tr>
@@ -234,6 +288,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Identifiant de la file IPC. </p>
+
 </div>
 </div>
 <a id="a90a1fb740e5e4c9ce79736e18bde569f"></a>
@@ -255,6 +311,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Mutex pour la synchronisation lors de l'écriture dans la file. </p>
 
 </div>
 </div>

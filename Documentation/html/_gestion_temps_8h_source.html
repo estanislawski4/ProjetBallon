@@ -22,8 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Ballon stratosphérique
-   &#160;<span id="projectnumber">1.2</span>
+   &#160;<span id="projectnumber">1.4</span>
    </div>
+   <div id="projectbrief">Programme de télémétrie du projet</div>
   </td>
  </tr>
  </tbody>
@@ -70,71 +71,76 @@ $(function() {
 <div class="title">GestionTemps.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_gestion_temps_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   GestionTemps.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: dbrochard</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created on 27 mars 2024, 15:01</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef GestionTemps_H</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define GestionTemps_H</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Structure pour stocker le temps</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_temps.html">   17</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_temps.html">Temps</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_temps.html#a5c8002a551ac0bc46efea0a1ba64a155">   19</a></span>&#160;    std::string <a class="code" href="struct_temps.html#a5c8002a551ac0bc46efea0a1ba64a155">annee</a>{};</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_temps.html#aeff9a659d797ee4b245e9e2e2eb0aebd">   20</a></span>&#160;    std::string <a class="code" href="struct_temps.html#aeff9a659d797ee4b245e9e2e2eb0aebd">mois</a>{};</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_temps.html#a4c107bbd2b241396e3cc02d3cec3c671">   21</a></span>&#160;    std::string <a class="code" href="struct_temps.html#a4c107bbd2b241396e3cc02d3cec3c671">jour</a>{};</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct_temps.html#a9fa1651c3ee90c17b6f892bc1bd4f140">   22</a></span>&#160;    std::string <a class="code" href="struct_temps.html#a9fa1651c3ee90c17b6f892bc1bd4f140">heure</a>{};</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_temps.html#a15cca16b379be5715dadcd07f8a09127">   23</a></span>&#160;    std::string <a class="code" href="struct_temps.html#a15cca16b379be5715dadcd07f8a09127">minute</a>{};</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct_temps.html#a2a7d38912375750e3fffda700d872d01">   24</a></span>&#160;    std::string <a class="code" href="struct_temps.html#a2a7d38912375750e3fffda700d872d01">seconde</a>{};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_gestion_temps.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_gestion_temps.html">GestionTemps</a></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_gestion_temps.html#aa715dfcd3799537f50353138e7320547">GestionTemps</a>(); <span class="comment">// Constructeur</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_gestion_temps.html#a0ac6adf77d4dfe02ac6121d3de20778d">~GestionTemps</a>(); <span class="comment">// Destructeur</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::tm <a class="code" href="class_gestion_temps.html#a37c4b0c5bf5d486bb45fee134f4c72d5">obtenirHeureActuelle</a>(); <span class="comment">// Méthode pour obtenir l&#39;heure actuelle</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d">majDate</a>();                 <span class="comment">// Méthode pour mettre à jour la date</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::string <a class="code" href="class_gestion_temps.html#a2db08517de566774cd4c6e4a700256e8">getDateFormatee</a>();  <span class="comment">// Méthode pour obtenir la date et l&#39;heure sous format aaaa-mm-jj hh:mm:ss</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::string <a class="code" href="class_gestion_temps.html#a831a7330612ea8d5e5f68c4b5760bf9f">getDateAprs</a>();      <span class="comment">// Méthode pour obtenir la date mois jour heure minute format aprs</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::string <a class="code" href="class_gestion_temps.html#ad317655b2081dd9dd473d95ff05a12ac">generateFilename</a>(); <span class="comment">// Méthode pour générer un nom de fichier</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<a href="_gestion_temps_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * File:   GestionTemps.h</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author: dbrochard</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Created on 27 mars 2024, 15:01</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef GestionTemps_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define GestionTemps_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_temps.html">   23</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_temps.html">Temps</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="struct_temps.html#a5c8002a551ac0bc46efea0a1ba64a155">   25</a></span>&#160;    std::string <a class="code" href="struct_temps.html#a5c8002a551ac0bc46efea0a1ba64a155">annee</a>{};    </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="struct_temps.html#aeff9a659d797ee4b245e9e2e2eb0aebd">   26</a></span>&#160;    std::string <a class="code" href="struct_temps.html#aeff9a659d797ee4b245e9e2e2eb0aebd">mois</a>{};     </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="struct_temps.html#a4c107bbd2b241396e3cc02d3cec3c671">   27</a></span>&#160;    std::string <a class="code" href="struct_temps.html#a4c107bbd2b241396e3cc02d3cec3c671">jour</a>{};     </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="struct_temps.html#a9fa1651c3ee90c17b6f892bc1bd4f140">   28</a></span>&#160;    std::string <a class="code" href="struct_temps.html#a9fa1651c3ee90c17b6f892bc1bd4f140">heure</a>{};    </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="struct_temps.html#a15cca16b379be5715dadcd07f8a09127">   29</a></span>&#160;    std::string <a class="code" href="struct_temps.html#a15cca16b379be5715dadcd07f8a09127">minute</a>{};   </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="struct_temps.html#a2a7d38912375750e3fffda700d872d01">   30</a></span>&#160;    std::string <a class="code" href="struct_temps.html#a2a7d38912375750e3fffda700d872d01">seconde</a>{};  </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_gestion_temps.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_gestion_temps.html">GestionTemps</a></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_gestion_temps.html#a5c5bc1ba7d6775dade99eda323edf41d">   45</a></span>&#160;    <a class="code" href="struct_temps.html">Temps</a> <a class="code" href="class_gestion_temps.html#a5c5bc1ba7d6775dade99eda323edf41d">temps</a>; <span class="comment">// Variable pour stocker le temps</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* GestionTemps_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aclass_gestion_temps_html"><div class="ttname"><a href="class_gestion_temps.html">GestionTemps</a></div><div class="ttdef"><b>Definition:</b> GestionTemps.h:29</div></div>
-<div class="ttc" id="aclass_gestion_temps_html_a0ac6adf77d4dfe02ac6121d3de20778d"><div class="ttname"><a href="class_gestion_temps.html#a0ac6adf77d4dfe02ac6121d3de20778d">GestionTemps::~GestionTemps</a></div><div class="ttdeci">~GestionTemps()</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:15</div></div>
-<div class="ttc" id="aclass_gestion_temps_html_a2db08517de566774cd4c6e4a700256e8"><div class="ttname"><a href="class_gestion_temps.html#a2db08517de566774cd4c6e4a700256e8">GestionTemps::getDateFormatee</a></div><div class="ttdeci">std::string getDateFormatee()</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:63</div></div>
-<div class="ttc" id="aclass_gestion_temps_html_a37c4b0c5bf5d486bb45fee134f4c72d5"><div class="ttname"><a href="class_gestion_temps.html#a37c4b0c5bf5d486bb45fee134f4c72d5">GestionTemps::obtenirHeureActuelle</a></div><div class="ttdeci">std::tm obtenirHeureActuelle()</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:20</div></div>
-<div class="ttc" id="aclass_gestion_temps_html_a5c5bc1ba7d6775dade99eda323edf41d"><div class="ttname"><a href="class_gestion_temps.html#a5c5bc1ba7d6775dade99eda323edf41d">GestionTemps::temps</a></div><div class="ttdeci">Temps temps</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:45</div></div>
-<div class="ttc" id="aclass_gestion_temps_html_a62c26df7ccb8857066d0cdbe02c2cf2d"><div class="ttname"><a href="class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d">GestionTemps::majDate</a></div><div class="ttdeci">void majDate()</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:28</div></div>
-<div class="ttc" id="aclass_gestion_temps_html_a831a7330612ea8d5e5f68c4b5760bf9f"><div class="ttname"><a href="class_gestion_temps.html#a831a7330612ea8d5e5f68c4b5760bf9f">GestionTemps::getDateAprs</a></div><div class="ttdeci">std::string getDateAprs()</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:58</div></div>
-<div class="ttc" id="aclass_gestion_temps_html_aa715dfcd3799537f50353138e7320547"><div class="ttname"><a href="class_gestion_temps.html#aa715dfcd3799537f50353138e7320547">GestionTemps::GestionTemps</a></div><div class="ttdeci">GestionTemps()</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:10</div></div>
-<div class="ttc" id="aclass_gestion_temps_html_ad317655b2081dd9dd473d95ff05a12ac"><div class="ttname"><a href="class_gestion_temps.html#ad317655b2081dd9dd473d95ff05a12ac">GestionTemps::generateFilename</a></div><div class="ttdeci">std::string generateFilename()</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:69</div></div>
-<div class="ttc" id="astruct_temps_html"><div class="ttname"><a href="struct_temps.html">Temps</a></div><div class="ttdef"><b>Definition:</b> GestionTemps.h:18</div></div>
-<div class="ttc" id="astruct_temps_html_a15cca16b379be5715dadcd07f8a09127"><div class="ttname"><a href="struct_temps.html#a15cca16b379be5715dadcd07f8a09127">Temps::minute</a></div><div class="ttdeci">std::string minute</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:23</div></div>
-<div class="ttc" id="astruct_temps_html_a2a7d38912375750e3fffda700d872d01"><div class="ttname"><a href="struct_temps.html#a2a7d38912375750e3fffda700d872d01">Temps::seconde</a></div><div class="ttdeci">std::string seconde</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:24</div></div>
-<div class="ttc" id="astruct_temps_html_a4c107bbd2b241396e3cc02d3cec3c671"><div class="ttname"><a href="struct_temps.html#a4c107bbd2b241396e3cc02d3cec3c671">Temps::jour</a></div><div class="ttdeci">std::string jour</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:21</div></div>
-<div class="ttc" id="astruct_temps_html_a5c8002a551ac0bc46efea0a1ba64a155"><div class="ttname"><a href="struct_temps.html#a5c8002a551ac0bc46efea0a1ba64a155">Temps::annee</a></div><div class="ttdeci">std::string annee</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:19</div></div>
-<div class="ttc" id="astruct_temps_html_a9fa1651c3ee90c17b6f892bc1bd4f140"><div class="ttname"><a href="struct_temps.html#a9fa1651c3ee90c17b6f892bc1bd4f140">Temps::heure</a></div><div class="ttdeci">std::string heure</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:22</div></div>
-<div class="ttc" id="astruct_temps_html_aeff9a659d797ee4b245e9e2e2eb0aebd"><div class="ttname"><a href="struct_temps.html#aeff9a659d797ee4b245e9e2e2eb0aebd">Temps::mois</a></div><div class="ttdeci">std::string mois</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:20</div></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_gestion_temps.html#aa715dfcd3799537f50353138e7320547">GestionTemps</a>(); <span class="comment">// Constructeur</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="class_gestion_temps.html#a0ac6adf77d4dfe02ac6121d3de20778d">~GestionTemps</a>(); <span class="comment">// Destructeur</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::tm <a class="code" href="class_gestion_temps.html#a37c4b0c5bf5d486bb45fee134f4c72d5">obtenirHeureActuelle</a>(); <span class="comment">// Méthode pour obtenir l&#39;heure actuelle</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d">majDate</a>();                 <span class="comment">// Méthode pour mettre à jour la date</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::string <a class="code" href="class_gestion_temps.html#a2db08517de566774cd4c6e4a700256e8">getDateFormatee</a>();  <span class="comment">// Méthode pour obtenir la date et l&#39;heure sous format aaaa-mm-jj hh:mm:ss</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::string <a class="code" href="class_gestion_temps.html#a831a7330612ea8d5e5f68c4b5760bf9f">getDateAprs</a>();      <span class="comment">// Méthode pour obtenir la date mois jour heure minute format aprs</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::string <a class="code" href="class_gestion_temps.html#ad317655b2081dd9dd473d95ff05a12ac">generateFilename</a>(); <span class="comment">// Méthode pour générer un nom de fichier</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_gestion_temps.html#a5c5bc1ba7d6775dade99eda323edf41d">  102</a></span>&#160;    <a class="code" href="struct_temps.html">Temps</a> <a class="code" href="class_gestion_temps.html#a5c5bc1ba7d6775dade99eda323edf41d">temps</a>; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* GestionTemps_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclass_gestion_temps_html"><div class="ttname"><a href="class_gestion_temps.html">GestionTemps</a></div><div class="ttdoc">Classe permettant de gérer la date et l'heure actuelles.</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:41</div></div>
+<div class="ttc" id="aclass_gestion_temps_html_a0ac6adf77d4dfe02ac6121d3de20778d"><div class="ttname"><a href="class_gestion_temps.html#a0ac6adf77d4dfe02ac6121d3de20778d">GestionTemps::~GestionTemps</a></div><div class="ttdeci">~GestionTemps()</div><div class="ttdoc">Destructeur de la classe GestionTemps.</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:22</div></div>
+<div class="ttc" id="aclass_gestion_temps_html_a2db08517de566774cd4c6e4a700256e8"><div class="ttname"><a href="class_gestion_temps.html#a2db08517de566774cd4c6e4a700256e8">GestionTemps::getDateFormatee</a></div><div class="ttdeci">std::string getDateFormatee()</div><div class="ttdoc">Obtient la date et l'heure au format &quot;aaaa-mm-jj hh:mm:ss&quot;.</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:84</div></div>
+<div class="ttc" id="aclass_gestion_temps_html_a37c4b0c5bf5d486bb45fee134f4c72d5"><div class="ttname"><a href="class_gestion_temps.html#a37c4b0c5bf5d486bb45fee134f4c72d5">GestionTemps::obtenirHeureActuelle</a></div><div class="ttdeci">std::tm obtenirHeureActuelle()</div><div class="ttdoc">Obtient l'heure actuelle.</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:30</div></div>
+<div class="ttc" id="aclass_gestion_temps_html_a5c5bc1ba7d6775dade99eda323edf41d"><div class="ttname"><a href="class_gestion_temps.html#a5c5bc1ba7d6775dade99eda323edf41d">GestionTemps::temps</a></div><div class="ttdeci">Temps temps</div><div class="ttdoc">Variable pour stocker la date et l'heure actuelles.</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:102</div></div>
+<div class="ttc" id="aclass_gestion_temps_html_a62c26df7ccb8857066d0cdbe02c2cf2d"><div class="ttname"><a href="class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d">GestionTemps::majDate</a></div><div class="ttdeci">void majDate()</div><div class="ttdoc">Met à jour la date actuelle.</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:41</div></div>
+<div class="ttc" id="aclass_gestion_temps_html_a831a7330612ea8d5e5f68c4b5760bf9f"><div class="ttname"><a href="class_gestion_temps.html#a831a7330612ea8d5e5f68c4b5760bf9f">GestionTemps::getDateAprs</a></div><div class="ttdeci">std::string getDateAprs()</div><div class="ttdoc">Obtient la date et l'heure au format APRS (Mois/Jour Heure:Minute).</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:75</div></div>
+<div class="ttc" id="aclass_gestion_temps_html_aa715dfcd3799537f50353138e7320547"><div class="ttname"><a href="class_gestion_temps.html#aa715dfcd3799537f50353138e7320547">GestionTemps::GestionTemps</a></div><div class="ttdeci">GestionTemps()</div><div class="ttdoc">Constructeur de la classe GestionTemps.</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:14</div></div>
+<div class="ttc" id="aclass_gestion_temps_html_ad317655b2081dd9dd473d95ff05a12ac"><div class="ttname"><a href="class_gestion_temps.html#ad317655b2081dd9dd473d95ff05a12ac">GestionTemps::generateFilename</a></div><div class="ttdeci">std::string generateFilename()</div><div class="ttdoc">Génère un nom de fichier basé sur la date actuelle.</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:94</div></div>
+<div class="ttc" id="astruct_temps_html"><div class="ttname"><a href="struct_temps.html">Temps</a></div><div class="ttdoc">Structure pour stocker les composants d'une date et d'une heure.</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:24</div></div>
+<div class="ttc" id="astruct_temps_html_a15cca16b379be5715dadcd07f8a09127"><div class="ttname"><a href="struct_temps.html#a15cca16b379be5715dadcd07f8a09127">Temps::minute</a></div><div class="ttdeci">std::string minute</div><div class="ttdoc">Les minutes sous forme de chaîne.</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:29</div></div>
+<div class="ttc" id="astruct_temps_html_a2a7d38912375750e3fffda700d872d01"><div class="ttname"><a href="struct_temps.html#a2a7d38912375750e3fffda700d872d01">Temps::seconde</a></div><div class="ttdeci">std::string seconde</div><div class="ttdoc">Les secondes sous forme de chaîne.</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:30</div></div>
+<div class="ttc" id="astruct_temps_html_a4c107bbd2b241396e3cc02d3cec3c671"><div class="ttname"><a href="struct_temps.html#a4c107bbd2b241396e3cc02d3cec3c671">Temps::jour</a></div><div class="ttdeci">std::string jour</div><div class="ttdoc">Le jour sous forme de chaîne.</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:27</div></div>
+<div class="ttc" id="astruct_temps_html_a5c8002a551ac0bc46efea0a1ba64a155"><div class="ttname"><a href="struct_temps.html#a5c8002a551ac0bc46efea0a1ba64a155">Temps::annee</a></div><div class="ttdeci">std::string annee</div><div class="ttdoc">L'année sous forme de chaîne.</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:25</div></div>
+<div class="ttc" id="astruct_temps_html_a9fa1651c3ee90c17b6f892bc1bd4f140"><div class="ttname"><a href="struct_temps.html#a9fa1651c3ee90c17b6f892bc1bd4f140">Temps::heure</a></div><div class="ttdeci">std::string heure</div><div class="ttdoc">L'heure sous forme de chaîne.</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:28</div></div>
+<div class="ttc" id="astruct_temps_html_aeff9a659d797ee4b245e9e2e2eb0aebd"><div class="ttname"><a href="struct_temps.html#aeff9a659d797ee4b245e9e2e2eb0aebd">Temps::mois</a></div><div class="ttdeci">std::string mois</div><div class="ttdoc">Le mois sous forme de chaîne.</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

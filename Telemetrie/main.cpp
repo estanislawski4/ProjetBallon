@@ -1,7 +1,26 @@
+/**
+ * @file main.cpp
+ * @brief Programme principal pour la collecte et l'envoi de données météorologiques.
+ *
+ * Ce programme utilise un capteur BME280 pour mesurer la température, la pression et l'humidité.
+ * Les données sont sauvegardées dans un fichier CSV toutes les 10 secondes et envoyées via
+ * une file IPC sous forme de trame APRS toutes les 2 minutes.
+ */
+
 #include "telemetrie.h"       // Inclusion de l'en-tête de la classe Telemetrie pour l'accès aux mesures du BME280
 #include "GestionFile.h"      // Inclusion de l'en-tête de la classe GestionFile pour gérer la file IPC
 #include <thread>             // Inclusion de la bibliothèque pour la gestion des threads et des pauses
 
+/**
+ * @brief Fonction principale du programme.
+ *
+ * Cette fonction initialise les objets nécessaires à la récupération et à l'envoi des données
+ * puis entre dans une boucle infinie où les mesures sont régulièrement enregistrées et transmises.
+ *
+ * @param argc Nombre d'arguments en ligne de commande (non utilisé).
+ * @param argv Tableau des arguments en ligne de commande (non utilisé).
+ * @return Code de sortie du programme.
+ */
 int main(int argc, char **argv)
 {
     try{

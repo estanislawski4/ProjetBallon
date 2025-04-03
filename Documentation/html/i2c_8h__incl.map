@@ -1,5 +1,5 @@
 <map id="/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/ProjetBallon/Telemetrie/i2c.h" name="/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/ProjetBallon/Telemetrie/i2c.h">
-<area shape="rect" id="node1" title=" " alt="" coords="257,5,432,76"/>
+<area shape="rect" id="node1" title=" " alt="" coords="301,5,476,76"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,124,71,151"/>
 <area shape="rect" id="node3" title=" " alt="" coords="95,124,159,151"/>
 <area shape="rect" id="node4" title=" " alt="" coords="183,124,245,151"/>
@@ -7,5 +7,6 @@
 <area shape="rect" id="node6" title=" " alt="" coords="356,124,421,151"/>
 <area shape="rect" id="node7" title=" " alt="" coords="446,124,505,151"/>
 <area shape="rect" id="node8" title=" " alt="" coords="529,124,611,151"/>
-<area shape="rect" id="node9" title=" " alt="" coords="635,124,707,151"/>
+<area shape="rect" id="node9" title=" " alt="" coords="636,124,723,151"/>
+<area shape="rect" id="node10" title=" " alt="" coords="747,124,819,151"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/ProjetBallon/Telemetrie/telemetrie.h" name="/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/ProjetBallon/Telemetrie/telemetrie.h">
 <area shape="rect" id="node1" title="Declération de la classe Telemetrie." alt="" coords="104,5,279,76"/>
-<area shape="rect" id="node2" href="$main_8cpp.html" title=" " alt="" coords="5,124,180,195"/>
+<area shape="rect" id="node2" href="$main_8cpp.html" title="Programme principal pour la collecte et l&#39;envoi de données météorologiques." alt="" coords="5,124,180,195"/>
 <area shape="rect" id="node3" href="$telemetrie_8cpp.html" title="Implémentation de la classe Telemetrie." alt="" coords="204,124,379,195"/>
 </map>

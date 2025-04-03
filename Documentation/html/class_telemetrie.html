@@ -22,8 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Ballon stratosphérique
-   &#160;<span id="projectnumber">1.2</span>
+   &#160;<span id="projectnumber">1.4</span>
    </div>
+   <div id="projectbrief">Programme de télémétrie du projet</div>
   </td>
  </tr>
  </tbody>
@@ -72,59 +73,75 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Classe permettant de gérer la télémétrie d'un capteur <a class="el" href="class_b_m_e280.html" title="Classe permettant d&#39;interagir avec un capteur BME280 via I2C.">BME280</a>.  
+ <a href="class_telemetrie.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="telemetrie_8h_source.html">telemetrie.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a457d8ea8e7148d69ab45d91d403f6bed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a457d8ea8e7148d69ab45d91d403f6bed">Telemetrie</a> ()</td></tr>
-<tr class="memdesc:a457d8ea8e7148d69ab45d91d403f6bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Inclusion du fichier d'en-tête  <a href="class_telemetrie.html#a457d8ea8e7148d69ab45d91d403f6bed">More...</a><br /></td></tr>
+<tr class="memdesc:a457d8ea8e7148d69ab45d91d403f6bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="class_telemetrie.html" title="Classe permettant de gérer la télémétrie d&#39;un capteur BME280.">Telemetrie</a>.  <a href="class_telemetrie.html#a457d8ea8e7148d69ab45d91d403f6bed">More...</a><br /></td></tr>
 <tr class="separator:a457d8ea8e7148d69ab45d91d403f6bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb7550e12e3fcbd58eb44a5541d7fa9d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#abb7550e12e3fcbd58eb44a5541d7fa9d">CreationTrameAPRS</a> ()</td></tr>
-<tr class="memdesc:abb7550e12e3fcbd58eb44a5541d7fa9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Génère une trame APRS weather.  <a href="class_telemetrie.html#abb7550e12e3fcbd58eb44a5541d7fa9d">More...</a><br /></td></tr>
+<tr class="memdesc:abb7550e12e3fcbd58eb44a5541d7fa9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Génère une trame APRS (Automatic Packet Reporting System).  <a href="class_telemetrie.html#abb7550e12e3fcbd58eb44a5541d7fa9d">More...</a><br /></td></tr>
 <tr class="separator:abb7550e12e3fcbd58eb44a5541d7fa9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc1a12fe408d6c5e73be222a90773f71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#abc1a12fe408d6c5e73be222a90773f71">SauvegarderEnCsv</a> ()</td></tr>
-<tr class="memdesc:abc1a12fe408d6c5e73be222a90773f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde les mesures dans un fichier CSV.  <a href="class_telemetrie.html#abc1a12fe408d6c5e73be222a90773f71">More...</a><br /></td></tr>
+<tr class="memdesc:abc1a12fe408d6c5e73be222a90773f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde les données de télémétrie dans un fichier CSV.  <a href="class_telemetrie.html#abc1a12fe408d6c5e73be222a90773f71">More...</a><br /></td></tr>
 <tr class="separator:abc1a12fe408d6c5e73be222a90773f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1c0a691e2473259e1cac2d63dbb1596"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#af1c0a691e2473259e1cac2d63dbb1596">getTemperature</a> () const</td></tr>
+<tr class="memdesc:af1c0a691e2473259e1cac2d63dbb1596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtient la température mesurée par le capteur.  <a href="class_telemetrie.html#af1c0a691e2473259e1cac2d63dbb1596">More...</a><br /></td></tr>
 <tr class="separator:af1c0a691e2473259e1cac2d63dbb1596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dc6e4b18703db4591c8de13999e0879"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a0dc6e4b18703db4591c8de13999e0879">getPression</a> () const</td></tr>
+<tr class="memdesc:a0dc6e4b18703db4591c8de13999e0879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtient la pression mesurée par le capteur.  <a href="class_telemetrie.html#a0dc6e4b18703db4591c8de13999e0879">More...</a><br /></td></tr>
 <tr class="separator:a0dc6e4b18703db4591c8de13999e0879"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b62fab9d10e95b1f1bd2e6232a3d5ca"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a5b62fab9d10e95b1f1bd2e6232a3d5ca">getHumidite</a> () const</td></tr>
+<tr class="memdesc:a5b62fab9d10e95b1f1bd2e6232a3d5ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtient l'humidité mesurée par le capteur.  <a href="class_telemetrie.html#a5b62fab9d10e95b1f1bd2e6232a3d5ca">More...</a><br /></td></tr>
 <tr class="separator:a5b62fab9d10e95b1f1bd2e6232a3d5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a18ac5ef32b7eb1187a18c98e2cea7fd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a18ac5ef32b7eb1187a18c98e2cea7fd3">ObtenirTemperature</a> ()</td></tr>
-<tr class="memdesc:a18ac5ef32b7eb1187a18c98e2cea7fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la température en Fahrenheit depuis le capteur.  <a href="class_telemetrie.html#a18ac5ef32b7eb1187a18c98e2cea7fd3">More...</a><br /></td></tr>
+<tr class="memdesc:a18ac5ef32b7eb1187a18c98e2cea7fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtient la température mesurée par le capteur <a class="el" href="class_b_m_e280.html" title="Classe permettant d&#39;interagir avec un capteur BME280 via I2C.">BME280</a>.  <a href="class_telemetrie.html#a18ac5ef32b7eb1187a18c98e2cea7fd3">More...</a><br /></td></tr>
 <tr class="separator:a18ac5ef32b7eb1187a18c98e2cea7fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a536f1deb6db1b6f31b86193f7db9ca29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a536f1deb6db1b6f31b86193f7db9ca29">ObtenirPression</a> ()</td></tr>
-<tr class="memdesc:a536f1deb6db1b6f31b86193f7db9ca29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la pression depuis le capteur.  <a href="class_telemetrie.html#a536f1deb6db1b6f31b86193f7db9ca29">More...</a><br /></td></tr>
+<tr class="memdesc:a536f1deb6db1b6f31b86193f7db9ca29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtient la pression mesurée par le capteur <a class="el" href="class_b_m_e280.html" title="Classe permettant d&#39;interagir avec un capteur BME280 via I2C.">BME280</a>.  <a href="class_telemetrie.html#a536f1deb6db1b6f31b86193f7db9ca29">More...</a><br /></td></tr>
 <tr class="separator:a536f1deb6db1b6f31b86193f7db9ca29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a273fc2f5cd213805791ee885517b11bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a273fc2f5cd213805791ee885517b11bb">ObtenirHumidite</a> ()</td></tr>
-<tr class="memdesc:a273fc2f5cd213805791ee885517b11bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère l'humidité depuis le capteur.  <a href="class_telemetrie.html#a273fc2f5cd213805791ee885517b11bb">More...</a><br /></td></tr>
+<tr class="memdesc:a273fc2f5cd213805791ee885517b11bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtient l'humidité mesurée par le capteur <a class="el" href="class_b_m_e280.html" title="Classe permettant d&#39;interagir avec un capteur BME280 via I2C.">BME280</a>.  <a href="class_telemetrie.html#a273fc2f5cd213805791ee885517b11bb">More...</a><br /></td></tr>
 <tr class="separator:a273fc2f5cd213805791ee885517b11bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c735ab4c7001cd5740d37d2e6fde636"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a0c735ab4c7001cd5740d37d2e6fde636">VerifierMesures</a> ()</td></tr>
-<tr class="memdesc:a0c735ab4c7001cd5740d37d2e6fde636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie la validité des mesures.  <a href="class_telemetrie.html#a0c735ab4c7001cd5740d37d2e6fde636">More...</a><br /></td></tr>
+<tr class="memdesc:a0c735ab4c7001cd5740d37d2e6fde636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie la validité des mesures obtenues.  <a href="class_telemetrie.html#a0c735ab4c7001cd5740d37d2e6fde636">More...</a><br /></td></tr>
 <tr class="separator:a0c735ab4c7001cd5740d37d2e6fde636"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a468b281d27921e082916884edb09d8b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_b_m_e280.html">BME280</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a468b281d27921e082916884edb09d8b5">bme</a></td></tr>
+<tr class="memdesc:a468b281d27921e082916884edb09d8b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance de la classe <a class="el" href="class_gestion_temps.html" title="Classe permettant de gérer la date et l&#39;heure actuelles.">GestionTemps</a> pour gérer les aspects temporels.  <a href="class_telemetrie.html#a468b281d27921e082916884edb09d8b5">More...</a><br /></td></tr>
 <tr class="separator:a468b281d27921e082916884edb09d8b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a171f3315360afd5ed0a9882ef8378632"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_gestion_temps.html">GestionTemps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a171f3315360afd5ed0a9882ef8378632">gestionTemps</a></td></tr>
+<tr class="memdesc:a171f3315360afd5ed0a9882ef8378632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance de la classe <a class="el" href="class_gestion_temps.html" title="Classe permettant de gérer la date et l&#39;heure actuelles.">GestionTemps</a> pour gérer les aspects temporels.  <a href="class_telemetrie.html#a171f3315360afd5ed0a9882ef8378632">More...</a><br /></td></tr>
 <tr class="separator:a171f3315360afd5ed0a9882ef8378632"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48615d1f7080d3d36d8dcd67bf8617cd"><td class="memItemLeft" align="right" valign="top">locale&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a48615d1f7080d3d36d8dcd67bf8617cd">localeAvecVirgule</a></td></tr>
+<tr class="memdesc:a48615d1f7080d3d36d8dcd67bf8617cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locale personnalisée pour utiliser la virgule comme séparateur décimal.  <a href="class_telemetrie.html#a48615d1f7080d3d36d8dcd67bf8617cd">More...</a><br /></td></tr>
 <tr class="separator:a48615d1f7080d3d36d8dcd67bf8617cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8718894182f228a18a085ba6303fca76"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a8718894182f228a18a085ba6303fca76">temperature</a></td></tr>
+<tr class="memdesc:a8718894182f228a18a085ba6303fca76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Température mesurée.  <a href="class_telemetrie.html#a8718894182f228a18a085ba6303fca76">More...</a><br /></td></tr>
 <tr class="separator:a8718894182f228a18a085ba6303fca76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a33e6e2ba3e055422f2416faecfea01"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a5a33e6e2ba3e055422f2416faecfea01">pression</a></td></tr>
+<tr class="memdesc:a5a33e6e2ba3e055422f2416faecfea01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pression mesurée.  <a href="class_telemetrie.html#a5a33e6e2ba3e055422f2416faecfea01">More...</a><br /></td></tr>
 <tr class="separator:a5a33e6e2ba3e055422f2416faecfea01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b9aa7ac04701f6a2048d7d06db9b8c2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a9b9aa7ac04701f6a2048d7d06db9b8c2">humidite</a></td></tr>
+<tr class="memdesc:a9b9aa7ac04701f6a2048d7d06db9b8c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Humidité mesurée.  <a href="class_telemetrie.html#a9b9aa7ac04701f6a2048d7d06db9b8c2">More...</a><br /></td></tr>
 <tr class="separator:a9b9aa7ac04701f6a2048d7d06db9b8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b42a4d78ca8cbec226b01705272c50f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telemetrie.html#a9b42a4d78ca8cbec226b01705272c50f">fichierCSV</a></td></tr>
+<tr class="memdesc:a9b42a4d78ca8cbec226b01705272c50f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nom du fichier CSV où les données sont sauvegardées.  <a href="class_telemetrie.html#a9b42a4d78ca8cbec226b01705272c50f">More...</a><br /></td></tr>
 <tr class="separator:a9b42a4d78ca8cbec226b01705272c50f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Classe permettant de gérer la télémétrie d'un capteur <a class="el" href="class_b_m_e280.html" title="Classe permettant d&#39;interagir avec un capteur BME280 via I2C.">BME280</a>. </p>
+<p>Cette classe obtient les mesures de température, pression et humidité à partir du capteur <a class="el" href="class_b_m_e280.html" title="Classe permettant d&#39;interagir avec un capteur BME280 via I2C.">BME280</a>, et les sauvegarde dans un fichier CSV au format approprié. Elle peut également générer une trame APRS. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a457d8ea8e7148d69ab45d91d403f6bed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a457d8ea8e7148d69ab45d91d403f6bed">&#9670;&nbsp;</a></span>Telemetrie()</h2>
 
@@ -140,9 +157,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>&lt; Inclusion du fichier d'en-tête </p>
-<p>Constructeur de la classe <a class="el" href="class_telemetrie.html">Telemetrie</a>.</p>
-<p>Initialise l'objet <a class="el" href="class_b_m_e280.html">BME280</a>, configure la locale pour utiliser la virgule comme séparateur décimal et crée un fichier CSV pour stocker les mesures.</p>
+<p>Constructeur de la classe <a class="el" href="class_telemetrie.html" title="Classe permettant de gérer la télémétrie d&#39;un capteur BME280.">Telemetrie</a>. </p>
+<p>&lt; Inclusion du fichier d'en-tête</p>
+<p>Initialise le capteur <a class="el" href="class_b_m_e280.html" title="Classe permettant d&#39;interagir avec un capteur BME280 via I2C.">BME280</a> et les autres composants nécessaires à la collecte de données.</p>
+<p>Constructeur de la classe <a class="el" href="class_telemetrie.html" title="Classe permettant de gérer la télémétrie d&#39;un capteur BME280.">Telemetrie</a>.</p>
+<p>Initialise l'objet <a class="el" href="class_b_m_e280.html" title="Classe permettant d&#39;interagir avec un capteur BME280 via I2C.">BME280</a>, configure la locale pour utiliser la virgule comme séparateur décimal et crée un fichier CSV pour stocker les mesures.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::runtime_error</td><td>si l'ouverture du fichier CSV échoue. </td></tr>
@@ -168,7 +187,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Génère une trame APRS weather. </p>
+<p>Génère une trame APRS (Automatic Packet Reporting System). </p>
+<p>Génère une trame APRS weather.</p>
+<dl class="section return"><dt>Returns</dt><dd>Une chaîne de caractères représentant la trame APRS formatée.</dd></dl>
 <p>Cette fonction récupère les mesures, les valide et les formate selon la norme APRS pour la télémétrie météo.</p>
 <dl class="section return"><dt>Returns</dt><dd>Une chaîne de caractères représentant la trame APRS. </dd></dl>
 
@@ -197,6 +218,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Obtient l'humidité mesurée par le capteur. </p>
+<dl class="section return"><dt>Returns</dt><dd>L'humidité relative en pourcentage (%). </dd></dl>
+
 </div>
 </div>
 <a id="a0dc6e4b18703db4591c8de13999e0879"></a>
@@ -221,6 +245,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Obtient la pression mesurée par le capteur. </p>
+<dl class="section return"><dt>Returns</dt><dd>La pression en mbar. </dd></dl>
 
 </div>
 </div>
@@ -247,6 +274,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Obtient la température mesurée par le capteur. </p>
+<dl class="section return"><dt>Returns</dt><dd>La température en degrés Celsius. </dd></dl>
+
 </div>
 </div>
 <a id="a273fc2f5cd213805791ee885517b11bb"></a>
@@ -272,7 +302,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Récupère l'humidité depuis le capteur. </p>
+<p>Obtient l'humidité mesurée par le capteur <a class="el" href="class_b_m_e280.html" title="Classe permettant d&#39;interagir avec un capteur BME280 via I2C.">BME280</a>. </p>
+<p>Récupère l'humidité depuis le capteur.</p>
+<p>Cette fonction lit les données du capteur et met à jour l'attribut <code>humidite</code>. </p>
 
 </div>
 </div>
@@ -299,7 +331,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Récupère la pression depuis le capteur. </p>
+<p>Obtient la pression mesurée par le capteur <a class="el" href="class_b_m_e280.html" title="Classe permettant d&#39;interagir avec un capteur BME280 via I2C.">BME280</a>. </p>
+<p>Récupère la pression depuis le capteur.</p>
+<p>Cette fonction lit les données du capteur et met à jour l'attribut <code>pression</code>. </p>
 
 </div>
 </div>
@@ -326,7 +360,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Récupère la température en Fahrenheit depuis le capteur. </p>
+<p>Obtient la température mesurée par le capteur <a class="el" href="class_b_m_e280.html" title="Classe permettant d&#39;interagir avec un capteur BME280 via I2C.">BME280</a>. </p>
+<p>Récupère la température en Fahrenheit depuis le capteur.</p>
+<p>Cette fonction lit les données du capteur et met à jour l'attribut <code>temperature</code>. </p>
 
 </div>
 </div>
@@ -345,7 +381,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sauvegarde les mesures dans un fichier CSV. </p>
+<p>Sauvegarde les données de télémétrie dans un fichier CSV. </p>
+<p>Sauvegarde les mesures dans un fichier CSV.</p>
+<p>Enregistre les mesures de température, pression et humidité dans un fichier CSV.</p>
 <p>Enregistre les données télémétriques avec un format spécifique pour une exploitation ultérieure.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -379,8 +417,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Vérifie la validité des mesures. </p>
-<dl class="section return"><dt>Returns</dt><dd>true si toutes les mesures sont valides, false sinon. </dd></dl>
+<p>Vérifie la validité des mesures obtenues. </p>
+<p>Vérifie la validité des mesures.</p>
+<p>Cette fonction permet de s'assurer que les valeurs mesurées par le capteur sont dans des limites acceptables.</p>
+<dl class="section return"><dt>Returns</dt><dd>True si les mesures sont valides, false sinon.</dd>
+<dd>
+true si toutes les mesures sont valides, false sinon. </dd></dl>
 
 </div>
 </div>
@@ -405,6 +447,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Instance de la classe <a class="el" href="class_gestion_temps.html" title="Classe permettant de gérer la date et l&#39;heure actuelles.">GestionTemps</a> pour gérer les aspects temporels. </p>
+
 </div>
 </div>
 <a id="a9b42a4d78ca8cbec226b01705272c50f"></a>
@@ -426,6 +470,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Nom du fichier CSV où les données sont sauvegardées. </p>
 
 </div>
 </div>
@@ -449,6 +495,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Instance de la classe <a class="el" href="class_gestion_temps.html" title="Classe permettant de gérer la date et l&#39;heure actuelles.">GestionTemps</a> pour gérer les aspects temporels. </p>
+
 </div>
 </div>
 <a id="a9b9aa7ac04701f6a2048d7d06db9b8c2"></a>
@@ -470,6 +518,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Humidité mesurée. </p>
 
 </div>
 </div>
@@ -493,6 +543,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Locale personnalisée pour utiliser la virgule comme séparateur décimal. </p>
+
 </div>
 </div>
 <a id="a5a33e6e2ba3e055422f2416faecfea01"></a>
@@ -515,6 +567,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Pression mesurée. </p>
+
 </div>
 </div>
 <a id="a8718894182f228a18a085ba6303fca76"></a>
@@ -536,6 +590,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Température mesurée. </p>
 
 </div>
 </div>

@@ -1,14 +1,15 @@
 <map id="/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/ProjetBallon/Telemetrie/BME280.h" name="/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/ProjetBallon/Telemetrie/BME280.h">
-<area shape="rect" id="node1" title=" " alt="" coords="179,5,354,76"/>
+<area shape="rect" id="node1" title=" " alt="" coords="247,5,422,76"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,199,77,225"/>
-<area shape="rect" id="node3" title=" " alt="" coords="316,124,383,151"/>
-<area shape="rect" id="node4" href="$i2c_8h.html" title=" " alt="" coords="241,124,292,151"/>
+<area shape="rect" id="node3" title=" " alt="" coords="384,124,451,151"/>
+<area shape="rect" id="node4" href="$i2c_8h.html" title=" " alt="" coords="309,124,360,151"/>
 <area shape="rect" id="node5" title=" " alt="" coords="102,199,167,225"/>
-<area shape="rect" id="node12" title=" " alt="" coords="407,124,470,151"/>
-<area shape="rect" id="node6" title=" " alt="" coords="192,199,256,225"/>
-<area shape="rect" id="node7" title=" " alt="" coords="280,199,341,225"/>
-<area shape="rect" id="node8" title=" " alt="" coords="366,199,429,225"/>
-<area shape="rect" id="node9" title=" " alt="" coords="453,199,518,225"/>
-<area shape="rect" id="node10" title=" " alt="" coords="543,199,601,225"/>
-<area shape="rect" id="node11" title=" " alt="" coords="625,199,708,225"/>
+<area shape="rect" id="node13" title=" " alt="" coords="475,124,538,151"/>
+<area shape="rect" id="node6" title=" " alt="" coords="303,199,367,225"/>
+<area shape="rect" id="node7" title=" " alt="" coords="391,199,452,225"/>
+<area shape="rect" id="node8" title=" " alt="" coords="477,199,539,225"/>
+<area shape="rect" id="node9" title=" " alt="" coords="563,199,629,225"/>
+<area shape="rect" id="node10" title=" " alt="" coords="653,199,712,225"/>
+<area shape="rect" id="node11" title=" " alt="" coords="736,199,819,225"/>
+<area shape="rect" id="node12" title=" " alt="" coords="191,199,278,225"/>
 </map>
