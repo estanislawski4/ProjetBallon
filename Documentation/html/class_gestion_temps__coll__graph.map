@@ -1,0 +1,4 @@
+<map id="GestionTemps" name="GestionTemps">
+<area shape="rect" id="node1" title="Classe permettant de gérer la date et l&#39;heure actuelles." alt="" coords="5,219,168,384"/>
+<area shape="rect" id="node2" href="$struct_temps.html" title="Structure pour stocker les composants d&#39;une date et d&#39;une heure." alt="" coords="45,5,128,156"/>
+</map>

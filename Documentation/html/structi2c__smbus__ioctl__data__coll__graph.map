@@ -1,0 +1,4 @@
+<map id="i2c_smbus_ioctl_data" name="i2c_smbus_ioctl_data">
+<area shape="rect" id="node1" title="Structure utilisée pour les opérations SMBus via ioctl()." alt="" coords="5,175,153,281"/>
+<area shape="rect" id="node2" href="$unioni2c__smbus__data.html" title="Union permettant de stocker les données pour une transaction SMBus." alt="" coords="21,5,138,112"/>
+</map>

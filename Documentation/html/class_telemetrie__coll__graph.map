@@ -1,0 +1,9 @@
+<map id="Telemetrie" name="Telemetrie">
+<area shape="rect" id="node1" title="Classe permettant de gérer la télémétrie d&#39;un capteur BME280." alt="" coords="307,637,473,905"/>
+<area shape="rect" id="node2" href="$class_b_m_e280.html" title="Classe permettant d&#39;interagir avec un capteur BME280 via I2C." alt="" coords="203,321,382,575"/>
+<area shape="rect" id="node3" href="$classi2c.html" title="Classe permettant la gestion des communications I2C avec un périphérique." alt="" coords="5,5,156,259"/>
+<area shape="rect" id="node4" href="$structbme280__calib__data.html" title="Structure contenant les constantes de calibration du capteur BME280." alt="" coords="180,20,315,244"/>
+<area shape="rect" id="node5" href="$structbme280__raw__data.html" title="Structure contenant les données brutes du capteur BME280." alt="" coords="339,20,467,244"/>
+<area shape="rect" id="node6" href="$class_gestion_temps.html" title="Classe permettant de gérer la date et l&#39;heure actuelles." alt="" coords="429,365,591,531"/>
+<area shape="rect" id="node7" href="$struct_temps.html" title="Structure pour stocker les composants d&#39;une date et d&#39;une heure." alt="" coords="491,57,574,207"/>
+</map>

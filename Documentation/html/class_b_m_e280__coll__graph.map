@@ -1,0 +1,6 @@
+<map id="BME280" name="BME280">
+<area shape="rect" id="node1" title="Classe permettant d&#39;interagir avec un capteur BME280 via I2C." alt="" coords="158,321,337,575"/>
+<area shape="rect" id="node2" href="$classi2c.html" title="Classe permettant la gestion des communications I2C avec un périphérique." alt="" coords="5,5,156,259"/>
+<area shape="rect" id="node3" href="$structbme280__calib__data.html" title="Structure contenant les constantes de calibration du capteur BME280." alt="" coords="180,20,315,244"/>
+<area shape="rect" id="node4" href="$structbme280__raw__data.html" title="Structure contenant les données brutes du capteur BME280." alt="" coords="339,20,467,244"/>
+</map>
