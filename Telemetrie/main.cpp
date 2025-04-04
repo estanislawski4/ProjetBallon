@@ -47,7 +47,7 @@ int main(int argc, char **argv)
                 std::cout << gestionTemps.getDateFormatee(); // Affichage de la date formatée
                 std::cout << " : > CSV "; // Message indiquant que l'on va sauvegarder les mesures dans le CSV
                 telemetrie.SauvegarderEnCsv(); // Sauvegarde les mesures dans le fichier CSV
-                std::cout <<std::endl <<" Température: " << telemetrie.getTemperature() << "°F" << std::endl;
+                std::cout <<std::endl <<" Température: " << telemetrie.getTemperature() << "°C" << std::endl;
                 std::cout << " Pression: " << telemetrie.getPression() << " mbar" << std::endl;
                 std::cout << " Humidité: " << telemetrie.getHumidite() << "%" << std::endl;
                 std::this_thread::sleep_for(std::chrono::seconds(1)); // Attente d'une seconde pour éviter la répétition rapide des actions

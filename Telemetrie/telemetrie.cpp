@@ -85,7 +85,7 @@ std::string Telemetrie::CreationTrameAPRS()
 void Telemetrie::SauvegarderEnCsv()
 {
     // Appels des fonctions pour obtenir les valeurs de température, humidité et pression
-    ObtenirTemperature();
+    temperature = bme.obtenirTemperatureEnC(); // Récupération des valeurs de température en °F
     ObtenirHumidite();
     ObtenirPression();
 
