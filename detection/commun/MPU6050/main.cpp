@@ -67,11 +67,13 @@ int main(int argc, char** argv) {
 }
 
 void rappel_FF(void){
+    cout << "Free fall detected" << endl;
     gestionFile.ecrireDansLaFileIPC(":f4kmn    :Free fall detected");
     std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // Attendre 1000 ms
 }
 
 void rappel_ZM(void){
+    cout << "Zero Motion detected" << endl;
     gestionFile.ecrireDansLaFileIPC(":f4kmn    :Zero Motion detected ");
     std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // Attendre 1000 ms
 }
