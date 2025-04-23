@@ -49,10 +49,10 @@ Telemetrie::Telemetrie():
  */
 std::string Telemetrie::CreationTrameAPRS()
 {
-    // Appels des fonctions pour obtenir les valeurs de température, humidité et pression
-    ObtenirTemperature();
-    ObtenirHumidite();
-    ObtenirPression();
+    // Appels des fonctions du BME pour obtenir les valeurs de température, humidité et pression
+    temperature = bme.obtenirTemperatureEnF(); // Récupération des valeurs de température en °F
+    humidite = bme.obtenirHumidite();
+    pression = bme.obtenirPression();
 
     // Vérification que les mesures sont valides
     VerifierMesures();
@@ -84,10 +84,13 @@ std::string Telemetrie::CreationTrameAPRS()
  */
 void Telemetrie::SauvegarderEnCsv()
 {
-    // Appels des fonctions pour obtenir les valeurs de température, humidité et pression
-    temperature = bme.obtenirTemperatureEnC(); // Récupération des valeurs de température en °F
-    ObtenirHumidite();
-    ObtenirPression();
+    // Appels des fonctions du BME pour obtenir les valeurs de température, humidité et pression
+    temperature = bme.obtenirTemperatureEnC(); // Récupération des valeurs de température en °C
+    humidite = bme.obtenirHumidite();
+    pression = bme.obtenirPression();
+
+    // Vérification que les mesures sont valides
+    VerifierMesures();
 
     // Ouverture du fichier CSV en mode ajout (ajouter de nouvelles données sans écraser les anciennes)
     std::ofstream fichier(fichierCSV, std::ios_base::app);
@@ -107,30 +110,6 @@ void Telemetrie::SauvegarderEnCsv()
     fichier << ";";
     fichier << out.str();  // Valeurs formatées
     fichier.close();  // Fermeture du fichier
-}
-
-/**
- * @brief Récupère la température en Fahrenheit depuis le capteur.
- */
-void Telemetrie::ObtenirTemperature()
-{
-    temperature = bme.obtenirTemperatureEnF();  // Récupération de la température en Fahrenheit à partir du capteur BME280
-}
-
-/**
- * @brief Récupère la pression depuis le capteur.
- */
-void Telemetrie::ObtenirPression()
-{
-    pression = bme.obtenirPression();  // Récupération de la pression du capteur BME280
-}
-
-/**
- * @brief Récupère l'humidité depuis le capteur.
- */
-void Telemetrie::ObtenirHumidite()
-{
-    humidite = bme.obtenirHumidite();  // Récupération de l'humidité du capteur BME280
 }
 
 /**

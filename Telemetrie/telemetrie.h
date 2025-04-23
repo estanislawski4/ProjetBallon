@@ -97,26 +97,6 @@ public:
      */
     double getHumidite() const { return humidite; }
 private:
-    /**
-     * @brief Obtient la température mesurée par le capteur BME280.
-     *
-     * Cette fonction lit les données du capteur et met à jour l'attribut `temperature`.
-     */
-    void ObtenirTemperature(); // Fonction pour obtenir la température
-
-    /**
-     * @brief Obtient la pression mesurée par le capteur BME280.
-     *
-     * Cette fonction lit les données du capteur et met à jour l'attribut `pression`.
-     */
-    void ObtenirPression(); // Fonction pour obtenir la pression
-
-    /**
-     * @brief Obtient l'humidité mesurée par le capteur BME280.
-     *
-     * Cette fonction lit les données du capteur et met à jour l'attribut `humidite`.
-     */
-    void ObtenirHumidite(); // Fonction pour obtenir l'humidité
 
     /**
      * @brief Vérifie la validité des mesures obtenues.
@@ -126,7 +106,6 @@ private:
      * @return True si les mesures sont valides, false sinon.
      */
     bool VerifierMesures(); // Focntion permet de vérifier les différentes mesures
-
 
     /**
      * @brief Instance de la classe GestionTemps pour gérer les aspects temporels.
