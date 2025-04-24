@@ -1,0 +1,4 @@
+<map id="GestionTemps::generateFilename" name="GestionTemps::generateFilename">
+<area shape="rect" id="node1" title="Génère un nom de fichier basé sur la date actuelle." alt="" coords="5,5,223,32"/>
+<area shape="rect" id="node2" href="$class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d" title="Met à jour la date actuelle." alt="" coords="271,5,433,32"/>
+</map>

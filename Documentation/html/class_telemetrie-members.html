@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,8 +26,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Ballon stratosphérique
-   &#160;<span id="projectnumber">1.4</span>
+   &#160;<span id="projectnumber">1.6</span>
    </div>
+   <div id="projectbrief">Programme de télémétrie du projet</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_telemetrie.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,7 +82,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Telemetrie Liste des membres</div>  </div>
@@ -69,27 +90,19 @@ $(function() {
 
 <p>Liste complète des membres de <a class="el" href="class_telemetrie.html">Telemetrie</a>, y compris les membres hérités :</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_telemetrie.html#a468b281d27921e082916884edb09d8b5">bme</a></td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_telemetrie.html#abb7550e12e3fcbd58eb44a5541d7fa9d">CreationTrameAPRS</a>()</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_telemetrie.html#a9b42a4d78ca8cbec226b01705272c50f">fichierCSV</a></td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_telemetrie.html#a171f3315360afd5ed0a9882ef8378632">gestionTemps</a></td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_telemetrie.html#a5b62fab9d10e95b1f1bd2e6232a3d5ca">getHumidite</a>() const</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_telemetrie.html#a0dc6e4b18703db4591c8de13999e0879">getPression</a>() const</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_telemetrie.html#af1c0a691e2473259e1cac2d63dbb1596">getTemperature</a>() const</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_telemetrie.html#a9b9aa7ac04701f6a2048d7d06db9b8c2">humidite</a></td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_telemetrie.html#a48615d1f7080d3d36d8dcd67bf8617cd">localeAvecVirgule</a></td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_telemetrie.html#a273fc2f5cd213805791ee885517b11bb">ObtenirHumidite</a>()</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_telemetrie.html#a536f1deb6db1b6f31b86193f7db9ca29">ObtenirPression</a>()</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_telemetrie.html#a18ac5ef32b7eb1187a18c98e2cea7fd3">ObtenirTemperature</a>()</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_telemetrie.html#a5a33e6e2ba3e055422f2416faecfea01">pression</a></td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_telemetrie.html#abc1a12fe408d6c5e73be222a90773f71">SauvegarderEnCsv</a>()</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_telemetrie.html#a457d8ea8e7148d69ab45d91d403f6bed">Telemetrie</a>()</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_telemetrie.html#a8718894182f228a18a085ba6303fca76">temperature</a></td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_telemetrie.html#a0c735ab4c7001cd5740d37d2e6fde636">VerifierMesures</a>()</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_telemetrie.html#abb7550e12e3fcbd58eb44a5541d7fa9d">CreationTrameAPRS</a>()</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_telemetrie.html#a5b62fab9d10e95b1f1bd2e6232a3d5ca">getHumidite</a>() const</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_telemetrie.html#a0dc6e4b18703db4591c8de13999e0879">getPression</a>() const</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_telemetrie.html#af1c0a691e2473259e1cac2d63dbb1596">getTemperature</a>() const</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_telemetrie.html#abc1a12fe408d6c5e73be222a90773f71">SauvegarderEnCsv</a>()</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_telemetrie.html#a457d8ea8e7148d69ab45d91d403f6bed">Telemetrie</a>()</td><td class="entry"><a class="el" href="class_telemetrie.html">Telemetrie</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

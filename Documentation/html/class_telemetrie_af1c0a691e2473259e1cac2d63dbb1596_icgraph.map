@@ -1,0 +1,4 @@
+<map id="Telemetrie::getTemperature" name="Telemetrie::getTemperature">
+<area shape="rect" id="node1" title="Obtient la température mesurée par le capteur." alt="" coords="104,5,284,32"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Fonction principale du programme." alt="" coords="5,5,56,32"/>
+</map>

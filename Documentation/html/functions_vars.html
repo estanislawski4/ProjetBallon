@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,8 +26,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Ballon stratosphérique
-   &#160;<span id="projectnumber">1.4</span>
+   &#160;<span id="projectnumber">1.6</span>
    </div>
+   <div id="projectbrief">Programme de télémétrie du projet</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +52,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('functions_vars.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -75,9 +96,6 @@ $(function() {
 <li>block
 : <a class="el" href="unioni2c__smbus__data.html#a56729c242baa246a3105fd7c64b86f48">i2c_smbus_data</a>
 </li>
-<li>bme
-: <a class="el" href="class_telemetrie.html#a468b281d27921e082916884edb09d8b5">Telemetrie</a>
-</li>
 <li>byte
 : <a class="el" href="unioni2c__smbus__data.html#a7145699abf962d118aa1c78ff864e892">i2c_smbus_data</a>
 </li>
@@ -85,9 +103,6 @@ $(function() {
 
 
 <h3><a id="index_c"></a>- c -</h3><ul>
-<li>cal
-: <a class="el" href="class_b_m_e280.html#a0246bed3e733bf6a1fc3f9e731c3d8ae">BME280</a>
-</li>
 <li>command
 : <a class="el" href="structi2c__smbus__ioctl__data.html#adaacbd70d47e01e8bca1457b721089e7">i2c_smbus_ioctl_data</a>
 </li>
@@ -97,9 +112,6 @@ $(function() {
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>data
 : <a class="el" href="structi2c__smbus__ioctl__data.html#af5a53e4ed38f278bd5fb62a65b67432d">i2c_smbus_ioctl_data</a>
-</li>
-<li>deviceI2C
-: <a class="el" href="class_b_m_e280.html#a6bc2394496dc8aa77c7d12eb1bfb6335">BME280</a>
 </li>
 <li>dig_H1
 : <a class="el" href="structbme280__calib__data.html#aa6521d4105f928a3734361923ded1402">bme280_calib_data</a>
@@ -158,37 +170,7 @@ $(function() {
 </ul>
 
 
-<h3><a id="index_e"></a>- e -</h3><ul>
-<li>error
-: <a class="el" href="classi2c.html#aea39837fb935ecdf947846a92379b2f7">i2c</a>
-</li>
-</ul>
-
-
-<h3><a id="index_f"></a>- f -</h3><ul>
-<li>fd
-: <a class="el" href="classi2c.html#a06301451fcee29a607b323abc5dc00bf">i2c</a>
-</li>
-<li>fichierCSV
-: <a class="el" href="class_telemetrie.html#a9b42a4d78ca8cbec226b01705272c50f">Telemetrie</a>
-</li>
-<li>fileId
-: <a class="el" href="class_gestion_file.html#af184c4a4bcb55cab285654f31af91a01">GestionFile</a>
-</li>
-</ul>
-
-
-<h3><a id="index_g"></a>- g -</h3><ul>
-<li>gestionTemps
-: <a class="el" href="class_telemetrie.html#a171f3315360afd5ed0a9882ef8378632">Telemetrie</a>
-</li>
-</ul>
-
-
 <h3><a id="index_h"></a>- h -</h3><ul>
-<li>h
-: <a class="el" href="class_b_m_e280.html#af4f6031c3b17ea4840a34e735b0d3e82">BME280</a>
-</li>
 <li>heure
 : <a class="el" href="struct_temps.html#a9fa1651c3ee90c17b6f892bc1bd4f140">Temps</a>
 </li>
@@ -197,9 +179,6 @@ $(function() {
 </li>
 <li>hmsb
 : <a class="el" href="structbme280__raw__data.html#aea4d6add56456afb7ab2b3588f3834d3">bme280_raw_data</a>
-</li>
-<li>humidite
-: <a class="el" href="class_telemetrie.html#a9b9aa7ac04701f6a2048d7d06db9b8c2">Telemetrie</a>
 </li>
 <li>humidity
 : <a class="el" href="structbme280__raw__data.html#a2a3c5a0299de0ac96dd24755f8032b6c">bme280_raw_data</a>
@@ -214,22 +193,12 @@ $(function() {
 </ul>
 
 
-<h3><a id="index_l"></a>- l -</h3><ul>
-<li>localeAvecVirgule
-: <a class="el" href="class_telemetrie.html#a48615d1f7080d3d36d8dcd67bf8617cd">Telemetrie</a>
-</li>
-</ul>
-
-
 <h3><a id="index_m"></a>- m -</h3><ul>
 <li>minute
 : <a class="el" href="struct_temps.html#a15cca16b379be5715dadcd07f8a09127">Temps</a>
 </li>
 <li>mois
 : <a class="el" href="struct_temps.html#aeff9a659d797ee4b245e9e2e2eb0aebd">Temps</a>
-</li>
-<li>mutexTx
-: <a class="el" href="class_gestion_file.html#a90a1fb740e5e4c9ce79736e18bde569f">GestionFile</a>
 </li>
 </ul>
 
@@ -241,9 +210,6 @@ $(function() {
 <li>pmsb
 : <a class="el" href="structbme280__raw__data.html#a461eb00a3bb054640fe2fbd78be99290">bme280_raw_data</a>
 </li>
-<li>pression
-: <a class="el" href="class_telemetrie.html#a5a33e6e2ba3e055422f2416faecfea01">Telemetrie</a>
-</li>
 <li>pressure
 : <a class="el" href="structbme280__raw__data.html#a2b42245bec219c69e275c9e813643e07">bme280_raw_data</a>
 </li>
@@ -254,9 +220,6 @@ $(function() {
 
 
 <h3><a id="index_r"></a>- r -</h3><ul>
-<li>raw
-: <a class="el" href="class_b_m_e280.html#abeeffeb056721a3b16872f03ae1ac171">BME280</a>
-</li>
 <li>read_write
 : <a class="el" href="structi2c__smbus__ioctl__data.html#add449c765b690f883e5771132d16a4f8">i2c_smbus_ioctl_data</a>
 </li>
@@ -285,10 +248,6 @@ $(function() {
 </li>
 <li>temperature
 : <a class="el" href="structbme280__raw__data.html#a75d4ec5f6567dfab355718a72a078888">bme280_raw_data</a>
-, <a class="el" href="class_telemetrie.html#a8718894182f228a18a085ba6303fca76">Telemetrie</a>
-</li>
-<li>temps
-: <a class="el" href="class_gestion_temps.html#a5c5bc1ba7d6775dade99eda323edf41d">GestionTemps</a>
 </li>
 <li>text
 : <a class="el" href="struct_message_r_x.html#a47a37495c39f6b8deda38a3a5699df4b">MessageRX</a>
@@ -316,9 +275,12 @@ $(function() {
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

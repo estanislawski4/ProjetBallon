@@ -1,0 +1,8 @@
+<map id="Telemetrie::SauvegarderEnCsv" name="Telemetrie::SauvegarderEnCsv">
+<area shape="rect" id="node1" title="Sauvegarde les données de télémétrie dans un fichier CSV." alt="" coords="5,81,208,108"/>
+<area shape="rect" id="node2" href="$class_gestion_temps.html#a2db08517de566774cd4c6e4a700256e8" title="Obtient la date et l&#39;heure au format &quot;aaaa&#45;mm&#45;jj hh:mm:ss&quot;." alt="" coords="257,5,472,32"/>
+<area shape="rect" id="node4" href="$class_b_m_e280.html#a055db07e502ea9dfd169e67978f5fa58" title="Obtient l&#39;humidité relative en pourcentage." alt="" coords="279,56,450,83"/>
+<area shape="rect" id="node5" href="$class_b_m_e280.html#a4c77525438e2442431524ae4d74d2f6e" title="Obtient la pression atmosphérique en mbar." alt="" coords="279,107,450,133"/>
+<area shape="rect" id="node6" href="$class_b_m_e280.html#a5fb779945e887981a5667074aead7128" title="Obtient la température en degrés Celsius." alt="" coords="256,157,473,184"/>
+<area shape="rect" id="node3" href="$class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d" title="Met à jour la date actuelle." alt="" coords="521,5,684,32"/>
+</map>

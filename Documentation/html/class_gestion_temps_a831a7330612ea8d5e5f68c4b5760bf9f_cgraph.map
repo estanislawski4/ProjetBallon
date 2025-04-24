@@ -1,0 +1,4 @@
+<map id="GestionTemps::getDateAprs" name="GestionTemps::getDateAprs">
+<area shape="rect" id="node1" title="Obtient la date et l&#39;heure au format APRS (Mois/Jour Heure:Minute)." alt="" coords="5,5,192,32"/>
+<area shape="rect" id="node2" href="$class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d" title="Met à jour la date actuelle." alt="" coords="240,5,403,32"/>
+</map>

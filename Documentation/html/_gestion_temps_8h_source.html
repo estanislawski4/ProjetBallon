@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,8 +26,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Ballon stratosphérique
-   &#160;<span id="projectnumber">1.4</span>
+   &#160;<span id="projectnumber">1.6</span>
    </div>
+   <div id="projectbrief">Programme de télémétrie du projet</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_gestion_temps_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +82,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_ec3f61db43eedbaa938e7890f5ed48d4.html">Telemetrie</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">GestionTemps.h</div>  </div>
@@ -119,7 +136,7 @@ $(function() {
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_gestion_temps.html#a5c5bc1ba7d6775dade99eda323edf41d">  102</a></span>&#160;    <a class="code" href="struct_temps.html">Temps</a> <a class="code" href="class_gestion_temps.html#a5c5bc1ba7d6775dade99eda323edf41d">temps</a>; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="struct_temps.html">Temps</a> temps; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
@@ -128,7 +145,6 @@ $(function() {
 <div class="ttc" id="aclass_gestion_temps_html_a0ac6adf77d4dfe02ac6121d3de20778d"><div class="ttname"><a href="class_gestion_temps.html#a0ac6adf77d4dfe02ac6121d3de20778d">GestionTemps::~GestionTemps</a></div><div class="ttdeci">~GestionTemps()</div><div class="ttdoc">Destructeur de la classe GestionTemps.</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:22</div></div>
 <div class="ttc" id="aclass_gestion_temps_html_a2db08517de566774cd4c6e4a700256e8"><div class="ttname"><a href="class_gestion_temps.html#a2db08517de566774cd4c6e4a700256e8">GestionTemps::getDateFormatee</a></div><div class="ttdeci">std::string getDateFormatee()</div><div class="ttdoc">Obtient la date et l'heure au format &quot;aaaa-mm-jj hh:mm:ss&quot;.</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:84</div></div>
 <div class="ttc" id="aclass_gestion_temps_html_a37c4b0c5bf5d486bb45fee134f4c72d5"><div class="ttname"><a href="class_gestion_temps.html#a37c4b0c5bf5d486bb45fee134f4c72d5">GestionTemps::obtenirHeureActuelle</a></div><div class="ttdeci">std::tm obtenirHeureActuelle()</div><div class="ttdoc">Obtient l'heure actuelle.</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:30</div></div>
-<div class="ttc" id="aclass_gestion_temps_html_a5c5bc1ba7d6775dade99eda323edf41d"><div class="ttname"><a href="class_gestion_temps.html#a5c5bc1ba7d6775dade99eda323edf41d">GestionTemps::temps</a></div><div class="ttdeci">Temps temps</div><div class="ttdoc">Variable pour stocker la date et l'heure actuelles.</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:102</div></div>
 <div class="ttc" id="aclass_gestion_temps_html_a62c26df7ccb8857066d0cdbe02c2cf2d"><div class="ttname"><a href="class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d">GestionTemps::majDate</a></div><div class="ttdeci">void majDate()</div><div class="ttdoc">Met à jour la date actuelle.</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:41</div></div>
 <div class="ttc" id="aclass_gestion_temps_html_a831a7330612ea8d5e5f68c4b5760bf9f"><div class="ttname"><a href="class_gestion_temps.html#a831a7330612ea8d5e5f68c4b5760bf9f">GestionTemps::getDateAprs</a></div><div class="ttdeci">std::string getDateAprs()</div><div class="ttdoc">Obtient la date et l'heure au format APRS (Mois/Jour Heure:Minute).</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:75</div></div>
 <div class="ttc" id="aclass_gestion_temps_html_aa715dfcd3799537f50353138e7320547"><div class="ttname"><a href="class_gestion_temps.html#aa715dfcd3799537f50353138e7320547">GestionTemps::GestionTemps</a></div><div class="ttdeci">GestionTemps()</div><div class="ttdoc">Constructeur de la classe GestionTemps.</div><div class="ttdef"><b>Definition:</b> GestionTemps.cpp:14</div></div>
@@ -141,9 +157,13 @@ $(function() {
 <div class="ttc" id="astruct_temps_html_a9fa1651c3ee90c17b6f892bc1bd4f140"><div class="ttname"><a href="struct_temps.html#a9fa1651c3ee90c17b6f892bc1bd4f140">Temps::heure</a></div><div class="ttdeci">std::string heure</div><div class="ttdoc">L'heure sous forme de chaîne.</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:28</div></div>
 <div class="ttc" id="astruct_temps_html_aeff9a659d797ee4b245e9e2e2eb0aebd"><div class="ttname"><a href="struct_temps.html#aeff9a659d797ee4b245e9e2e2eb0aebd">Temps::mois</a></div><div class="ttdeci">std::string mois</div><div class="ttdoc">Le mois sous forme de chaîne.</div><div class="ttdef"><b>Definition:</b> GestionTemps.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ec3f61db43eedbaa938e7890f5ed48d4.html">Telemetrie</a></li><li class="navelem"><a class="el" href="_gestion_temps_8h.html">GestionTemps.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

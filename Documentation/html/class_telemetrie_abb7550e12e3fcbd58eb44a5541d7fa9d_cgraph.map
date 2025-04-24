@@ -1,0 +1,8 @@
+<map id="Telemetrie::CreationTrameAPRS" name="Telemetrie::CreationTrameAPRS">
+<area shape="rect" id="node1" title="Génère une trame APRS (Automatic Packet Reporting System)." alt="" coords="5,81,219,108"/>
+<area shape="rect" id="node2" href="$class_gestion_temps.html#a831a7330612ea8d5e5f68c4b5760bf9f" title="Obtient la date et l&#39;heure au format APRS (Mois/Jour Heure:Minute)." alt="" coords="281,5,467,32"/>
+<area shape="rect" id="node4" href="$class_b_m_e280.html#a055db07e502ea9dfd169e67978f5fa58" title="Obtient l&#39;humidité relative en pourcentage." alt="" coords="289,56,459,83"/>
+<area shape="rect" id="node5" href="$class_b_m_e280.html#a4c77525438e2442431524ae4d74d2f6e" title="Obtient la pression atmosphérique en mbar." alt="" coords="289,107,459,133"/>
+<area shape="rect" id="node6" href="$class_b_m_e280.html#adf495a603c913d8e221c4d6f7b58813d" title="Obtient la température en degrés Fahrenheit." alt="" coords="267,157,481,184"/>
+<area shape="rect" id="node3" href="$class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d" title="Met à jour la date actuelle." alt="" coords="529,5,692,32"/>
+</map>

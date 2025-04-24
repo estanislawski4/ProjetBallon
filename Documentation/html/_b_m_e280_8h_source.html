@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,8 +26,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Ballon stratosphérique
-   &#160;<span id="projectnumber">1.4</span>
+   &#160;<span id="projectnumber">1.6</span>
    </div>
+   <div id="projectbrief">Programme de télémétrie du projet</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_b_m_e280_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +82,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_ec3f61db43eedbaa938e7890f5ed48d4.html">Telemetrie</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">BME280.h</div>  </div>
@@ -214,7 +231,7 @@ $(function() {
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_b_m_e280.html#a055db07e502ea9dfd169e67978f5fa58">obtenirHumidite</a>();</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_b_m_e280.html#a6f4a51ea4f212fddfcf03cf17f94eae7">donnerAltitude</a>(<span class="keywordtype">double</span> <a class="code" href="class_b_m_e280.html#af4f6031c3b17ea4840a34e735b0d3e82">h</a>);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_b_m_e280.html#a6f4a51ea4f212fddfcf03cf17f94eae7">donnerAltitude</a>(<span class="keywordtype">double</span> h);</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_b_m_e280.html#a74457727a7734e9515a0ed6e7b7fdca7">obtenirPression0</a>();</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
@@ -224,36 +241,30 @@ $(function() {
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00311"></a><span class="lineno"><a class="line" href="class_b_m_e280.html#a6bc2394496dc8aa77c7d12eb1bfb6335">  311</a></span>&#160;    <a class="code" href="classi2c.html">i2c</a> *<a class="code" href="class_b_m_e280.html#a6bc2394496dc8aa77c7d12eb1bfb6335">deviceI2C</a>; </div>
-<div class="line"><a name="l00312"></a><span class="lineno"><a class="line" href="class_b_m_e280.html#a0246bed3e733bf6a1fc3f9e731c3d8ae">  312</a></span>&#160;    <a class="code" href="structbme280__calib__data.html">bme280_calib_data</a> <a class="code" href="class_b_m_e280.html#a0246bed3e733bf6a1fc3f9e731c3d8ae">cal</a>; </div>
-<div class="line"><a name="l00313"></a><span class="lineno"><a class="line" href="class_b_m_e280.html#abeeffeb056721a3b16872f03ae1ac171">  313</a></span>&#160;    <a class="code" href="structbme280__raw__data.html">bme280_raw_data</a> <a class="code" href="class_b_m_e280.html#abeeffeb056721a3b16872f03ae1ac171">raw</a>; </div>
-<div class="line"><a name="l00314"></a><span class="lineno"><a class="line" href="class_b_m_e280.html#af4f6031c3b17ea4840a34e735b0d3e82">  314</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_b_m_e280.html#af4f6031c3b17ea4840a34e735b0d3e82">h</a>; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <a class="code" href="classi2c.html">i2c</a> *deviceI2C; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <a class="code" href="structbme280__calib__data.html">bme280_calib_data</a> cal; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <a class="code" href="structbme280__raw__data.html">bme280_raw_data</a> raw; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordtype">double</span> h; </div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_b_m_e280.html#a34cf1585bf0ab0ab7107fdf8b017d481">readCalibrationData</a>();</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordtype">void</span> readCalibrationData();</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_b_m_e280.html#acebc5d1110eaf74ad9e66af4a440dd85">getRawData</a>();</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordtype">void</span> getRawData();</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;};</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// BME280_H_INCLUDED</span></div>
 <div class="ttc" id="a_b_m_e280_8h_html_a729d35579033cd8afd481459c3f07346"><div class="ttname"><a href="_b_m_e280_8h.html#a729d35579033cd8afd481459c3f07346">ADRESSE_I2C_BME280</a></div><div class="ttdeci">#define ADRESSE_I2C_BME280</div><div class="ttdoc">Adresse I2C par défaut du BME280.</div><div class="ttdef"><b>Definition:</b> BME280.h:33</div></div>
 <div class="ttc" id="aclass_b_m_e280_html"><div class="ttname"><a href="class_b_m_e280.html">BME280</a></div><div class="ttdoc">Classe permettant d'interagir avec un capteur BME280 via I2C.</div><div class="ttdef"><b>Definition:</b> BME280.h:230</div></div>
-<div class="ttc" id="aclass_b_m_e280_html_a0246bed3e733bf6a1fc3f9e731c3d8ae"><div class="ttname"><a href="class_b_m_e280.html#a0246bed3e733bf6a1fc3f9e731c3d8ae">BME280::cal</a></div><div class="ttdeci">bme280_calib_data cal</div><div class="ttdoc">Structure de calibration.</div><div class="ttdef"><b>Definition:</b> BME280.h:312</div></div>
 <div class="ttc" id="aclass_b_m_e280_html_a055db07e502ea9dfd169e67978f5fa58"><div class="ttname"><a href="class_b_m_e280.html#a055db07e502ea9dfd169e67978f5fa58">BME280::obtenirHumidite</a></div><div class="ttdeci">double obtenirHumidite()</div><div class="ttdoc">Obtient l'humidité relative en pourcentage.</div><div class="ttdef"><b>Definition:</b> BME280.cpp:213</div></div>
-<div class="ttc" id="aclass_b_m_e280_html_a34cf1585bf0ab0ab7107fdf8b017d481"><div class="ttname"><a href="class_b_m_e280.html#a34cf1585bf0ab0ab7107fdf8b017d481">BME280::readCalibrationData</a></div><div class="ttdeci">void readCalibrationData()</div><div class="ttdoc">Lit les données de calibration du capteur.</div><div class="ttdef"><b>Definition:</b> BME280.cpp:66</div></div>
 <div class="ttc" id="aclass_b_m_e280_html_a4c77525438e2442431524ae4d74d2f6e"><div class="ttname"><a href="class_b_m_e280.html#a4c77525438e2442431524ae4d74d2f6e">BME280::obtenirPression</a></div><div class="ttdeci">double obtenirPression()</div><div class="ttdoc">Obtient la pression atmosphérique en mbar.</div><div class="ttdef"><b>Definition:</b> BME280.cpp:170</div></div>
 <div class="ttc" id="aclass_b_m_e280_html_a5fb779945e887981a5667074aead7128"><div class="ttname"><a href="class_b_m_e280.html#a5fb779945e887981a5667074aead7128">BME280::obtenirTemperatureEnC</a></div><div class="ttdeci">double obtenirTemperatureEnC()</div><div class="ttdoc">Obtient la température en degrés Celsius.</div><div class="ttdef"><b>Definition:</b> BME280.cpp:127</div></div>
 <div class="ttc" id="aclass_b_m_e280_html_a62a3218adc31578806b5156660f75d19"><div class="ttname"><a href="class_b_m_e280.html#a62a3218adc31578806b5156660f75d19">BME280::BME280</a></div><div class="ttdeci">BME280(int i2cAddress=ADRESSE_I2C_BME280)</div><div class="ttdoc">Constructeur de la classe BME280.</div><div class="ttdef"><b>Definition:</b> BME280.cpp:31</div></div>
 <div class="ttc" id="aclass_b_m_e280_html_a6a6bfa071c849109c1cc0220d24c86ab"><div class="ttname"><a href="class_b_m_e280.html#a6a6bfa071c849109c1cc0220d24c86ab">BME280::version</a></div><div class="ttdeci">void version()</div><div class="ttdoc">Affiche la version du firmware du BME280.</div><div class="ttdef"><b>Definition:</b> BME280.cpp:295</div></div>
-<div class="ttc" id="aclass_b_m_e280_html_a6bc2394496dc8aa77c7d12eb1bfb6335"><div class="ttname"><a href="class_b_m_e280.html#a6bc2394496dc8aa77c7d12eb1bfb6335">BME280::deviceI2C</a></div><div class="ttdeci">i2c * deviceI2C</div><div class="ttdoc">Objet pour la communication I2C avec le capteur.</div><div class="ttdef"><b>Definition:</b> BME280.h:311</div></div>
 <div class="ttc" id="aclass_b_m_e280_html_a6f4a51ea4f212fddfcf03cf17f94eae7"><div class="ttname"><a href="class_b_m_e280.html#a6f4a51ea4f212fddfcf03cf17f94eae7">BME280::donnerAltitude</a></div><div class="ttdeci">void donnerAltitude(double h)</div><div class="ttdoc">Définit l'altitude en mètres pour le calcul de la pression au niveau de la mer.</div><div class="ttdef"><b>Definition:</b> BME280.cpp:262</div></div>
 <div class="ttc" id="aclass_b_m_e280_html_a74457727a7734e9515a0ed6e7b7fdca7"><div class="ttname"><a href="class_b_m_e280.html#a74457727a7734e9515a0ed6e7b7fdca7">BME280::obtenirPression0</a></div><div class="ttdeci">double obtenirPression0()</div><div class="ttdoc">Obtient la pression au niveau de la mer.</div><div class="ttdef"><b>Definition:</b> BME280.cpp:250</div></div>
 <div class="ttc" id="aclass_b_m_e280_html_ab8bdfe169da05cb91710ca6c881ea1fe"><div class="ttname"><a href="class_b_m_e280.html#ab8bdfe169da05cb91710ca6c881ea1fe">BME280::obtenirChipID</a></div><div class="ttdeci">unsigned int obtenirChipID()</div><div class="ttdoc">Obtient l'ID du chip BME280.</div><div class="ttdef"><b>Definition:</b> BME280.cpp:59</div></div>
-<div class="ttc" id="aclass_b_m_e280_html_abeeffeb056721a3b16872f03ae1ac171"><div class="ttname"><a href="class_b_m_e280.html#abeeffeb056721a3b16872f03ae1ac171">BME280::raw</a></div><div class="ttdeci">bme280_raw_data raw</div><div class="ttdoc">Structure des données brutes du capteur.</div><div class="ttdef"><b>Definition:</b> BME280.h:313</div></div>
 <div class="ttc" id="aclass_b_m_e280_html_ace8b91a765273d6dc04c01a1758819b2"><div class="ttname"><a href="class_b_m_e280.html#ace8b91a765273d6dc04c01a1758819b2">BME280::obtenirPointDeRosee</a></div><div class="ttdeci">double obtenirPointDeRosee()</div><div class="ttdoc">Obtient la valeur du point de rosée en degrés Celsius.</div><div class="ttdef"><b>Definition:</b> BME280.cpp:270</div></div>
-<div class="ttc" id="aclass_b_m_e280_html_acebc5d1110eaf74ad9e66af4a440dd85"><div class="ttname"><a href="class_b_m_e280.html#acebc5d1110eaf74ad9e66af4a440dd85">BME280::getRawData</a></div><div class="ttdeci">void getRawData()</div><div class="ttdoc">Lit les données brutes du capteur (température, pression, humidité).</div><div class="ttdef"><b>Definition:</b> BME280.cpp:92</div></div>
 <div class="ttc" id="aclass_b_m_e280_html_ad1b5d497f71ab75aae0fbdbec6f9b5be"><div class="ttname"><a href="class_b_m_e280.html#ad1b5d497f71ab75aae0fbdbec6f9b5be">BME280::~BME280</a></div><div class="ttdeci">~BME280()</div><div class="ttdoc">Destructeur de la classe BME280.</div><div class="ttdef"><b>Definition:</b> BME280.cpp:50</div></div>
 <div class="ttc" id="aclass_b_m_e280_html_adf495a603c913d8e221c4d6f7b58813d"><div class="ttname"><a href="class_b_m_e280.html#adf495a603c913d8e221c4d6f7b58813d">BME280::obtenirTemperatureEnF</a></div><div class="ttdeci">double obtenirTemperatureEnF()</div><div class="ttdoc">Obtient la température en degrés Fahrenheit.</div><div class="ttdef"><b>Definition:</b> BME280.cpp:154</div></div>
-<div class="ttc" id="aclass_b_m_e280_html_af4f6031c3b17ea4840a34e735b0d3e82"><div class="ttname"><a href="class_b_m_e280.html#af4f6031c3b17ea4840a34e735b0d3e82">BME280::h</a></div><div class="ttdeci">double h</div><div class="ttdoc">Différence d'altitude du capteur par rapport au niveau de la mer (en mètres)</div><div class="ttdef"><b>Definition:</b> BME280.h:314</div></div>
 <div class="ttc" id="aclassi2c_html"><div class="ttname"><a href="classi2c.html">i2c</a></div><div class="ttdoc">Classe permettant la gestion des communications I2C avec un périphérique.</div><div class="ttdef"><b>Definition:</b> i2c.h:165</div></div>
 <div class="ttc" id="ai2c_8h_html"><div class="ttname"><a href="i2c_8h.html">i2c.h</a></div></div>
 <div class="ttc" id="astructbme280__calib__data_html"><div class="ttname"><a href="structbme280__calib__data.html">bme280_calib_data</a></div><div class="ttdoc">Structure contenant les constantes de calibration du capteur BME280.</div><div class="ttdef"><b>Definition:</b> BME280.h:197</div></div>
@@ -289,9 +300,13 @@ $(function() {
 <div class="ttc" id="astructbme280__raw__data_html_aea4d6add56456afb7ab2b3588f3834d3"><div class="ttname"><a href="structbme280__raw__data.html#aea4d6add56456afb7ab2b3588f3834d3">bme280_raw_data::hmsb</a></div><div class="ttdeci">uint8_t hmsb</div><div class="ttdoc">MSB de l'humidité</div><div class="ttdef"><b>Definition:</b> BME280.h:180</div></div>
 <div class="ttc" id="astructbme280__raw__data_html_af8c58b1059f531489fc7778fcfad70f8"><div class="ttname"><a href="structbme280__raw__data.html#af8c58b1059f531489fc7778fcfad70f8">bme280_raw_data::hlsb</a></div><div class="ttdeci">uint8_t hlsb</div><div class="ttdoc">LSB de l'humidité</div><div class="ttdef"><b>Definition:</b> BME280.h:181</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ec3f61db43eedbaa938e7890f5ed48d4.html">Telemetrie</a></li><li class="navelem"><a class="el" href="_b_m_e280_8h.html">BME280.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,8 +26,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Ballon stratosphérique
-   &#160;<span id="projectnumber">1.4</span>
+   &#160;<span id="projectnumber">1.6</span>
    </div>
+   <div id="projectbrief">Programme de télémétrie du projet</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('i2c_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +82,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_ec3f61db43eedbaa938e7890f5ed48d4.html">Telemetrie</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">i2c.h</div>  </div>
@@ -180,8 +197,8 @@ $(function() {
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="classi2c.html#a06301451fcee29a607b323abc5dc00bf">  266</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classi2c.html#a06301451fcee29a607b323abc5dc00bf">fd</a>; </div>
-<div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="classi2c.html#aea39837fb935ecdf947846a92379b2f7">  267</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classi2c.html#aea39837fb935ecdf947846a92379b2f7">error</a>; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordtype">int</span> fd; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordtype">bool</span> error; </div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> i2c_smbus_access (<span class="keywordtype">char</span> rw, uint8_t command, <span class="keywordtype">int</span> size, <span class="keyword">union</span> <a class="code" href="unioni2c__smbus__data.html">i2c_smbus_data</a> *data);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
@@ -189,8 +206,6 @@ $(function() {
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// I2C_H_INCLUDED</span></div>
 <div class="ttc" id="aclassi2c_html"><div class="ttname"><a href="classi2c.html">i2c</a></div><div class="ttdoc">Classe permettant la gestion des communications I2C avec un périphérique.</div><div class="ttdef"><b>Definition:</b> i2c.h:165</div></div>
-<div class="ttc" id="aclassi2c_html_a06301451fcee29a607b323abc5dc00bf"><div class="ttname"><a href="classi2c.html#a06301451fcee29a607b323abc5dc00bf">i2c::fd</a></div><div class="ttdeci">int fd</div><div class="ttdoc">Descripteur de fichier pour la communication I2C.</div><div class="ttdef"><b>Definition:</b> i2c.h:266</div></div>
-<div class="ttc" id="aclassi2c_html_aea39837fb935ecdf947846a92379b2f7"><div class="ttname"><a href="classi2c.html#aea39837fb935ecdf947846a92379b2f7">i2c::error</a></div><div class="ttdeci">bool error</div><div class="ttdoc">Indicateur d'erreur de communication.</div><div class="ttdef"><b>Definition:</b> i2c.h:267</div></div>
 <div class="ttc" id="ai2c_8h_html_ac2dd8b77e329bba4a3ca9cd275f9bf50"><div class="ttname"><a href="i2c_8h.html#ac2dd8b77e329bba4a3ca9cd275f9bf50">I2C_SMBUS_BLOCK_MAX</a></div><div class="ttdeci">#define I2C_SMBUS_BLOCK_MAX</div><div class="ttdoc">Taille maximale d'un bloc de données dans SMBus.</div><div class="ttdef"><b>Definition:</b> i2c.h:117</div></div>
 <div class="ttc" id="astructi2c__smbus__ioctl__data_html"><div class="ttname"><a href="structi2c__smbus__ioctl__data.html">i2c_smbus_ioctl_data</a></div><div class="ttdoc">Structure utilisée pour les opérations SMBus via ioctl().</div><div class="ttdef"><b>Definition:</b> i2c.h:149</div></div>
 <div class="ttc" id="astructi2c__smbus__ioctl__data_html_a777bacfabf66ba077b40d1c835c7879f"><div class="ttname"><a href="structi2c__smbus__ioctl__data.html#a777bacfabf66ba077b40d1c835c7879f">i2c_smbus_ioctl_data::size</a></div><div class="ttdeci">int size</div><div class="ttdoc">Taille des données à lire/écrire.</div><div class="ttdef"><b>Definition:</b> i2c.h:152</div></div>
@@ -201,9 +216,13 @@ $(function() {
 <div class="ttc" id="aunioni2c__smbus__data_html_a7145699abf962d118aa1c78ff864e892"><div class="ttname"><a href="unioni2c__smbus__data.html#a7145699abf962d118aa1c78ff864e892">i2c_smbus_data::byte</a></div><div class="ttdeci">uint8_t byte</div><div class="ttdoc">Données sous forme d'octet.</div><div class="ttdef"><b>Definition:</b> i2c.h:137</div></div>
 <div class="ttc" id="aunioni2c__smbus__data_html_ae8621bf131cbdfff90b21499a2c11a26"><div class="ttname"><a href="unioni2c__smbus__data.html#ae8621bf131cbdfff90b21499a2c11a26">i2c_smbus_data::word</a></div><div class="ttdeci">uint16_t word</div><div class="ttdoc">Données sous forme de mot.</div><div class="ttdef"><b>Definition:</b> i2c.h:138</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ec3f61db43eedbaa938e7890f5ed48d4.html">Telemetrie</a></li><li class="navelem"><a class="el" href="i2c_8h.html">i2c.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

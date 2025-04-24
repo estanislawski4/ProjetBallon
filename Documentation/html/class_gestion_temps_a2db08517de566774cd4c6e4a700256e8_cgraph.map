@@ -1,0 +1,4 @@
+<map id="GestionTemps::getDateFormatee" name="GestionTemps::getDateFormatee">
+<area shape="rect" id="node1" title="Obtient la date et l&#39;heure au format &quot;aaaa&#45;mm&#45;jj hh:mm:ss&quot;." alt="" coords="5,5,220,32"/>
+<area shape="rect" id="node2" href="$class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d" title="Met à jour la date actuelle." alt="" coords="268,5,431,32"/>
+</map>

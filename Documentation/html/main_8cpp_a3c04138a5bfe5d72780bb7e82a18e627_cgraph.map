@@ -1,0 +1,18 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title="Fonction principale du programme." alt="" coords="5,351,56,377"/>
+<area shape="rect" id="node2" href="$class_telemetrie.html#abb7550e12e3fcbd58eb44a5541d7fa9d" title="Génère une trame APRS (Automatic Packet Reporting System)." alt="" coords="104,107,317,133"/>
+<area shape="rect" id="node8" href="$class_gestion_file.html#aaf1e693750c81f18aaa35c47397d8680" title="Écrit un message dans la file IPC." alt="" coords="124,285,297,326"/>
+<area shape="rect" id="node9" href="$class_gestion_temps.html#a2db08517de566774cd4c6e4a700256e8" title="Obtient la date et l&#39;heure au format &quot;aaaa&#45;mm&#45;jj hh:mm:ss&quot;." alt="" coords="367,259,581,285"/>
+<area shape="rect" id="node10" href="$class_telemetrie.html#a5b62fab9d10e95b1f1bd2e6232a3d5ca" title="Obtient l&#39;humidité mesurée par le capteur." alt="" coords="131,351,291,377"/>
+<area shape="rect" id="node11" href="$class_telemetrie.html#a0dc6e4b18703db4591c8de13999e0879" title="Obtient la pression mesurée par le capteur." alt="" coords="131,401,290,428"/>
+<area shape="rect" id="node12" href="$class_telemetrie.html#af1c0a691e2473259e1cac2d63dbb1596" title="Obtient la température mesurée par le capteur." alt="" coords="121,452,301,479"/>
+<area shape="rect" id="node13" href="$class_gestion_file.html#ad5b3074925aebd7eaf5450fc72062bfa" title="Ouvre la file IPC avec une clé spécifique." alt="" coords="121,503,300,529"/>
+<area shape="rect" id="node14" href="$class_gestion_temps.html#a37c4b0c5bf5d486bb45fee134f4c72d5" title="Obtient l&#39;heure actuelle." alt="" coords="117,554,305,595"/>
+<area shape="rect" id="node15" href="$class_telemetrie.html#abc1a12fe408d6c5e73be222a90773f71" title="Sauvegarde les données de télémétrie dans un fichier CSV." alt="" coords="109,183,312,209"/>
+<area shape="rect" id="node3" href="$class_gestion_temps.html#a831a7330612ea8d5e5f68c4b5760bf9f" title="Obtient la date et l&#39;heure au format APRS (Mois/Jour Heure:Minute)." alt="" coords="381,5,567,32"/>
+<area shape="rect" id="node5" href="$class_b_m_e280.html#a055db07e502ea9dfd169e67978f5fa58" title="Obtient l&#39;humidité relative en pourcentage." alt="" coords="389,157,559,184"/>
+<area shape="rect" id="node6" href="$class_b_m_e280.html#a4c77525438e2442431524ae4d74d2f6e" title="Obtient la pression atmosphérique en mbar." alt="" coords="389,107,559,133"/>
+<area shape="rect" id="node7" href="$class_b_m_e280.html#adf495a603c913d8e221c4d6f7b58813d" title="Obtient la température en degrés Fahrenheit." alt="" coords="367,56,581,83"/>
+<area shape="rect" id="node4" href="$class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d" title="Met à jour la date actuelle." alt="" coords="631,132,793,159"/>
+<area shape="rect" id="node16" href="$class_b_m_e280.html#a5fb779945e887981a5667074aead7128" title="Obtient la température en degrés Celsius." alt="" coords="365,208,583,235"/>
+</map>

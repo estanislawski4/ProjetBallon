@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,8 +26,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Ballon stratosphérique
-   &#160;<span id="projectnumber">1.4</span>
+   &#160;<span id="projectnumber">1.6</span>
    </div>
+   <div id="projectbrief">Programme de télémétrie du projet</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_gestion_temps.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +82,9 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
-<a href="#pri-attribs">Attributs privés</a> &#124;
 <a href="class_gestion_temps-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
 <div class="title">Référence de la classe GestionTemps</div>  </div>
@@ -75,15 +95,6 @@ $(function() {
  <a href="class_gestion_temps.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_gestion_temps_8h_source.html">GestionTemps.h</a>&gt;</code></p>
-<div class="dynheader">
-Graphe de collaboration de GestionTemps:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_gestion_temps__coll__graph.png" border="0" usemap="#a_gestion_temps_coll__map" alt="Collaboration graph"/></div>
-<map name="a_gestion_temps_coll__map" id="a_gestion_temps_coll__map">
-<area shape="rect" title="Classe permettant de gérer la date et l&#39;heure actuelles." alt="" coords="5,219,168,384"/>
-<area shape="rect" href="struct_temps.html" title="Structure pour stocker les composants d&#39;une date et d&#39;une heure." alt="" coords="45,5,128,156"/>
-</map>
-</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -108,12 +119,6 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ad317655b2081dd9dd473d95ff05a12ac"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_temps.html#ad317655b2081dd9dd473d95ff05a12ac">generateFilename</a> ()</td></tr>
 <tr class="memdesc:ad317655b2081dd9dd473d95ff05a12ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Génère un nom de fichier basé sur la date actuelle.  <a href="class_gestion_temps.html#ad317655b2081dd9dd473d95ff05a12ac">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad317655b2081dd9dd473d95ff05a12ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Attributs privés</h2></td></tr>
-<tr class="memitem:a5c5bc1ba7d6775dade99eda323edf41d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_temps.html">Temps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_temps.html#a5c5bc1ba7d6775dade99eda323edf41d">temps</a></td></tr>
-<tr class="memdesc:a5c5bc1ba7d6775dade99eda323edf41d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable pour stocker la date et l'heure actuelles.  <a href="class_gestion_temps.html#a5c5bc1ba7d6775dade99eda323edf41d">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a5c5bc1ba7d6775dade99eda323edf41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe permettant de gérer la date et l'heure actuelles. </p>
@@ -137,6 +142,15 @@ Attributs privés</h2></td></tr>
 <p>Constructeur de la classe <a class="el" href="class_gestion_temps.html" title="Classe permettant de gérer la date et l&#39;heure actuelles.">GestionTemps</a>. </p>
 <p>Constructeur de <a class="el" href="class_gestion_temps.html" title="Classe permettant de gérer la date et l&#39;heure actuelles.">GestionTemps</a> Initialise l'objet en mettant à jour la date.</p>
 <p>Initialise la classe et les membres nécessaires pour la gestion du temps. </p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_gestion_temps_aa715dfcd3799537f50353138e7320547_cgraph.png" border="0" usemap="#aclass_gestion_temps_aa715dfcd3799537f50353138e7320547_cgraph" alt=""/></div>
+<map name="aclass_gestion_temps_aa715dfcd3799537f50353138e7320547_cgraph" id="aclass_gestion_temps_aa715dfcd3799537f50353138e7320547_cgraph">
+<area shape="rect" title="Constructeur de la classe GestionTemps." alt="" coords="5,5,204,32"/>
+<area shape="rect" href="class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d" title="Met à jour la date actuelle." alt="" coords="252,5,415,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -182,6 +196,24 @@ Attributs privés</h2></td></tr>
 <p>Cette méthode génère un nom de fichier formaté avec la date et l'heure actuelles, utile pour les journaux ou les fichiers de données. </p><dl class="section return"><dt>Renvoie</dt><dd>Le nom de fichier généré.</dd>
 <dd>
 Chaîne de caractères représentant le nom du fichier au format data_YYYY-MM-DD_HH-MM-SS.csv </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_gestion_temps_ad317655b2081dd9dd473d95ff05a12ac_cgraph.png" border="0" usemap="#aclass_gestion_temps_ad317655b2081dd9dd473d95ff05a12ac_cgraph" alt=""/></div>
+<map name="aclass_gestion_temps_ad317655b2081dd9dd473d95ff05a12ac_cgraph" id="aclass_gestion_temps_ad317655b2081dd9dd473d95ff05a12ac_cgraph">
+<area shape="rect" title="Génère un nom de fichier basé sur la date actuelle." alt="" coords="5,5,223,32"/>
+<area shape="rect" href="class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d" title="Met à jour la date actuelle." alt="" coords="271,5,433,32"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_gestion_temps_ad317655b2081dd9dd473d95ff05a12ac_icgraph.png" border="0" usemap="#aclass_gestion_temps_ad317655b2081dd9dd473d95ff05a12ac_icgraph" alt=""/></div>
+<map name="aclass_gestion_temps_ad317655b2081dd9dd473d95ff05a12ac_icgraph" id="aclass_gestion_temps_ad317655b2081dd9dd473d95ff05a12ac_icgraph">
+<area shape="rect" title="Génère un nom de fichier basé sur la date actuelle." alt="" coords="204,5,421,32"/>
+<area shape="rect" href="class_telemetrie.html#a457d8ea8e7148d69ab45d91d403f6bed" title="Constructeur de la classe Telemetrie." alt="" coords="5,5,156,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -205,6 +237,25 @@ Chaîne de caractères représentant le nom du fichier au format data_YYYY-MM-DD
 <p>Cette méthode retourne la date et l'heure au format utilisé par APRS (Automatic Packet Reporting System). </p><dl class="section return"><dt>Renvoie</dt><dd>La date et l'heure au format "mois/jour heure:minute".</dd>
 <dd>
 Chaîne de caractères représentant la date au format MMJJHHmm </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_gestion_temps_a831a7330612ea8d5e5f68c4b5760bf9f_cgraph.png" border="0" usemap="#aclass_gestion_temps_a831a7330612ea8d5e5f68c4b5760bf9f_cgraph" alt=""/></div>
+<map name="aclass_gestion_temps_a831a7330612ea8d5e5f68c4b5760bf9f_cgraph" id="aclass_gestion_temps_a831a7330612ea8d5e5f68c4b5760bf9f_cgraph">
+<area shape="rect" title="Obtient la date et l&#39;heure au format APRS (Mois/Jour Heure:Minute)." alt="" coords="5,5,192,32"/>
+<area shape="rect" href="class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d" title="Met à jour la date actuelle." alt="" coords="240,5,403,32"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_gestion_temps_a831a7330612ea8d5e5f68c4b5760bf9f_icgraph.png" border="0" usemap="#aclass_gestion_temps_a831a7330612ea8d5e5f68c4b5760bf9f_icgraph" alt=""/></div>
+<map name="aclass_gestion_temps_a831a7330612ea8d5e5f68c4b5760bf9f_icgraph" id="aclass_gestion_temps_a831a7330612ea8d5e5f68c4b5760bf9f_icgraph">
+<area shape="rect" title="Obtient la date et l&#39;heure au format APRS (Mois/Jour Heure:Minute)." alt="" coords="365,5,552,32"/>
+<area shape="rect" href="class_telemetrie.html#abb7550e12e3fcbd58eb44a5541d7fa9d" title="Génère une trame APRS (Automatic Packet Reporting System)." alt="" coords="104,5,317,32"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Fonction principale du programme." alt="" coords="5,5,56,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -228,6 +279,25 @@ Chaîne de caractères représentant la date au format MMJJHHmm </dd></dl>
 <p>Cette méthode retourne la date et l'heure actuelles sous un format standardisé. </p><dl class="section return"><dt>Renvoie</dt><dd>La date et l'heure sous forme de chaîne, formatée en "aaaa-mm-jj hh:mm:ss".</dd>
 <dd>
 Chaîne de caractères représentant la date au format AAAA-MM-JJ HH:MM:SS CEST </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_gestion_temps_a2db08517de566774cd4c6e4a700256e8_cgraph.png" border="0" usemap="#aclass_gestion_temps_a2db08517de566774cd4c6e4a700256e8_cgraph" alt=""/></div>
+<map name="aclass_gestion_temps_a2db08517de566774cd4c6e4a700256e8_cgraph" id="aclass_gestion_temps_a2db08517de566774cd4c6e4a700256e8_cgraph">
+<area shape="rect" title="Obtient la date et l&#39;heure au format &quot;aaaa&#45;mm&#45;jj hh:mm:ss&quot;." alt="" coords="5,5,220,32"/>
+<area shape="rect" href="class_gestion_temps.html#a62c26df7ccb8857066d0cdbe02c2cf2d" title="Met à jour la date actuelle." alt="" coords="268,5,431,32"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_gestion_temps_a2db08517de566774cd4c6e4a700256e8_icgraph.png" border="0" usemap="#aclass_gestion_temps_a2db08517de566774cd4c6e4a700256e8_icgraph" alt=""/></div>
+<map name="aclass_gestion_temps_a2db08517de566774cd4c6e4a700256e8_icgraph" id="aclass_gestion_temps_a2db08517de566774cd4c6e4a700256e8_icgraph">
+<area shape="rect" title="Obtient la date et l&#39;heure au format &quot;aaaa&#45;mm&#45;jj hh:mm:ss&quot;." alt="" coords="355,5,569,32"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Fonction principale du programme." alt="" coords="5,5,56,32"/>
+<area shape="rect" href="class_telemetrie.html#abc1a12fe408d6c5e73be222a90773f71" title="Sauvegarde les données de télémétrie dans un fichier CSV." alt="" coords="104,31,307,57"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -249,6 +319,22 @@ Chaîne de caractères représentant la date au format AAAA-MM-JJ HH:MM:SS CEST 
 <p>Met à jour la date actuelle. </p>
 <p>Met à jour la structure de date et heure.</p>
 <p>Cette méthode met à jour les composants de la date actuelle (année, mois, jour, etc.) stockés dans la structure <a class="el" href="struct_temps.html" title="Structure pour stocker les composants d&#39;une date et d&#39;une heure.">Temps</a>. </p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_gestion_temps_a62c26df7ccb8857066d0cdbe02c2cf2d_icgraph.png" border="0" usemap="#aclass_gestion_temps_a62c26df7ccb8857066d0cdbe02c2cf2d_icgraph" alt=""/></div>
+<map name="aclass_gestion_temps_a62c26df7ccb8857066d0cdbe02c2cf2d_icgraph" id="aclass_gestion_temps_a62c26df7ccb8857066d0cdbe02c2cf2d_icgraph">
+<area shape="rect" title="Met à jour la date actuelle." alt="" coords="631,81,793,108"/>
+<area shape="rect" href="class_gestion_temps.html#ad317655b2081dd9dd473d95ff05a12ac" title="Génère un nom de fichier basé sur la date actuelle." alt="" coords="365,5,583,32"/>
+<area shape="rect" href="class_gestion_temps.html#aa715dfcd3799537f50353138e7320547" title="Constructeur de la classe GestionTemps." alt="" coords="375,56,573,83"/>
+<area shape="rect" href="class_gestion_temps.html#a831a7330612ea8d5e5f68c4b5760bf9f" title="Obtient la date et l&#39;heure au format APRS (Mois/Jour Heure:Minute)." alt="" coords="381,107,567,133"/>
+<area shape="rect" href="class_gestion_temps.html#a2db08517de566774cd4c6e4a700256e8" title="Obtient la date et l&#39;heure au format &quot;aaaa&#45;mm&#45;jj hh:mm:ss&quot;." alt="" coords="367,157,581,184"/>
+<area shape="rect" href="class_telemetrie.html#a457d8ea8e7148d69ab45d91d403f6bed" title="Constructeur de la classe Telemetrie." alt="" coords="135,5,286,32"/>
+<area shape="rect" href="class_telemetrie.html#abb7550e12e3fcbd58eb44a5541d7fa9d" title="Génère une trame APRS (Automatic Packet Reporting System)." alt="" coords="104,107,317,133"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Fonction principale du programme." alt="" coords="5,157,56,184"/>
+<area shape="rect" href="class_telemetrie.html#abc1a12fe408d6c5e73be222a90773f71" title="Sauvegarde les données de télémétrie dans un fichier CSV." alt="" coords="109,208,312,235"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -272,31 +358,15 @@ Chaîne de caractères représentant la date au format AAAA-MM-JJ HH:MM:SS CEST 
 <p>Utilise la bibliothèque &lt;ctime&gt; pour obtenir l'heure actuelle sous forme d'un objet std::tm. </p><dl class="section return"><dt>Renvoie</dt><dd>L'heure actuelle sous forme de structure std::tm.</dd>
 <dd>
 Structure std::tm représentant l'heure actuelle </dd></dl>
-
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_gestion_temps_a37c4b0c5bf5d486bb45fee134f4c72d5_icgraph.png" border="0" usemap="#aclass_gestion_temps_a37c4b0c5bf5d486bb45fee134f4c72d5_icgraph" alt=""/></div>
+<map name="aclass_gestion_temps_a37c4b0c5bf5d486bb45fee134f4c72d5_icgraph" id="aclass_gestion_temps_a37c4b0c5bf5d486bb45fee134f4c72d5_icgraph">
+<area shape="rect" title="Obtient l&#39;heure actuelle." alt="" coords="104,5,292,47"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Fonction principale du programme." alt="" coords="5,13,56,39"/>
+</map>
 </div>
-</div>
-<h2 class="groupheader">Documentation des données membres</h2>
-<a id="a5c5bc1ba7d6775dade99eda323edf41d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c5bc1ba7d6775dade99eda323edf41d">&#9670;&nbsp;</a></span>temps</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_temps.html">Temps</a> GestionTemps::temps</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Variable pour stocker la date et l'heure actuelles. </p>
 
 </div>
 </div>
@@ -305,9 +375,13 @@ Structure std::tm représentant l'heure actuelle </dd></dl>
 <li>/home/USERS/ELEVES/CIEL2023/cmainfray/Projet Ballon/ProjetBallon/Telemetrie/<a class="el" href="_gestion_temps_8cpp.html">GestionTemps.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_gestion_temps.html">GestionTemps</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>
