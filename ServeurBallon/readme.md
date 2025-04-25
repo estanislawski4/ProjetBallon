@@ -72,13 +72,11 @@ Ainsi, d’un simple clic, vous commandez à distance l’oiseau volant vers la 
 
 ## Documentation technique
 
-Pour approfondir les arcanes du système, une documentation détaillée est à votre disposition. Vous y trouverez l’architecture complète, le fonctionnement interne des modules, ainsi que les instructions nécessaires à la compilation et à l’exécution.
+Pour approfondir les arcanes du système, une documentation détaillée est à votre disposition. Vous y trouverez l’architecture complète, le fonctionnement interne des modules.
 
-- Accès en ligne : []Consulter la documentation technique](https://estanislawski4.github.io/ServeurBallon/)
+- Accès en ligne : [Consulter la documentation technique](https://estanislawski4.github.io/ServeurBallon/)
 
 - Accès local : Le dossier Documentation, situé à la racine du projet, contient l’intégralité des fichiers nécessaires, y compris le code source.
-
-
 
 > « Contrôler la technique, c’est régner en silence – et nul ne se doute
 > alors de la force qui se cache derrière un écran. »
