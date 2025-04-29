@@ -115,9 +115,10 @@ class TrameModel
      */
     public function getTelemetryData()
     {
-        $sql = "SELECT message, date_reception 
-                FROM trames 
-                WHERE message LIKE '%_%' 
+        // On enlève le filtre sur l'underscore, on prend directement les trames APLT00
+        $sql = "SELECT message, date_reception
+                FROM trames
+                WHERE message LIKE '%t%h%b%'
                 ORDER BY date_reception ASC";
 
         $stmt = $this->bdd->query($sql);
@@ -125,40 +126,69 @@ class TrameModel
 
         $telemetryData = [];
 
+        // Nouveau regex : on capture 3 chiffres (temp), 2 chiffres (hum), 5 chiffres (pression)
+        $regex = '/t(\d{3})h(\d{2})b(\d{5})/';
+
         foreach ($rows as $row) {
-            $message = $row['message'];
+            if (preg_match($regex, $row['message'], $m)) {
+                $tempDixiemeC = (int)$m[1];           // ex: "078" → 78
+                $temperatureC = $tempDixiemeC / 10;  // 7.8 °C
 
-            // Exemple : t077h36b9993 ...
-            $regex = '/t(\d+)h(\d+)b(\d+)\s+([-+0-9,\.\s]+)/';
+                $humidity = (int)$m[2];              // ex: "31" → 31 %
 
-            if (preg_match($regex, $message, $matches)) {
-                // Conversion en supposant dixièmes de °C
-                $temperatureF = (float) $matches[1];  // ex : "077" => 7.7°C
-                $temperatureC = ($temperatureF - 32) * 5 / 9; 
-                $humidity    = (float) $matches[2];        // ex : "36" => 36% (si c’est bien le cas)
-                $pressure    = (float) $matches[3];        // ex : "9993" => 9993 (à adapter si nécessaire)
-
-                // Accélérations
-                $accelString = str_replace(',', '.', trim($matches[4]));
-                $accelParts  = preg_split('/\s+/', $accelString);
-
-                $accelX = isset($accelParts[0]) ? (float)$accelParts[0] : 0.0;
-                $accelY = isset($accelParts[1]) ? (float)$accelParts[1] : 0.0;
-                $accelZ = isset($accelParts[2]) ? (float)$accelParts[2] : 0.0;
+                $pressureRaw = (int)$m[3];           // ex: "10148"
+                // Selon l’unité : 1014,8 hPa si on divise par 10
+                $pressure  = $pressureRaw / 10;
 
                 $telemetryData[] = [
                     'date'        => $row['date_reception'],
                     'temperature' => $temperatureC,
                     'humidity'    => $humidity,
                     'pressure'    => $pressure,
-                    'accelX'      => $accelX,
-                    'accelY'      => $accelY,
-                    'accelZ'      => $accelZ
+                    // si vous ajoutez un jour les accélérations, traitez-les ici
+                    'accelX'      => null,
+                    'accelY'      => null,
+                    'accelZ'      => null
                 ];
             }
         }
 
         return $telemetryData;
+    }
+
+    public function getCoordinates()
+    {
+        // Récupère uniquement les messages commençant par "!" (format des trames de localisation)
+        $sql = "SELECT message FROM trames WHERE message LIKE '!%'";
+        $stmt = $this->bdd->query($sql);
+        $coordinates = [];
+
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            // Expression régulière pour extraire la latitude et la longitude
+            $pattern = '/^!([0-9]{2})([0-9]{2}\.[0-9]+)([NS])\/([0-9]{3})([0-9]{2}\.[0-9]+)([EW])/';
+            if (preg_match($pattern, $row['message'], $matches)) {
+                // Traitement de la latitude
+                $latDeg = (int)$matches[1];                     // Exemple : 47
+                $latMin = (float)$matches[2];                   // Exemple : 59.73
+                $latHem = $matches[3];                          // 'N' ou 'S'
+                $latitude = $latDeg + ($latMin / 60);            // Conversion en degrés décimaux
+                if ($latHem === 'S') {
+                    $latitude = -$latitude;
+                }
+                
+                // Traitement de la longitude
+                $lonDeg = (int)$matches[4];                     // Exemple : 000
+                $lonMin = (float)$matches[5];                   // Exemple : 12.26
+                $lonHem = $matches[6];                          // 'E' ou 'W'
+                $longitude = $lonDeg + ($lonMin / 60);           // Conversion en degrés décimaux
+                if ($lonHem === 'W') {
+                    $longitude = -$longitude;
+                }
+                
+                $coordinates[] = ['latitude' => $latitude, 'longitude' => $longitude];
+            }
+        }
+        return $coordinates;
     }
 }
 
