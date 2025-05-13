@@ -131,8 +131,8 @@ class TrameModel
 
         foreach ($rows as $row) {
             if (preg_match($regex, $row['message'], $m)) {
-                $tempDixiemeC = (int)$m[1];           // ex: "078" → 78
-                $temperatureC = $tempDixiemeC / 10;  // 7.8 °C
+                $tempF = (int)$m[1];           // ex: "078" → 78
+                $temperatureC = ($tempF - 32) * 5.0 / 9.0;
 
                 $humidity = (int)$m[2];              // ex: "31" → 31 %
 
