@@ -37,7 +37,7 @@
 #define    ZG_OFFS_L  0x18
 
 #define    SAMPLRT_DIV 	0x19
-#define    CONFIG       0x1A  // registre 26 Configuration du filtrage Passe Bas
+#define    CCONFIG_MPU  0x1A  // registre 26 Configuration du filtrage Passe Bas
 #define    GYRO_CONFIG  0x1B  // registre 27 Gyroscope Configuration
 #define    ACCEL_CONFIG 0x1C  // registre 28
 
